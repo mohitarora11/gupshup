@@ -6,7 +6,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
 		header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
 	}else{
-		saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
+	    saveoption($_SESSION["userid"],$_POST["optionchosen"],dirname(__FILE__).DIRECTORY_SEPARATOR.'testimages'.DIRECTORY_SEPARATOR.'frame_'.$_FILES["file"]["name"]);
+		include ('imagesave.php');
+		
 	}
 }
 ?>
@@ -45,8 +47,9 @@ Win.</li>
 </em><span>OR</span>
 </form>
 <form class="table1" enctype="multipart/form-data" method="post"> 
-<input name="" type="file">
+<input name="file" type="file">
 <input name="optionchosen" value="2" type="hidden">
+<input name="" type="submit" value="Submit">
 <em>Smile & Take a Dazzling selfie. Tag the location to upload. Your selfie will be be tagged with a auomated heading incase you do not fill the first column.
 </em></form>
 

@@ -22,8 +22,10 @@ $srcimg->load($i);
 imagecopymerge($dest, $srcimg->image, 150, 150, 0, 0, $srcimg->getWidth(), $srcimg->getHeight(), 70);
 
 // Output and free from memory
-header('Content-Type: image/jpeg');
-imagejpeg($dest);
+//header('Content-Type: image/jpeg');
+$timestamp = 'frame_'.time().$_FILES["file"]["name"];
+imagejpeg($dest,dirname(__FILE__).DIRECTORY_SEPARATOR.'testimages'.DIRECTORY_SEPARATOR.$timestamp);
+saveoption($_SESSION["userid"],$_POST["optionchosen"],$timestamp);
 imagedestroy($dest);
 imagedestroy($srcimg->image);
 
@@ -33,17 +35,5 @@ else{
 }
  }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
-<head>
-<title>Insert Movie</title> 
-</head>
-<body>
-    <form method="post" action="" enctype="multipart/form-data" name="insert" class="cls_insert" >
-        <input type="file" name="file" id="imgfile" class="inp cls_uplimg"  />
-        <input type="submit" name="submit" value="Submit" class="cls_submit" />
-    </form>
-</body>
-</html>
 
