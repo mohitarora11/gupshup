@@ -1,15 +1,18 @@
 <?php
 include ('header.php');
-
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{   if($_POST["optionchosen"]=='1'){
-		saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
-		header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
-	}else{
-	    saveoption($_SESSION["userid"],$_POST["optionchosen"],dirname(__FILE__).DIRECTORY_SEPARATOR.'testimages'.DIRECTORY_SEPARATOR.'frame_'.$_FILES["file"]["name"]);
-		include ('imagesave.php');
-		
+if($_SESSION["userid"]){
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{   if($_POST["optionchosen"]=='1'){
+			saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
+			savestatus($_SESSION["userid"],1);
+			header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
+		}else{			
+			include ('imagesave.php');
+			
+		}
 	}
+}else{
+	header("Location: ".$GLOBALS['url']."index1.php"); /* Redirect browser */
 }
 ?>
 

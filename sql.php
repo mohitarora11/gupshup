@@ -32,6 +32,18 @@ function saveoption($fbid,$optionchoosen,$choosenvalue){
 	
 	mysql_query($sql);
 }
+
+/* for updating status */
+function savestatus($fbid,$status){	
+	$sql = "Update user_atableforyou set status = ".$status." where fbid= '".$fbid."'";
+	mysql_query($sql);
+}
+
+/* for getting status */
+function getstatus($fbid){	
+	$q = "Select status from user_atableforyou where fbid = ".$fbid;
+    return mysql_query($q);
+}
 /* for inserting a vote */
 function vote($userid,$fbid,$email){
 	$arr = array();

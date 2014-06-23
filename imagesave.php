@@ -26,6 +26,7 @@ imagecopymerge($dest, $srcimg->image, 150, 150, 0, 0, $srcimg->getWidth(), $srci
 $timestamp = 'frame_'.time().$_FILES["file"]["name"];
 imagejpeg($dest,dirname(__FILE__).DIRECTORY_SEPARATOR.'testimages'.DIRECTORY_SEPARATOR.$timestamp);
 saveoption($_SESSION["userid"],$_POST["optionchosen"],$timestamp);
+savestatus($_SESSION["userid"],1);
 imagedestroy($dest);
 imagedestroy($srcimg->image);
 
