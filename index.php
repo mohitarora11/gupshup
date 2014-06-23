@@ -38,39 +38,9 @@ FacebookSession::setDefaultApplication(APPID, APPSECRET);
 if(isset($_REQUEST['error']) ){
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
-	include_once('templates/error.html');
+	include_once('home.php');
 	die('');
 }
-/*
-//https://www.webniraj.com/2014/05/01/facebook-api-php-sdk-updated-to-v4-0-0/
-// login helper with redirect_uri
-//for websites
-$helper = new FacebookRedirectLoginHelper( BASEURL );
-
-try {
-  $session = $helper->getSessionFromRedirect();
-} catch( FacebookRequestException $ex ) {
-  // When Facebook returns an error
-} catch( Exception $ex ) {
-  // When validation fails or other local issues
-}
- 
-// see if we have a session
-if ( isset( $session ) ) {
-  // graph api request for user data
-  $request = new FacebookRequest( $session, 'GET', '/me' );
-  $response = $request->execute();
-  // get response
-  $graphObject = $response->getGraphObject();
-   
-  // print data
-  echo  print_r( $graphObject, 1 );
-} else {
-  // show login url
-  echo '<a href="' . $helper->getLoginUrl() . '" target="_blank">Login</a>';
-}
-
-*/
 
 //for canvas
 $helper = new FacebookCanvasLoginHelper();
@@ -85,16 +55,21 @@ try {
 }
 
 if ($session){
-  // Logged in.
-    // graph api request for user data
-  $request = new FacebookRequest( $session, 'GET', '/me' );
-  $response = $request->execute();
-  // get response
-  $graphObject = $response->getGraphObject();
-   
-  // print data
   
-  /*
+ $request = new FacebookRequest( $session, 'GET', '/me' );
+  $response = $request->execute();  
+  $graphObject = $response->getGraphObject();
+  $_SESSION["userid"]=$graphObject->getProperty('id');
+	$_SESSION["useremail"]=$graphObject->getProperty('email');
+	$_SESSION["username"]=$graphObject->getProperty('name');
+	$page = $GLOBALS['url']."savedata.php";
+	header("Location: ".$page);
+	die();
+	?>
+	
+  
+  
+  <!--
   1.store user ingfo
   1.1 comment on wall
   1.2 if user upload image
@@ -102,15 +77,15 @@ if ($session){
   1.2.2 user have options to choose frams
   1.2.3 once user select's and submit, then we need to post on wall
   2. if user already exist direct scoreboard
-  */
-  
-  include('templates/index.html');
+  -->
+  <?
+  //include('home.php');
   
   //print_r($session);
 }else{
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
-	include_once('templates/error.html');
+	include_once('home.php');
 	die('');
 ?>
 	<script>
