@@ -38,7 +38,7 @@ function vote($userid,$fbid,$email){
 	//$arr['ip'] = $_SERVER['REMOTE_ADDR'];
 	$q=isvoted($userid,$fbid);
 	
-	if(mysql_num_rows($q)<0){
+	if(mysql_num_rows($q)==0){
 		$q = "insert into vote_atableforyou(userid,fbid,votetime,ipaddress,email) 
 		values(".$userid.",'".$fbid."',current_timestamp(),'".$_SERVER['REMOTE_ADDR']."','".$email."')";		
 		return mysql_query($q);
