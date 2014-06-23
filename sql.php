@@ -18,18 +18,19 @@ function checkifexist($fbid){
 function saveuser($fbid,$email,$fname){
 	$sql = "INSERT INTO user_atableforyou(fbid,email,fname,inserteddate)
 	VALUES('".$fbid."','".$email."','".$fname."',current_timestamp())";
-	mysql_query($q);
+	mysql_query($sql);
 }
 
 /* for updating  user selected info */
 function saveoption($fbid,$optionchoosen,$choosenvalue){
 
 	if($optionchoosen == 1){ /*  user has choosen comment */
-		$sql = "Update user_atableforyou set optionchoosen = ".$optionchoosen.", cmt = '".$choosenvalue."' where fbid= '".$fbid."'";
+		$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", cmt = '".$choosenvalue."' where fbid= '".$fbid."'";
 	}else{
-		$sql = "Update user_atableforyou set optionchoosen = ".$optionchoosen.", photourl = '".$choosenvalue."' where fbid= '".$fbid."'";
+		$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", photourl = '".$choosenvalue."' where fbid= '".$fbid."'";
 	}
-	mysql_query($q);
+	
+	mysql_query($sql);
 }
 /* for inserting a vote */
 function vote($userid,$fbid,$email){
