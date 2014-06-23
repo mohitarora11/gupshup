@@ -36,11 +36,14 @@ function saveoption($fbid,$optionchoosen,$choosenvalue){
 function vote($userid,$fbid,$email){
 	$arr = array();
 	//$arr['ip'] = $_SERVER['REMOTE_ADDR'];
+	$q=isvoted($userid,$fbid);
 	
-	$q = "insert into vote_atableforyou(userid,fbid,votetime,ipaddress,email) 
-	values(".$userid.",'".$fbid."',current_timestamp(),'".$_SERVER['REMOTE_ADDR']."','".$email."')";
-	//echo $q;
-	return mysql_query($q);
+	if(mysql_num_rows($q)<0){
+		$q = "insert into vote_atableforyou(userid,fbid,votetime,ipaddress,email) 
+		values(".$userid.",'".$fbid."',current_timestamp(),'".$_SERVER['REMOTE_ADDR']."','".$email."')";		
+		return mysql_query($q);
+	}
+	return 0;
 }
 /* for getting the total count of register user */
 function totalcount(){
@@ -55,7 +58,8 @@ function totalcountvote(){
 }
 /* for checking has the user already voted */
 function isvoted($userid,$fbid){
-	$q = "select * from vote_atableforyou where jodiid=".$jodiid." and fbid='".$fbid."'";
+	$q = "select * from vote_atableforyou where userid=".$userid." and fbid='".$fbid."'";
+	
 	return mysql_query($q);
 }
 
