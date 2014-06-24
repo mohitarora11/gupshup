@@ -62,7 +62,7 @@ if ($session){
   $_SESSION["userid"]=$graphObject->getProperty('id');
 	$_SESSION["useremail"]=$graphObject->getProperty('email');
 	$_SESSION["username"]=$graphObject->getProperty('name');
-	$page = $GLOBALS['url']."champ.php";
+	$page = $GLOBALS['url']."savedata.php";
 	header("Location: ".$page);
 	die();
 	?>
