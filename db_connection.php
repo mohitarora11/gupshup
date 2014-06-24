@@ -27,8 +27,9 @@ $dbname = 'atableforyou';*/
 
 
 //$db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname) or die ('Error connecting to mysql');    
+//$conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname) or die ('Error connecting to mysql');    
 //mysql_select_db($dbname, $conn);
 
-
+/* new way to execute mysql quires*/
+$conn = new PDO("mysql:host=".$dbhost.";dbname=".$dbname, $dbuser, $dbpass);
 ?>

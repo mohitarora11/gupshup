@@ -39,7 +39,6 @@ else{
 			header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
 			exit();
 		}
-		
 	}
 	else{
 		header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
