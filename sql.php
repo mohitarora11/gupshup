@@ -37,7 +37,7 @@ function saveoption($fbid,$optionchoosen,$choosenvalue){
 /* for updating status */
 function savestatus($fbid,$status){	
 	$sql = "Update user_atableforyou set status = ".$status." where fbid= '".$fbid."'";
-	mysqli_query($sql);
+	mysqli_query($GLOBALS['conn'],$sql);
 }
 /* for updating location and caption */
 function savecaption($fbid,$loc,$cap){
