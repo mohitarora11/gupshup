@@ -15,12 +15,14 @@
 
 <?php
 
-	/*$_SESSION["voterid"] = '881355547';
+	$_SESSION["voterid"] = '81355529';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 1;*/
+	$_SESSION["pk"] = 1;
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	 {
 	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
+		
+		
 	}
 ?>
 
@@ -32,7 +34,10 @@
 	<form method="post">
 		<input type = "Submit" value="vote" />
 	</form>
-	<?php }else{
+	<?php }else if(isset($_SESSION["voted"])){
+		echo 'Thank You for voting.';
+		unset($_SESSION['voted']);
+	}else{
 		echo 'You have already voted for this ';
 	}?>	
 	

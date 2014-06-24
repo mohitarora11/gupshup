@@ -21,7 +21,7 @@ mysql_select_db($dbname, $conn);
 */
 $dbhost = '127.0.0.1';
 $dbuser = 'root';
-$dbpass = 'admin123';
+$dbpass = '';
 $dbname = 'atableforyou';
 //$db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname) or die ('Error connecting to mysql');    

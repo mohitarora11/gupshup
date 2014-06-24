@@ -33,21 +33,23 @@ include('app_config.php');
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
 include ('header.php');
-if($_SESSION["userid"]){
+if($_SESSION["userid"]){  
+ 
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{   
 		if($_POST["optionchosen"]=='1'){
 			$id = saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
 			$pk=0;
 			savestatus($_SESSION["userid"],1);
-			while($r= mysql_fetch_array($id)){
+
+			/*while($r= mysqli_fetch_array($id)){
 				$pk = $r["id"];
-			}
+			}*/
 			
 			
 
 			//for canvas
-			$helper = new FacebookCanvasLoginHelper();
+			/*$helper = new FacebookCanvasLoginHelper();
 			try {
 
 			  $session = $helper->getSession();
@@ -75,18 +77,10 @@ if($_SESSION["userid"]){
 					$response = $request->execute();  
 					$graphObject = $response->getGraphObject();
 					
-					/*$response = (new FacebookRequest(
-					  $session, 'POST', '/me/feed', array(
-						'link' => $GLOBALS['url']."vote.php?pk=".$pk,
-						'message' => 'User provided message',
-						'picture' => $GLOBALS['url'].'images/pastry.jpg',
-						'description' => '',
-						'caption' => 'Gupshup'
-					  )
-					))->execute()->getGraphObject();				*/
+					
 					header("Location: ".$GLOBALS['url']."thanku.php");
 					die('');
-						/* Redirect browser */
+						
 				} catch(FacebookRequestException $e) {
 					echo "Exception occured, code: " . $e->getCode();
 					echo " with message: " . $e->getMessage();
@@ -98,14 +92,18 @@ if($_SESSION["userid"]){
 				$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
 				//include_once('home.php');
 				//die('');
-			}
+			}*/
 		}else{			
 			include ('imagesave.php');
 			
 		}
+		header("Location: ".$GLOBALS['url']."caption.php"); /* Redirect browser */
+		exit();
 	}
+	
 }else{
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
+	exit();
 }
 ?>
 
