@@ -12,6 +12,7 @@
 <div class="champ"><strong class="marbot">Vote</strong>
 	<?php
 		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
+			if(mysql_num_rows($q)==0){
 	?>
 	<form method="post">
 		<input type = "Submit" value="vote" />
