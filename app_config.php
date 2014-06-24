@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+	session_start();
+}
 // for backend
 define("APPNAME","ask answer");
 define("NAMESPACE","askanswer");
@@ -10,8 +12,4 @@ define("SCOPE","email,user_birthday"); // comma seperate values
 define("DOMAIN","digiqom.com");
 define("BASEURL","//www.digiqom.com/aexp/atableforappflow/");
 define("BPC","0");
-
-//UI HTML
 define("TITLE","A Table for App Flow");
-
-?>

@@ -1,4 +1,7 @@
-<?php session_start();
+<?php 
+if(!isset($_SESSION)){
+	session_start();
+}
 $url_prefix = '/gupshup/';$bpc = '8';
 $url="http://localhost/gupshup/";
 //$url="http://www.ratulpuri.com/";
