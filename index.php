@@ -1,4 +1,7 @@
 <?php
+session_start();
+include('app_config.php');
+
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
 require_once( 'Facebook/HttpClients/FacebookCurl.php' );
 require_once( 'Facebook/HttpClients/FacebookCurlHttpClient.php' );
@@ -28,7 +31,6 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 
-include('app_config.php');
 // init app with app id (APPID) and secret (SECRET)
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
@@ -44,21 +46,16 @@ if(isset($_REQUEST['error']) ){
 //for canvas
 $helper = new FacebookCanvasLoginHelper();
 try {
-
   $session = $helper->getSession();
   //print_r($session); 
 } catch (FacebookRequestException $ex) {
-    
 	// When Facebook returns an error
 	//print_r($ex);
-} catch (\Exception $ex) {
-    
+} catch (\Exception $ex) {   
 	// When validation fails or other local issues
 	//print_r($ex);
 }
-
 if ($session){
-  
 	$request = new FacebookRequest( $session, 'GET', '/me' );
 	$response = $request->execute();  
 	$graphObject = $response->getGraphObject();
@@ -66,10 +63,11 @@ if ($session){
 	$_SESSION["useremail"]=$graphObject->getProperty('email');
 	$_SESSION["username"]=$graphObject->getProperty('name');
 	$_SESSION["facebook_session"] = $session;
-	$page = $GLOBALS['url']."savedata.php";
-	header("Location: ".$page);
-	die();
 	
+	$page = $GLOBALS['url']."savedata.php?PHPSESSID=".session_id();
+	//print_r($_SESSION);
+	header("Location: ".$page);
+	exit(print_r($_SESSION));
 }else{
 
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);

@@ -1,7 +1,6 @@
 <?php
-
-include_once ('globalvar.php');
-include('sql.php');
+include_once('globalvar.php');
+include_once('sql.php');
 
 if(!isset($_SESSION["user"])){
     /*$_SESSION["userid"]='12349';
@@ -11,39 +10,35 @@ if(!isset($_SESSION["user"])){
 }
 
 if($_REQUEST['pk']!=null){
-		$_SESSION['pk']=$_REQUEST['pk'];
-	}
-	
+	$_SESSION['pk']=$_REQUEST['pk'];
+}
 
-if($_SESSION["pk"]!=null){
-	header("Location: ".$GLOBALS['url']."vote.php"); /* Redirect browser */
+if($_SESSION["pk"] != null){
+	header("Location: ".$GLOBALS['url']."vote.php?PHPSESSID=".session_id()); /* Redirect browser */
 	exit();
-} 
-else{
+}else{
 	if($_SESSION["userid"]){
 		if(!checkifexist($_SESSION["userid"])){
 			saveuser($_SESSION["userid"],$_SESSION["useremail"],$_SESSION["username"]);
 			savestatus($_SESSION["userid"],0);			
 		}
         $q = getstatus($_SESSION["userid"]);
-        $r= mysqli_fetch_array($q);
+        $r = $q->fetch(PDO::FETCH_ASSOC);
+		//die(print_r($r));
 		if($r["status"]==0){		
-			header("Location: ".$GLOBALS['url']."champ.php"); /* Redirect browser */
+			header("Location: ".$GLOBALS['url']."champ.php?PHPSESSID=".session_id()); /* Redirect browser */
 			exit();
-		}
-		else if($r["status"]==1){
-			header("Location: ".$GLOBALS['url']."caption.php"); /* Redirect browser */
+		}else if($r["status"]==1){
+			header("Location: ".$GLOBALS['url']."caption.php?PHPSESSID=".session_id()); /* Redirect browser */
 			exit();
-		}
-		else if($r["status"]==2){
-			header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
+		}else if($r["status"]==2){
+			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 			exit();
 		}
 	}
 	else{
-		header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
+		header("Location: ".$GLOBALS['url']."index.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
 }
 ?>
-

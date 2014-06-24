@@ -1,7 +1,6 @@
 <?php
 	include_once('globalvar.php');
-	include ('sql.php'); 
- ?>
+?>
 <!doctype html>
 <html>
 <head>
@@ -11,4 +10,3 @@
 </head>
 <body>
 <div class="table1"><img src="images/tablefor.png" width="298" height="59" alt=""><span></span></div>
-
