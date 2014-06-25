@@ -35,6 +35,5 @@ else{
     echo "Please upload image of size more than 200X200";
 }
  }
-?>
 
 

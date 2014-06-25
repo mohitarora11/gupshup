@@ -30,7 +30,7 @@ function saveoption($fbid,$optionchoosen,$choosenvalue){
 		$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", photourl = '".$choosenvalue."' where fbid= '".$fbid."'";
 	}
 	mysql_query($sql);
-	$sql = "Select id from user_atableforyou where where fbid= '".$fbid."'";
+	$sql = "Select id from user_atableforyou where fbid= '".$fbid."'";
 	return mysql_query($sql);
 }
 
