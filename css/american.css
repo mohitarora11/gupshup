@@ -87,7 +87,7 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     z-index: 999;
 }
 
-.table1 input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
+ input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
 	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
 
 .table1 em { display: block;
@@ -135,7 +135,7 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     font-size: 16px;
     font-weight: normal; color:#fff; padding:7px 15px;  }
 	.hgt { height:55px;}
-.fontst { color:#585858; font-size:48px !important;}
+.fontst { color:#585858; font-size:35px !important;}
 .card { background:url(../images/bg.png) no-repeat; width:600px; height:350px; }
 .topbor { position:absolute; }
 .card .rytimg { float:right; margin:20px 0 0 0 ;  }
