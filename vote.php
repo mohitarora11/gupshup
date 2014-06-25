@@ -15,9 +15,9 @@
 
 <?php
 
-	/*$_SESSION["voterid"] = '881355547';
+	$_SESSION["voterid"] = '881355547';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 1;*/
+	/*$_SESSION["pk"] = 1;*/
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	 {
 	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
@@ -27,7 +27,7 @@
 <div class="champ"><strong class="marbot">Vote</strong>
 	<?php
 		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
-			if(mysql_num_rows($q)==0){
+			if(mysqli_num_rows($q)==0){
 	?>
 	<form method="post">
 		<input type = "Submit" value="vote" />

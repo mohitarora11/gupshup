@@ -1,4 +1,5 @@
 <?php
+
 include_once ('globalvar.php');
 include('sql.php');
 
@@ -9,7 +10,7 @@ if(!isset($_SESSION["user"])){
 	$_SESSION["pk"] = null;
 }
 
-if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['SCRIPT_NAME'] == "/vote.php"){
+if($_REQUEST['pk']!=null){
 		$_SESSION['pk']=$_REQUEST['pk'];
 	}
 	

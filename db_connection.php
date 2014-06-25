@@ -19,12 +19,13 @@ $dbname = 'merchantbonus';
 $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');    
 mysql_select_db($dbname, $conn);
 */
-$dbhost = '';
+$dbhost = '127.0.0.1';
 $dbuser = 'root';
 $dbpass = 'admin123';
 $dbname = 'atableforyou';
-$db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-
+//$db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname) or die ('Error connecting to mysql');    
+//mysql_select_db($dbname, $conn);
 
 
 ?>
