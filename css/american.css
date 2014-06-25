@@ -67,6 +67,25 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
 
 .table1 input[type="text"],#browse  { width:400px; background:#dedfe0; border:none; padding:10px 0; }
 
+#browse {
+    
+    display: block;
+     width:400px; background:#dedfe0; border:none; padding:17px 0;float:left
+}
+
+#browse input {
+    cursor: pointer;
+    font-size: 50px;
+    left: -700px;
+    line-height: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: -2px;
+    z-index: 999;
+}
+
 .table1 input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
 	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
 

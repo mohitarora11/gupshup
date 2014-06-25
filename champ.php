@@ -144,8 +144,9 @@ Win.</li>
 </em><span>OR</span>
 </form>
 <form class="table1" style="margin-top:5px" enctype="multipart/form-data" method="post"> 
-<span id="browse"></span>
-<input name="file" type="file">
+<label id="browse">
+	<input name="file" type="file">
+</label>
 <input name="optionchosen" value="2" type="hidden">
 <input name="" type="submit" value="Upload">
 <em>Smile & Take a Dazzling selfie. Tag the location to upload. Your selfie will be be tagged with a auomated heading incase you do not fill the first column.
