@@ -108,11 +108,11 @@ include_once('header.php');
 <option >chennai</option>
 <option >banglore</option>
 </select>
-<?php 
+<!--<?php 
 $q = getjodifromfbid($_SESSION['userid']);
  $r = $q->fetch(PDO::FETCH_ASSOC);
 if($r["opitonchoosen"]==2){
-?>
+?>-->
 <select name="caption">
 <option>select caption</option>
 <option >hiiii</option>
@@ -121,9 +121,9 @@ if($r["opitonchoosen"]==2){
 <option >sdfghhjjhg</option>
 <option >sdfghj</option>
 </select>
-<?php
+<!--<?php
 }
-?>
+?>-->
 <input type="submit" value="submit">
 </form>
 </div>
