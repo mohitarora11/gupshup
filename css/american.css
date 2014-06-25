@@ -71,7 +71,7 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
 #browse {
     
     display: block;
-     width:400px; background:#dedfe0; border:none; padding:17px 0;float:left
+     width:400px; background:#dedfe0; border:none; padding:17px 0;float:left;position:relative;
 }
 
 #browse input {
