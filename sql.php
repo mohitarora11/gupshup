@@ -125,6 +125,15 @@ function getjodifromfbid($fbid){
 	return $res;
 	//return mysqli_query($GLOBALS['conn'],$q);
 }
+/* getting user selected option useing id */
+function getuserfromid($id){
+	global $conn;
+	$q = "select * from user_atableforyou where id =".$id;
+	$res = $conn->prepare($q);
+	$res->execute();
+	return $res;
+	//return mysqli_query($GLOBALS['conn'],$q);
+}
 
 /* for getting user current rank */
 function currentposition(){

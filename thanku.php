@@ -1,8 +1,9 @@
 <?php
 include_once('globalvar.php');
-$_SESSION["userid"] = '111';
-if($_SESSION["userid"]){
-}else{
+include_once('sql.php');
+/*$_SESSION["userid"] = '11';*/
+if(!isset($_SESSION["userid"])){
+
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
 ?>
@@ -21,26 +22,31 @@ if($_SESSION["userid"]){
 </div>
 
 <div class="champ">
-
-<div class="card">
-<div class="leftcol"><span></span>
-<p><strong>GUPSHUP</strong>
-At Soi 7, Cyber Hub
-</p>
+	<?php
+	
+		$q = getjodifromfbid($_SESSION['userid']);
+		$r = $q->fetch(PDO::FETCH_ASSOC);		
+		if($r["opitonchoosen"]==2){
+	?>		
+	<div class="card">
+	<div class="leftcol"><span></span>
+	<p><strong><?php echo $r["caption"] ?></strong>
+		At <?php echo $r["location"]?>
+   </p>
 
 </div>
-<div class="rytimg"><img src="images/img.png" width="342" height="309"></div>
+<div class="rytimg"><img src="resizedimages/<?php echo $r['resizephotourl']?>" width="210" height="210"></div>
 
 </div>
+<?php } else{?>
 
-<!--
 <div class="card" style="height:200px">
 <div class="leftcol1">
-<p><strong>GUPSHUP</strong>
+<p><strong><?php echo $r["cmt"] ?></strong>
 </p>
 </div>
 </div>
--->
+<?php } ?>
 <strong class="marbot fontst">Thanks for Participating</strong>
 
 
@@ -50,10 +56,11 @@ At Soi 7, Cyber Hub
 
 </div>
 <br>
-Your picture will be posted to your timeline after validation.  
-Share your picture to get maximum votes
+We will publish your Caption/Selfie
+after validation. Please come back soon and share your entry with your
+friends for Votes
 </div>
-
+<div class="bottomborder"></div>
 <?php
 include ('footer.html');
 ?>

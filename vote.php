@@ -1,5 +1,7 @@
 <?php
-session_id($_REQUEST['PHPSESSID']);
+if ( isset($_GET['PHPSESSID'])){
+	session_id($_GET['PHPSESSID']);
+}
 include_once('app_config.php');
 include_once('sql.php');
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
@@ -35,10 +37,10 @@ use Facebook\GraphObject;
 // init app with app id (APPID) and secret (SECRET)
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
-if($_REQUEST['pk']!=null){
-	$_SESSION['pk']=$_REQUEST['pk'];
+if(isset($_GET['pk'])){
+	$_SESSION['pk']=$_GET['pk'];
 }
-$_SESSION["voterid"] = '1444';
+//$_SESSION["voterid"] = '1444';
  
 if(isset($_REQUEST['error']) ){
 
@@ -90,9 +92,9 @@ if ($session){
 
 <?php
 
-	/*$_SESSION["voterid"] = '81355529';
+	/*$_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 1;*/
+	$_SESSION["pk"] = 13;*/
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	 {
 	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
@@ -101,33 +103,45 @@ if ($session){
 	}
 ?>
 
-<div class="champ"><strong class="marbot">Vote</strong>
-	<div class="card" >
+<div class="champ" style="height:738px"><strong class="marbot">Vote</strong>
+	<div class="card"  >
 		<div class="leftcol">
-		<span><img width="180" height="32" src="images/table.png"></span>
+		<span><img width="180" height="32" src="images/table.png"></span><br/>
+	<?php 
+	  $sql = getuserfromid($_SESSION['pk']);
+	  $r = $sql->fetch(PDO::FETCH_ASSOC);
+    ?>	
+	
 	<?php
 		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
 			if($q->rowCount()==0){
 	?>
 	
-	
-			<form method="post" >
-				<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-				<input  type = "Submit" value="vote" />		
-			</form>
-		
-	
+	<p>
+		<?php 		
+		if($r["opitonchoosen"]==2){
+		echo $r["caption"];
+		}else{
+			echo $r["cmt"];
+		}
+		?>
+			
+	</p>
+	<form method="post" >
+		<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
+		<input  type = "Submit" value="vote" />		
+	</form>
 	
 	<?php }else if(isset($_SESSION["voted"])){
-		echo 'Thank You for voting.';
+		echo '<p>Thank You for voting.</p>';
 		unset($_SESSION['voted']);
 	}else{
-		echo 'You have already voted for this ';
+		echo '<p>You have already voted for this</p> ';
 	}?>	
 	</div>
-	
-	<div class="rytimg"><img src="images/img.png" width="342" height="309"></div>
-	
+	 <?php if($r["opitonchoosen"]==2){ ?>
+		<div class="rytimg"><img src="resizedimages/<?php echo $r['resizephotourl']?>" width="210" height="210"></div>
+	<?php } ?>
 	</div>
 	
 </div>

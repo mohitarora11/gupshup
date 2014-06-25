@@ -102,11 +102,11 @@ include_once('header.php');
 	<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 <select name="location" >
 <option>select location </option>
-<option value="1">Delhi</option>
-<option value="2">mumbai</option>
-<option value="3">kolkata</option>
-<option value="4">chennai</option>
-<option value="5">banglore</option>
+<option >Delhi</option>
+<option >mumbai</option>
+<option >kolkata</option>
+<option >chennai</option>
+<option >banglore</option>
 </select>
 <?php 
 $q = getjodifromfbid($_SESSION['userid']);
@@ -115,11 +115,11 @@ if($r["opitonchoosen"]==2){
 ?>
 <select name="caption">
 <option>select caption</option>
-<option value="1">hiiii</option>
-<option value="2">hello</option>
-<option value="3">how r u</option>
-<option value="4">sdfghhjjhg</option>
-<option value="5">sdfghj</option>
+<option >hiiii</option>
+<option >hello</option>
+<option >how r u</option>
+<option >sdfghhjjhg</option>
+<option >sdfghj</option>
 </select>
 <?php
 }

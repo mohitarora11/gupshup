@@ -71,13 +71,13 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
 #browse {
     
     display: block;
-     width:400px; background:#dedfe0; border:none; padding:17px 0;float:left;position:relative;
+     width:400px; background:#dedfe0; border:none; padding:1px 0;height:30px;float:left;position:relative;
 }
 
 #browse input {
     cursor: pointer;
     font-size: 50px;
-    left: -700px;
+    left: 0px;
     line-height: 0;
     margin: 0;
     opacity: 0;
@@ -85,6 +85,8 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     position: absolute;
     top: -2px;
     z-index: 999;
+	width:400px;
+	height:28px;
 }
 
  input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 

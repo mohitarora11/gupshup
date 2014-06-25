@@ -21,17 +21,21 @@
         <input name="comment" type="text" maxlength="20">
         <input name="optionchosen" value="1" type="hidden">
         <input name="" type="submit" value="Submit" />
-        <em>Submit a caption for us to feature in our outdoor advertising at Cyber Hub
+        <em>Submit a snappy caption that may be feature in our outdoor advertising at Cyber Hub
 </em><span>OR</span>
     </form>
     <form class="table1" style="margin-top:5px" enctype="multipart/form-data" method="post" action="champ.php" name="photoform" onsubmit="return validatephotoform()">
         <input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>" />
         <label id="browse">
-            <input name="file" type="file">
+				<i id="file_url"></i>	
+			<input onchange="return fileonchange(this)" name="file" type="file" id="id_file">
         </label>
         <input name="optionchosen" value="2" type="hidden">
         <input name="" type="submit" value="Upload">
-        <em>Smile & Take a Dazzling selfie. Tag the location to upload. Your selfie will be be tagged with a auomated heading incase you do not fill the first column.
+<br/>    
+    <em>Smile &amp; take a dazzling selfie, tag your location and upload the picture.
+If you do not chose a caption, your selfie will be be tagged with a
+caption of our choice!
 </em>
     </form>
 
@@ -39,7 +43,8 @@
 
 <div class="bottomborder">
     <p class="btext">
-        Want these offers* dont have a American Express® Card. Get one NOW!
+        Want these offers, but don't have an
+American Express&reg; Card? <a href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
     </p>
 </div>
 
@@ -47,15 +52,27 @@
 function validateform(){
 var x = document.forms["commentform"]["comment"].value;
     if (x == null || x == "") {
-        alert("Comment must be filled out");
+        alert("Kindly enter Caption");
         return false;
     }
 }
 function validatephotoform(){
 var x = document.forms["photoform"]["file"].value;
     if (x == null || x == "") {
-        alert("Select the picture to be uplodaed");
+        alert("Select the selfie to be uplodaed");
         return false;
     }
+}
+function fileonchange(obj){
+document.getElementById('file_url').innerHTML = '';
+if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(obj.value)){	
+		document.getElementById('file_url').innerHTML = obj.value;
+}
+else{
+
+obj.value = '';
+alert("Kindly upload only gif,jpg,jpeg,png file");
+}
+	
 }
 </script>
