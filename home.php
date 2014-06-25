@@ -17,7 +17,7 @@ A regular at Cyber Hub? Here’s your opportunity to win a table for two!<br>
 
 <div class="pastry">
 <div class="offers"><a href="specialoffer.php">OFFERS</a></div>
-<div class="offers"><a href="<?php echo $LOGINURL;?>">CONTEST</a></div>
+<div class="offers"><a href="<?php echo $LOGINURL;?>" target="_top">CONTEST</a></div>
 
 
 </div>

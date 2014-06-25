@@ -1,10 +1,38 @@
-<?php
+<?php use Facebook\FacebookRequest;
+use Facebook\GraphObject;
+use Facebook\FacebookRequestException;
+
+
 include ('header.php');
 if($_SESSION["userid"]){
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{   if($_POST["optionchosen"]=='1'){
-			saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
+			$id = saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"]);
+			$pk=0;
 			savestatus($_SESSION["userid"],1);
+			while($r= mysql_fetch_array($id)){
+				$pk = $r["id"];
+			}
+			try {
+
+				$response = (new FacebookRequest(
+				  $_SESSION["facebook_session"], 'POST', '/me/feed', array(
+					'link' => $GLOBALS['url']."vote.php?pk=".$pk,
+					'message' => 'User provided message',
+					'picture' => $GLOBALS['url'].'images/pastry.jpg',
+					'description' => '',
+					'caption' => 'Gupshup'
+				  )
+				))->execute()->getGraphObject();
+
+				//echo "Posted with id: " . $response->getProperty('id');
+
+			  } catch(FacebookRequestException $e) {
+
+				//echo "Exception occured, code: " . $e->getCode();
+				//echo " with message: " . $e->getMessage();
+
+			  }   
 			header("Location: ".$GLOBALS['url']."thanku.php"); /* Redirect browser */
 		}else{			
 			include ('imagesave.php');
@@ -12,7 +40,7 @@ if($_SESSION["userid"]){
 		}
 	}
 }else{
-	header("Location: ".$GLOBALS['url']."index1.php"); /* Redirect browser */
+	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
 ?>
 
