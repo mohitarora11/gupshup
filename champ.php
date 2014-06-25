@@ -32,7 +32,7 @@ use Facebook\GraphObject;
 include('app_config.php');
 
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
-
+$_SESSION["userid"] = '111';
 include ('header.php');
 if($_SESSION["userid"]){
 	if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -133,20 +133,21 @@ Win.</li>
 
 </ul>
 
-<form class="table1" method="post">
+<form class="table1" method="post" style="margin-bottom:10px">
 
 <strong># A TABLE FOR
 </strong>
 <input name="comment" type="text">
 <input name="optionchosen" value="1" type="hidden">
-<input name="" type="submit" value="Submit">
+<input name="" type="submit" value="Submit" />
 <em>Submit a caption for us to feature in our outdoor advertising at Cyber Hub
 </em><span>OR</span>
 </form>
-<form class="table1" enctype="multipart/form-data" method="post"> 
+<form class="table1" style="margin-top:5px" enctype="multipart/form-data" method="post"> 
+<span id="browse"></span>
 <input name="file" type="file">
 <input name="optionchosen" value="2" type="hidden">
-<input name="" type="submit" value="Submit">
+<input name="" type="submit" value="Upload">
 <em>Smile & Take a Dazzling selfie. Tag the location to upload. Your selfie will be be tagged with a auomated heading incase you do not fill the first column.
 </em></form>
 

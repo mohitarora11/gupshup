@@ -2,7 +2,7 @@
 include ('header.php');
 if($_SESSION["userid"]){
 }else{
-	header("Location: ".$GLOBALS['url']."index1.php"); /* Redirect browser */
+	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
 ?>
 

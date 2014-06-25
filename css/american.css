@@ -65,8 +65,11 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     font-size: 36px; text-align:left; margin:0; }
 .table1 span { font-size:26px; display:block; text-align:left; width:100%; padding:10px 0; color:#505151; }
 
-.table1 input[type="text"] { width:400px; background:#dedfe0; border:none; padding:10px 0; }
-.table1 input[type="submit"] { width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
+.table1 input[type="text"],#browse  { width:400px; background:#dedfe0; border:none; padding:10px 0; }
+
+.table1 input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
+	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
+
 .table1 em { display: block;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 12px;
