@@ -15,9 +15,9 @@
 
 <?php
 
-	$_SESSION["voterid"] = '881355547';
+	/*$_SESSION["voterid"] = '881355547';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	/*$_SESSION["pk"] = 1;*/
+	$_SESSION["pk"] = 1;*/
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	 {
 	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);

@@ -1,5 +1,4 @@
 <?php
-
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
 require_once( 'Facebook/HttpClients/FacebookCurl.php' );
 require_once( 'Facebook/HttpClients/FacebookCurlHttpClient.php' );
@@ -33,8 +32,7 @@ include('app_config.php');
 // init app with app id (APPID) and secret (SECRET)
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
-// https://apps.facebook.com/askanswer/?error=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=5e383f6bf8f5f09b4581097c33b83ecf#_=_
-//if user denied access
+
 if(isset($_REQUEST['error']) ){
 
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);

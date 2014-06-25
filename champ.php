@@ -1,5 +1,4 @@
 <?php 
-
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
 require_once( 'Facebook/HttpClients/FacebookCurl.php' );
 require_once( 'Facebook/HttpClients/FacebookCurlHttpClient.php' );
@@ -30,9 +29,9 @@ use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 
 include('app_config.php');
-
+// init app with app id (APPID) and secret (SECRET)
 FacebookSession::setDefaultApplication(APPID, APPSECRET);
-$_SESSION["userid"] = '111';
+
 include ('header.php');
 if($_SESSION["userid"]){
 	if($_SERVER["REQUEST_METHOD"] == "POST")

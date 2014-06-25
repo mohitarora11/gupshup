@@ -26,7 +26,7 @@ else{
 			savestatus($_SESSION["userid"],0);			
 		}
         $q = getstatus($_SESSION["userid"]);
-        while($r= mysql_fetch_array($q)){		
+        while($r= mysqli_fetch_array($q)){		
 			if($r["status"]==0){		
 				header("Location: ".$GLOBALS['url']."champ.php"); /* Redirect browser */
 				exit();
