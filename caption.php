@@ -1,5 +1,7 @@
 <?php
-session_id($_REQUEST['PHPSESSID']);
+if ( isset($_REQUEST['PHPSESSID'])){
+	session_id($_REQUEST['PHPSESSID']);
+}
 include_once('app_config.php');
 include_once('sql.php');
 

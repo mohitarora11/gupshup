@@ -35,8 +35,7 @@ if($_SESSION["pk"] != null){
 			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 			exit();
 		}
-	}
-	else{
+	}else{
 		header("Location: ".$GLOBALS['url']."index.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
