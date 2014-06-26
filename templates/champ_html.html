@@ -28,7 +28,7 @@
         <input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>" />
         <label id="browse">
 				<i id="file_url"></i>	
-			<input onchange="return fileonchange(this)" name="file" type="file" id="id_file">
+			<input name="file" type="file" id="id_file">
         </label>
         <input name="optionchosen" value="2" type="hidden">
         <input name="" type="submit" value="Upload">
@@ -47,8 +47,9 @@ caption of our choice!
 American Express&reg; Card? <a href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
     </p>
 </div>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
 <script type="text/javascript">
+var _URL = window.URL || window.webkitURL;
 function validateform(){
 var x = document.forms["commentform"]["comment"].value;
     if (x == null || x == "") {
@@ -73,6 +74,35 @@ else{
 obj.value = '';
 alert("Kindly upload only gif,jpg,jpeg,png file");
 }
-	
 }
+$("#id_file").change(function(e) {
+    var file, img;
+	
+		document.getElementById('file_url').innerHTML = this.value;
+	
+
+    if ((file = this.files[0])) {
+        img = new Image();
+        img.onload = function() {
+		
+			if( this.width < 210 || this.height < 210 ){
+               alert("Please upload image greater than 210X210");
+			   document.getElementById('file_url').innerHTML='';
+			}
+			if(Math.abs(this.width-this.height)>10 ){
+				alert("Please upload a square image");
+				document.getElementById('file_url').innerHTML='';
+			}
+        };
+        img.onerror = function() {
+            alert( "not a valid file: " + file.type);
+				document.getElementById('file_url').innerHTML='';
+        };
+        img.src = _URL.createObjectURL(file);
+
+
+    }
+
+});
+
 </script>
