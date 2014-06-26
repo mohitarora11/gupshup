@@ -86,7 +86,7 @@ if ($session){
 <link href="css/american.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="table"><img src="images/tablefor.png" width="298" height="59" alt=""><span></span></div>
+<div class="table"><span></span></div>
 
 <?php
 
@@ -103,7 +103,8 @@ if ($session){
 
 <div class="champ"><strong class="marbot">Vote</strong>
 	<div class="card" >
-		<div class="leftcol1">
+		<div class="leftcol">
+		<span><img width="180" height="32" src="images/table.png"></span>
 	<?php
 		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
 			if($q->rowCount()==0){
@@ -126,6 +127,7 @@ if ($session){
 	</div>
 	
 	<div class="rytimg"><img src="images/img.png" width="342" height="309"></div>
+	
 	</div>
 	
 </div>
