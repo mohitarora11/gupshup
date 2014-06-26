@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('app_config.php');
 
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
@@ -72,6 +71,7 @@ if ($session){
 
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
+	$_SESSION["LOGINURL"]= $LOGINURL;
 	include_once('home.php');
 	die('');
 ?>

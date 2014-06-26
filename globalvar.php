@@ -1,10 +1,12 @@
 <?php 
 if(!isset($_SESSION)){
-	session_id($_REQUEST['PHPSESSID']);
+if ( isset($_GET['PHPSESSID'])){
+	session_id($_GET['PHPSESSID']);
+}
 	session_start();
 }
 //
-$url_prefix = '/gupshup/';$bpc = '12';
+$url_prefix = '/gupshup/';$bpc = '14';
 //$url="http://localhost/gupshup/";
 $url="//www.digiqom.com/aexp/atableforappflow/";
 //$url="http://www.ratulpuri.com/";

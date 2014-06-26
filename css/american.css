@@ -19,6 +19,7 @@
 html {width:700px;margin:0 auto;}
 body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
+.bckno { background:none;}
 .table { width:418px; margin:93px 195px 31px; }
 .table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right; }
 
@@ -133,3 +134,28 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
 .buttonsp { background:#283e28; font-family: libre_baskervilleregular;
     font-size: 16px;
     font-weight: normal; color:#fff; padding:7px 15px;  }
+	.hgt { height:55px;}
+.fontst { color:#585858; font-size:48px !important;}
+.card { background:url(../images/bg.png) no-repeat; width:600px; height:350px; }
+.topbor { position:absolute; }
+.card .rytimg { float:right; margin:20px 0 0 0 ;  }
+.card .leftcol { width:236px; float:left; margin:0 0 0 22px;}
+.card .leftcol span { display:block; margin:60px 0 0 0px;}
+.card .leftcol p { width:236px;  text-align:center; font-family: libre_baskervilleregular;
+    font-size: 18px; color:#585858;}
+.card .leftcol p strong {  font-size: 30px;
+    line-height: 0;
+    margin-bottom: 25px;
+    margin-top: 40px;
+    padding: 0;} 
+
+
+.card .leftcol1 { width:565px; float:left; margin:0 0 0 22px;}
+.card .leftcol1 span { display:block; margin:60px 0 0 0px;}
+.card .leftcol1 p { width:565px;  text-align:center; font-family: libre_baskervilleregular;
+    font-size: 18px; color:#585858;}
+.card .leftcol1 p strong {  font-size: 65px;
+    line-height: 0;
+    margin-bottom: 25px;
+    margin-top: 65px;
+    padding: 0;} 

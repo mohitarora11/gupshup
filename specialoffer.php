@@ -1,9 +1,8 @@
 <?php
+session_id($_REQUEST['PHPSESSID']);
+include_once('app_config.php');
 include ('header.php');
-if($_SESSION["userid"]){
-}else{
-	header("Location: ".$GLOBALS['url']."index1.php"); /* Redirect browser */
-}
+
 ?>
 
 <div class="champsp"><strong>SPECIAL OFFERS</strong>
@@ -27,7 +26,13 @@ Rewards® Points for every Rs. 100 Spent</p></li>
 Rewards® Points for every Rs. 100 Spent</p></li>
 </ul>
 </div>
-<a href="#" class="buttonsp">ENTER CONTEST</a>
+<?php if(isset($_SESSION["LOGINURL"])){
+?>
+<a target="_top" href="<?php echo $_SESSION['LOGINURL'];?>" class="buttonsp">ENTER CONTEST</a>
+<?php }else {
+?>
+<a target="_top" href="https://www.facebook.com/v2.0/dialog/oauth?client_id=557404164366859&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fatablefor%2F&state=0a60d415e3306119af0a07ad0842d0e7&sdk=php-sdk-4.0.8&scope=email%2Cpublish_actions" class="buttonsp test">ENTER CONTEST</a>
+<?php } ?>
 </div>
 
 <div class="bottomborder"><p class="btext">
