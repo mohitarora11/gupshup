@@ -67,9 +67,9 @@ if($_SESSION["userid"]){
 			if ($session){			  
 				try{
 					$request = new FacebookRequest( $session, 'POST', '/me/feed' , array(
-						'link' => $GLOBALS['url']."vote.php?pk=".$pk,
+						'link' => 'http:'.$GLOBALS['url']."vote.php?pk=".$pk,
 						'message' => 'User provided message',
-						'picture' => $GLOBALS['url'].'images/pastry.jpg',
+						'picture' => 'http:'.$GLOBALS['url'].'images/pastry.jpg',
 						'description' => '',
 						'caption' => 'A table for'
 					  ));
@@ -84,9 +84,7 @@ if($_SESSION["userid"]){
 			}else{
 				$helper = new FacebookRedirectLoginHelper(CANVASURL);
 				$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
-			
 			}
-		
 		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
