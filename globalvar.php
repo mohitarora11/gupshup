@@ -1,8 +1,8 @@
-<?php 
+<?php
 if(!isset($_SESSION)){
-if ( isset($_GET['PHPSESSID'])){
-	session_id($_GET['PHPSESSID']);
-}
+	if ( isset($_REQUEST['PHPSESSID'])){
+		session_id($_REQUEST['PHPSESSID']);
+	}
 	session_start();
 }
 //
@@ -14,6 +14,4 @@ $url="//www.digiqom.com/aexp/atableforappflow/";
 if(!isset($_SESSION["login"])){
 	$_SESSION["login"]=false;
 }
-
-
 ?>

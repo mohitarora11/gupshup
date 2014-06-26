@@ -66,17 +66,15 @@ if ($session){
 	$request = new FacebookRequest( $session, 'GET', '/me' );
 	$response = $request->execute();  
 	$graphObject = $response->getGraphObject();	
-	
 }else{
-
-	$helper = new FacebookRedirectLoginHelper(CANVASURL."vote.php?pk=".$_SESSION['pk']);
+	$helper = new FacebookRedirectLoginHelper(CANVASURL."vote.php?pk=".$_SESSION['pk']."&PHPSESSID=".session_id());
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
-	
 ?>
 	<script>
 		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
 	</script>
 <?php
+	exit();
 }
 ?>
  <!doctype html>
@@ -89,20 +87,14 @@ if ($session){
 </head>
 <body>
 <div class="table"><span></span></div>
-
 <?php
-
 	/*$_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
 	$_SESSION["pk"] = 13;*/
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	 {
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
-		
-		
 	}
 ?>
-
 <div class="champ" style="height:738px"><strong class="marbot">Vote</strong>
 	<div class="card"  >
 		<div class="leftcol">
@@ -114,38 +106,36 @@ if ($session){
 	
 	<?php
 		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
-			if($q->rowCount()==0){
-	?>
-	
-	<p>
-		<?php 		
-		if($r["opitonchoosen"]==2){
-		echo $r["caption"];
+		if($q->rowCount()==0){
+			?>
+			<p>
+			<?php 		
+				if($r["opitonchoosen"]==2){
+					echo $r["caption"];
+				}else{
+					echo $r["cmt"];
+				}
+			?>
+			</p>
+			<form method="post">
+				<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
+				<input type="Submit" value="vote"/>
+			</form>
+			<?php
+		}else if(isset($_SESSION["voted"])){
+			echo '<p>Thank You for voting.</p>';
+			unset($_SESSION['voted']);
 		}else{
-			echo $r["cmt"];
+			echo '<p>You have already voted for this</p> ';
 		}
-		?>
-			
-	</p>
-	<form method="post" >
-		<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-		<input  type = "Submit" value="vote" />		
-	</form>
-	
-	<?php }else if(isset($_SESSION["voted"])){
-		echo '<p>Thank You for voting.</p>';
-		unset($_SESSION['voted']);
-	}else{
-		echo '<p>You have already voted for this</p> ';
-	}?>	
+	?>	
 	</div>
-	 <?php if($r["opitonchoosen"]==2){ ?>
+	<?php if($r["opitonchoosen"]==2){ ?>
 		<div class="rytimg"><img src="resizedimages/<?php echo $r['resizephotourl']?>" width="210" height="210"></div>
 	<?php } ?>
 	</div>
-	
 </div>
 <div class="bottomborder"></div>
 <?php
-include_once ('footer.html');
+	include_once ('footer.html');
 ?>

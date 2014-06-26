@@ -66,8 +66,6 @@ if($_SESSION["userid"]){
 			}
 			if ($session){			  
 				try{
-					
-					
 					$request = new FacebookRequest( $session, 'POST', '/me/feed' , array(
 						'link' => $GLOBALS['url']."vote.php?pk=".$pk,
 						'message' => 'User provided message',
