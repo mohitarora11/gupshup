@@ -89,9 +89,9 @@ if ($session){
 <?php
 	//exit();
 }
-$_SESSION["voterid"] = '81355519';
+/*$_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 18;
+	$_SESSION["pk"] = 18;*/
 ?>
  <!doctype html>
 <html>

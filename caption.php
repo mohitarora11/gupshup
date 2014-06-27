@@ -31,16 +31,20 @@ include_once('header.php');
 		<div class="leftcol" style="text-align:left">
 			<form class="table1" method="post" style="margin-bottom:10px" action="caption.php" name="captionform" onsubmit="return validatecaption()">
 				<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-			<select name="location" >
-			<option value="">select location </option>
-			<option >Delhi</option>
-			<option >mumbai</option>
-			<option >kolkata</option>
-			<option >chennai</option>
-			<option >banglore</option>
-			</select>
-<br/>
-			<select name="caption">
+			<ul>
+			<li class="divselect">
+				<select name="location" class="styled">
+				<option value="">select location </option>
+				<option >Delhi</option>
+				<option >mumbai</option>
+				<option >kolkata</option>
+				<option >chennai</option>
+				<option >banglore</option>
+				</select>
+			</li>
+
+		<li class="divselect">
+			<select name="caption" class="styled">
 			<option value="">select caption</option>
 			<option >hiiii</option>
 			<option >hello</option>
@@ -48,8 +52,11 @@ include_once('header.php');
 			<option >sdfghhjjhg</option>
 			<option >sdfghj</option>
 			</select>
-<br/>
+		</li>
+<li>
 			<input type="submit" value="submit">
+			</li>
+			</ul>
 			</form>
 		</div>
 		<div class="rytimg">		
@@ -58,6 +65,7 @@ include_once('header.php');
 	</div>
 </div>
 <div class="bottomborder"></div>
+<script type="text/javascript" src="js/custom-form-elements.js"></script>
 <script type="text/javascript">
 function validatecaption(){
 	var cap = document.forms["captionform"]["caption"].value;

@@ -161,3 +161,35 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     margin-bottom: 25px;
     margin-top: 65px;
     padding: 0;} 
+
+	
+	
+	.card .leftcol ul{position:relative;float:left;margin-bottom:10px;width:236px;margin:5px 0}
+	.card .leftcol ul li{margin:5px 0px 10px;padding:0px;float:left;position:relative;height:30px}
+	select.styled {
+    float: left;
+    font: 13px Arial,Helvetica,sans-serif;
+    left: 2px;
+    top: 9px;
+    width: 200px;
+	height:18px;
+}
+	
+	.card .leftcol span.select {
+    background: url("../images/dd.gif") no-repeat scroll right 0px #dedfe0;
+    border: 1px solid #fff;
+    border-radius: 3px;    
+    color: #333;
+    font-size:18px;
+    height: 21px;
+    left: 0;
+    overflow: hidden;
+    padding: 2px 10px 4px;
+    position: absolute;
+    top: 0px;
+    width: 200px !important;
+    z-index: 5;
+	margin:0px;
+	
+	
+}

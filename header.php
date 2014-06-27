@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Gupshup</title>
+<title>A table for</title>
 <link href="<?php echo $GLOBALS['url'];?>css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
 </head>
 <body>

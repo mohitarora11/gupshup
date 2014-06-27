@@ -88,15 +88,21 @@ $("#id_file").change(function(e) {
 			if( this.width < 210 || this.height < 210 ){
                alert("Please upload image greater than 210X210");
 			   document.getElementById('file_url').innerHTML='';
+			   $('#id_file').val('');
+			   return false;
 			}
-			if(Math.abs(this.width-this.height)>10 ){
+			/*if(Math.abs(this.width-this.height)>10 ){
 				alert("Please upload a square image");
 				document.getElementById('file_url').innerHTML='';
-			}
+				$('#id_file').val('');
+				return false;
+			}*/
         };
         img.onerror = function() {
             alert( "not a valid file: " + file.type);
 				document.getElementById('file_url').innerHTML='';
+				$('#id_file').val('');
+				return false;
         };
         img.src = _URL.createObjectURL(file);
 
