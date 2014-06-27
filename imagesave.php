@@ -1,9 +1,8 @@
 <?php
 include_once('imageupload.php');
-include_once('sql.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    
     // Create image instances
     $dest  = imagecreatefrompng('images/img.png');
     $image = new SimpleImage();
@@ -26,6 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         imagedestroy($dest);
         imagedestroy($srcimg->image);
     } else {
-        echo "Please upload image of size more than 200X200";
+       echo "Please upload image of size more than 200X200";
     }
 }
