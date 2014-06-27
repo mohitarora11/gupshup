@@ -17,7 +17,7 @@
 
 
 html {width:700px;margin:0 auto;}
-body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
+body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
 .bckno { background:none;}
 .table { width:418px; margin:93px 195px 31px; }
@@ -42,7 +42,7 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
 	.pastry .offers { background:#073955; float:left; margin:30px 0 0 90px; padding:5px 10px; font-size:29px; }
 		.pastry .offers a { color:#fff; text-decoration:none;}
 			.bottomborder {
-    background: url("../images/bottom.png") no-repeat scroll 27px center rgba(0, 0, 0, 0);
+    background: url("../images/bottom1.png") no-repeat scroll 27px center rgba(0, 0, 0, 0);
     height: 45px;
     width: 673px;
 }
