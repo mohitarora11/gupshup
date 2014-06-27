@@ -4,7 +4,7 @@ include_once('imageupload.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Create image instances
-    $dest  = imagecreatefrompng('images/img.png');
+    $dest  = imagecreatefrompng('images/img2.png');
     $image = new SimpleImage();
     $image->load($_FILES["file"]["tmp_name"]);
     if ($image->getWidth() > 200 && $image->getHeight() > 200) {
