@@ -2,15 +2,13 @@
 include_once('globalvar.php');
 include_once('app_config.php');
 include_once('sql.php');
+
 //$_SESSION["userid"] = '11';
 if(!isset($_SESSION["userid"])){
-
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
 
-
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -18,87 +16,67 @@ if(!isset($_SESSION["userid"])){
 <title>Thanks</title>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
-
+<script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
 </head>
-
 <body>
-    <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
-
 <?php 
-	  $sql = getjodifromfbid($_SESSION['userid']);
-	  $r = $sql->fetch(PDO::FETCH_ASSOC);
-    ?>	
-
+	$sql = getjodifromfbid($_SESSION['userid']);
+	$r = $sql->fetch(PDO::FETCH_ASSOC);
+	$pk = $r["id"];
+?>
 <div id="fb-root"></div>
 <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '<?php echo APPID?>',
-          xfbml      : true,
-          version    : 'v2.0'
+			appId      : '<?php echo APPID?>',
+			xfbml      : true,
+			version    : 'v2.0'
         });
-      };
-
-      (function() {
-        var e = document.createElement('script');
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        e.async = true;
-        document.getElementById('fb-root').appendChild(e);
-      }());
+		FB.login(function(){
+			fbfeed();
+		},{scope: SC.SCOPE});
+    };
+	  
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
     </script>
 	<script>
-	
 	function fbfeed(o,cb){
-	var o = {};
-	o.feedObj = {
-        message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
-        method: 'feed',
-        name: 'A table for',
-        link: SC.CANVASURL+"vote.php?v="+<?php echo $r["id"] ?>,
-        picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
-        caption: "",		
-        description: "Participate in the American Express &reg; Rewarding Jodi Batao"
-    };
-	o.path = '/me/feed/';
-	FB.api({path:o.path, method:'POST', data:o.feedObj},function(r){
-		if(r != void 0){
-			//debug('fbShare'+ o.path , r);
-			//cb(r);
-		}else{
-			//debug(arguments);
-		}
-	});	
-}
-
-	
-    function postToFacebook() {
-        var body = 'Reading Connect JS documentation';
 		var o = {};
-	o.feedObj = {
-        message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
-        method: 'feed',
-        name: 'A table for',
-        link: SC.CANVASURL+"vote.php?v="+<?php echo $r["id"] ?>,
-        picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
-        caption: "",		
-        description: "Participate in the American Express &reg; Rewarding Jodi Batao"
-    };
-
-        FB.api('/me/feed', 'post',  o.feedObj , function(response) {
-          if (!response || response.error) {
-            //alert('Error occured');
-          } else {
-            //alert('Post ID: ' + response);
-          }
-        });
-    }
+		o.feedObj = {
+			message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
+			name: 'A table for',
+			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
+			picture: 'http:'+SC.BASEURL+'images/pastry.jpg',
+			caption: "A table for",		
+			description: ""
+		};
+		o.path = '/me/feed/';
+		FB.api(o.path,'POST',o.feedObj,function(r){
+			try{
+				console.log(arguments);
+			}catch(ee){
+				
+			}
+			if(r != void 0){
+				//debug('fbShare'+ o.path , r);
+				//cb(r);
+			}else{
+				//debug(arguments);
+			}
+		});	
+	}	
     </script>
 <div class="table">
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
 
-<div class="champ" >
-	<div class="card"  >
+<div class="champ">
+	<div class="card">
 		<div class="leftcol1">
 		
 		<p>
@@ -138,6 +116,12 @@ if(!isset($_SESSION["userid"])){
 	<?php } ?>
 </div>
 <div class="bottomborder"></div>
+<?php /*
+<hr/>
+<a href="#" onclick="javascript:postToFacebook();">Postwall</a>
+<hr/>
+<a href="#" onclick="javascript:fbfeed();">feed</a>
+*/ ?>
 <script type="text/javascript">
 //setTimeout(function(){postToFacebook()}, 3000);
 

@@ -86,8 +86,6 @@ function validatecaption(){
         alert("Kindly Select caption and location");
         return false;
     }
-	
-
 }
 </script>
 <?php
