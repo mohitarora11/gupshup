@@ -33,11 +33,9 @@ if(!isset($_SESSION["userid"])){
 <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId  : '<?php echo APPID?>',
-		  channelUrl : SC.BASEURL+'/channel.php',
-          status : true, // check login status
-          cookie : true, // enable cookies to allow the server to access the session
-          xfbml  : true  // parse XFBML
+          appId      : '<?php echo APPID?>',
+          xfbml      : true,
+          version    : 'v2.0'
         });
       };
 
