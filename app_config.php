@@ -13,3 +13,7 @@ define("DOMAIN","digiqom.com");
 define("BASEURL","//www.digiqom.com/aexp/atableforappflow/");
 
 define("TITLE","A Table for Champions");
+
+if(!isset($SC)){ ?>
+    <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>', APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
+<?php } ?>
