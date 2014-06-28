@@ -6,6 +6,7 @@ if(isset($_SESSION) && $_SESSION["userid"]){
 		if($_POST["optionchosen"]=='1'){
 			$id = saveoption($_SESSION["userid"],$_POST["optionchosen"],$_POST["comment"],"");			
 			savestatus($_SESSION["userid"],2);	
+			$_SESSION["firsttime"] = true;
 			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 			exit();
 		}else{

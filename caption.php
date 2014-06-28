@@ -13,7 +13,7 @@ if($_SESSION["userid"]){
 			
 			savecaption($_SESSION['userid'],$_POST["location"],$_POST["caption"]);
 		}
-		
+		$_SESSION["firsttime"] = true;
 		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
@@ -21,9 +21,9 @@ if($_SESSION["userid"]){
 include_once('header.php');
 ?>
 
-<div class="champ" >
+<div class="champ" ><strong>CHAMPIONS</strong>
 	<div class="card"  >
-
+<br/><br/>
 		<?php 
 		  $sql = getjodifromfbid($_SESSION['userid']);
 		  $r = $sql->fetch(PDO::FETCH_ASSOC);

@@ -20,7 +20,7 @@ html {width:700px;margin:0 auto;}
 body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
 .bckno { background:none;}
-.table { width:418px; margin:93px 195px 31px; }
+.table { width:418px; margin:93px 195px 25px; }
 .table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right; }
 
 .champ { 
@@ -32,7 +32,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
     width: 600px;
 	height:610px;
 }
-.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:64px; font-weight:normal; margin-bottom:38px;  }
+.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:65px; font-weight:normal; margin-bottom:38px;  }
 
 .pastry {   background: url("../images/pastry.jpg") no-repeat scroll 0 0;
     height: 426px;
@@ -94,7 +94,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 
 .table1 em { display: block;
     font-family: Arial,Helvetica,sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-style: normal;
     padding: 10px 0;
     text-align: left;
@@ -156,10 +156,10 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 .card .leftcol1 span { display:block; margin:60px 0 0 0px;}
 .card .leftcol1 p { width:565px;  text-align:center; font-family: libre_baskervilleregular;
     font-size: 18px; color:#585858;}
-.card .leftcol1 p strong {  font-size: 45px;
-    line-height: 50px;
-    margin-bottom: 25px;
-    margin-top: 25px;
+.card .leftcol1 p strong {  font-size: 55px;
+    line-height: 60px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     padding: 0;} 
 
 	

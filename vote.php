@@ -65,19 +65,17 @@ try {
 }
 if ($session){
 	try{
-		/*			$request = new FacebookRequest( $session, 'POST', '/me/feed' , array(
-						'link' => 'https:'.$GLOBALS['url']."vote.php?pk=".$_SESSION['pk'],
-						'message' => 'User provided message',
-						'picture' => 'https:'.$GLOBALS['url'].'images/pastry.jpg',
-						'description' => '',
-						'caption' => 'A table for'
-					  ));
-					$response = $request->execute();  
-					$graphObject = $response->getGraphObject();*/
+		$request = new FacebookRequest( $session, 'GET', '/me' );
+		$response = $request->execute();  
+		$graphObject = $response->getGraphObject();
+		$_SESSION["voterid"]=$graphObject->getProperty('id');
+		$_SESSION["voteremail"]=$graphObject->getProperty('email');
+		
+
 				
 				} catch(FacebookRequestException $e) {
-					echo "Exception occured, code: " . $e->getCode();
-					echo " with message: " . $e->getMessage();
+					//echo "Exception occured, code: " . $e->getCode();
+					//echo " with message: " . $e->getMessage();
 				}
 }else{
 	$helper = new FacebookRedirectLoginHelper(CANVASURL."vote.php?pk=".$_SESSION['pk']."&PHPSESSID=".session_id());
@@ -110,7 +108,7 @@ if ($session){
 <?php
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-	    vote($_SESSION["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
+	    vote($_REQUEST["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
 	}
 ?>
 
@@ -134,8 +132,15 @@ if ($session){
 				<?php	} ?>
 			</p>
 		<br/>
-		<?php if($r["opitonchoosen"]==2){ ?>
+		<?php if($r["opitonchoosen"]==2){ 
+			if ($r["isapproved"]==1)
+			{	
+		?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
+			<?php } 
+			else { ?>
+				<img src="images/pastry.jpg" width="210" height="210" />
+			<?php } ?>
 		<?php }else{ ?>
 			<img src="images/pastry.jpg" width="210" height="210" />
 		<?php } ?>
@@ -149,9 +154,12 @@ if ($session){
 		
 		<form method="post">
 			<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
+			<input type="hidden" name="pk" value="<?php echo $_SESSION["pk"]; ?>"/>
 			<input type="Submit" value="vote"/>
+			
 		</form>
 		<?php
+			unset($_SESSION['pk']);
 			}else if(isset($_SESSION["voted"])){
 				echo '<br/><br/><p>Thank You for voting.</p>';
 				unset($_SESSION['voted']);

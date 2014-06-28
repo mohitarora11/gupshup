@@ -24,6 +24,9 @@ if(!isset($_SESSION["userid"])){
 	$r = $sql->fetch(PDO::FETCH_ASSOC);
 	$pk = $r["id"];
 ?>
+<?php if(isset($_SESSION["firsttime"]))
+{
+?>
 <div id="fb-root"></div>
 <script>
       window.fbAsyncInit = function() {
@@ -53,7 +56,7 @@ if(!isset($_SESSION["userid"])){
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
 			caption: "A table for",		
-			description: ""
+			description: "The contest encourages users to complete the caption ' A Table For ___' or click and upload photos on Facebook while dining at Cyber Hub, submit selected photos or captions through the contest application, share it on their own facebook timeline and get votes from friends"
 		};
 		o.path = '/me/feed/';
 		FB.api(o.path,'POST',o.feedObj,function(r){
@@ -71,6 +74,9 @@ if(!isset($_SESSION["userid"])){
 		});	
 	}	
     </script>
+	<?php
+	}
+	?>
 <div class="table">
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
