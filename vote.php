@@ -65,7 +65,7 @@ try {
 }
 if ($session){
 	try{
-					$request = new FacebookRequest( $session, 'POST', '/me/feed' , array(
+		/*			$request = new FacebookRequest( $session, 'POST', '/me/feed' , array(
 						'link' => 'https:'.$GLOBALS['url']."vote.php?pk=".$_SESSION['pk'],
 						'message' => 'User provided message',
 						'picture' => 'https:'.$GLOBALS['url'].'images/pastry.jpg',
@@ -73,7 +73,7 @@ if ($session){
 						'caption' => 'A table for'
 					  ));
 					$response = $request->execute();  
-					$graphObject = $response->getGraphObject();
+					$graphObject = $response->getGraphObject();*/
 				
 				} catch(FacebookRequestException $e) {
 					echo "Exception occured, code: " . $e->getCode();
