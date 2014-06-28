@@ -51,14 +51,14 @@ if(!isset($_SESSION["userid"])){
 			message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
-			picture: 'http:'+SC.BASEURL+'images/pastry.jpg',
+			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
 			caption: "A table for",		
 			description: ""
 		};
 		o.path = '/me/feed/';
 		FB.api(o.path,'POST',o.feedObj,function(r){
 			try{
-				console.log(arguments);
+				//console.log(arguments);
 			}catch(ee){
 				
 			}

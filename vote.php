@@ -84,7 +84,7 @@ if ($session){
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
 ?>
 	<script>
-		//top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
+		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
 	</script>
 <?php
 	//exit();
