@@ -35,11 +35,23 @@ include_once('header.php');
 			<li class="divselect">
 				<select name="location" class="styled">
 				<option value="">select location </option>
-				<option >Delhi</option>
-				<option >mumbai</option>
-				<option >kolkata</option>
-				<option >chennai</option>
-				<option >banglore</option>
+				<option>Oh! Calcutta</option>
+				<option>Olive Bistro</option>
+				<option>Panchvati Gaurav  </option>
+				<option>Pita Pit </option>
+				<option>Pizza Hut Delivery</option>
+				<option>Raasta</option>
+				<option>Red Mango  </option>
+				<option>Rred Hot  </option>
+				<option>Soda Bottle Opener  </option>
+				<option>Soi 7  </option>
+				<option>Sutra Gastropub</option>
+				<option>Starbucks</option>
+				<option>The Beer Cafe </option>
+				<option>The Wine Company</option>
+				<option>Vaango  </option>
+				<option>Yogito </option>
+				<option>Zambar </option>
 				</select>
 			</li>
 

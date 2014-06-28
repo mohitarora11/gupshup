@@ -171,7 +171,7 @@ body { width:700px; background:url(../images/base.png) no-repeat; margin:0 auto;
     font: 13px Arial,Helvetica,sans-serif;
     left: 2px;
     top: 9px;
-    width: 200px;
+    width: 219px !important;
 	height:18px;
 }
 	
