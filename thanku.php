@@ -16,7 +16,9 @@ if(!isset($_SESSION["userid"])){
 <head>
 <meta charset="utf-8">
 <title>Thanks</title>
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>

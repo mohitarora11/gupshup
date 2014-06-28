@@ -66,7 +66,7 @@ if ($session){
 	$page = $GLOBALS['url']."savedata.php?PHPSESSID=".session_id();
 	//print_r($_SESSION);
 	header("Location: ".$page);
-	exit(print_r($_SESSION));
+	exit();
 }else{
 
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);

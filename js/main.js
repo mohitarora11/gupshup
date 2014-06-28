@@ -1,140 +1,72 @@
-var frmonsuibmit = function(o){
-	return false;
+
+var _URL = window.URL || window.webkitURL;
+function validateform(){
+var x = document.forms["commentform"]["comment"].value;
+    if (x == null || x == "") {
+        alert("Kindly enter Caption");
+        return false;
+    }
 }
-
-var savacmt = function(){
-	var o = {};
-	o.id_error = document.getElementById("id_error");
-	o.v = document.getElementById('id_cmt').value;
-	try{o.v = o.v.trim();}catch(e){}
-	if(o.v != ''){
-		o.id_error.style.display="none";
-		if(!window.oauth){
-			FB.login(function(r){
-				fetchFBuserInfo(function(){ senduserinfo(); sendcmt(o.v); });
-			},{scope: SC.SCOPE});
-		}else{
-			fetchFBuserInfo(function(){ senduserinfo(); sendcmt(o.v); });
-		}
-	}else{
-		o.id_error.style.display="block";
-	}
+function validatephotoform(){
+var x = document.forms["photoform"]["file"].value;
+    if (x == null || x == "") {
+        alert("Select the selfie to be uplodaed");
+        return false;
+    }
 }
-
-var senduserinfo = function(){
-	$.ajax({
-		type: "POST",
-		url: "userinfo.php",
-		data: window.userInfo
-	}).done(function( r ) {
-		debug(r, arguments);
-	});
+function fileonchange(obj){
+document.getElementById('file_url').innerHTML = '';
+if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(obj.value)){	
+		document.getElementById('file_url').innerHTML = obj.value;
 }
+else{
 
-
-var reply = function(){
-	$.ajax({
-		type: "POST",
-		url: "reply.php",
-		data: {'postid':'','msg':''}
-	}).done(function( r ) {
-		debug(r, arguments);
-	});
+obj.value = '';
+alert("Kindly upload only gif,jpg,jpeg,png file");
 }
-
-
-var sendcmt = function(cmt){
-	var msg = [
-			   "Click here to participate in the challenge and win cool gadgets and promising career with American Express India."
-			   ];
+}
+$("#id_file").change(function(e) {
+    var file, img;
 	
-	var feedObj = {
-		message: 'Campus Centurion Challenge 2013',
-		name: "Are you hooked on to the Campus Centurion Challenge 2013 yet?",
-		link: SC.CANVASURL,
-		picture: 'http:'+SC.BASEURL+'img/fb_image1.jpg',
-		caption: "Campus Centurion",
-		description: msg[0]
-	};
-	document.getElementById("id_cmt_process").style.display = "block";
-	fbFQL({path:'/me/feed',method:'POST',data:feedObj},function(r){
-		if(r.id){
-			
-		}
-	});
-}
-
-var renderFriendsWithApp = function(){}
-
-//fetch appusers
-function fetchFBappUsers(cb){
-    cb = cb || function(){};
-	var o = {}; 
+		document.getElementById('file_url').innerHTML = this.value;
 	
-	if(window.appUsers == void 0){
-		o.fql = {
-            method: "get",
-            path: "/fql/",
-            data: {
-				q: "SELECT uid,name FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me() ) AND is_app_user = 1"
-			}
-        };
+
+    if ((file = this.files[0])) {
+        img = new Image();
+        img.onload = function() {
 		
-		fbFQL(o.fql,function(r){
-	        window.appUsers = r.data;
-	        cb(r);
-		});
-	}else{
-		cb(window.appUsers);
-	}
-}
-
-//userinfo
-function fetchFBuserInfo(cb){
-    cb = cb || function(){};
-	var o = {}; 
-	
-	if(window.userInfo == void 0){
-		/* Name,gender,location,email*/
-		o.fql = {
-            method: "get",
-            path: "/fql/",
-            data: {
-				q: 'select uid, name, email from user where uid = me()'
+			if( this.width < 210 || this.height < 210 ){
+               alert("Please upload image greater than 210X210");
+			   document.getElementById('file_url').innerHTML='';
+			   $('#id_file').val('');
+			   return false;
 			}
+			/*if(Math.abs(this.width-this.height)>10 ){
+				alert("Please upload a square image");
+				document.getElementById('file_url').innerHTML='';
+				$('#id_file').val('');
+				return false;
+			}*/
         };
-		
-		fbFQL(o.fql,function(r){
-			o.o = r.data[0];
-			o.o.name = o.o.name || '';
-			o.o.email = o.o.email || '';
-	        window.userInfo = r.data[0];
-	        cb(r);
-		});
-	}else{
-		cb(window.userInfo);
-	}
-}
+        img.onerror = function() {
+            alert( "not a valid file: " + file.type);
+				document.getElementById('file_url').innerHTML='';
+				$('#id_file').val('');
+				return false;
+        };
+        img.src = _URL.createObjectURL(file);
 
 
-// fbFQL({path:'graph api',method:'GET',data:{limit:3}},function(r){})
-function fbFQL(o,cb){
-	o = o || {};
-	o.method = o.method || 'GET';
-	o.data = o.data || {}; //{limit:3};
-	cb = cb || function(){};
-	if (o.path) {
-		try{
-			FB.api(o.path, o.method,o.data, function(r){
-				debug(o.path,r);
-				if (!r || r.error) {
-					debug('Error:',r.error);
-				}else{
-					cb(r);
-				}
-			});
-		}catch(e){cb(e);}
-	}else{
-		cb('not specify graph api path');
-	}
-}
+    }
+
+});
+
+
+$('.popup').on('click',function(){
+
+$( "#"+$(this).data('href')).dialog({ width: '650',height:'600', resizable: false,
+
+modal: true });
+
+});
+

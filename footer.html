@@ -1,7 +1,23 @@
 
 <footer>
-<ul><li><a href="#">ABOUT THE CONTEST</a></li><li>|</li><li><a href="#">Terms & Conditions</a></li></ul>
+<ul><li><a class="popup" href="javascript:void(0)" data-href="dialog">ABOUT THE CONTEST</a></li><li>|</li>
+<li><a class="popup" href="javascript:void(0)" data-href="terms">TERMS & CONDITIONS</a></li></ul>
 
 </footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+<div id="dialog" title="About the Contest" style="display:none">
+
+<?php include_once('about.html')?> 
+
+</div>
+
+<div id="terms" title="Terms & Conditions" style="display:none">
+<?php include_once('terms.html')?> 
+</div>
 </body>
 </html>

@@ -3,9 +3,9 @@ include_once('globalvar.php');
 include_once('sql.php');
 
 if(!isset($_SESSION["user"])){
-    /*$_SESSION["userid"]='12310';
+    $_SESSION["userid"]='12310';
 	$_SESSION["useremail"]='mohit123@gmail.com';
-	$_SESSION["username"]='mohit';*/
+	$_SESSION["username"]='mohit';
 	$_SESSION["pk"] = null;
 }
 

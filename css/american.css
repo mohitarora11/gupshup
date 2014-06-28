@@ -193,3 +193,4 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 	
 	
 }
+.ui-dialog-content p,.static p{font:normal 14px arial;line-height:20px}

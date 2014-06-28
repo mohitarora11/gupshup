@@ -99,6 +99,7 @@ if ($session){
 <meta charset="utf-8">
 <meta property="og:url" content="<?php echo $GLOBALS['url'];?>vote.php?pk=<?php echo $_SESSION['pk'] ?>" />
 <title>Gupshup</title>
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
 <link href="css/american.css" rel="stylesheet" type="text/css">
 </head>
 <body>
