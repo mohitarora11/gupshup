@@ -1,5 +1,7 @@
 <?php
-session_id($_REQUEST['PHPSESSID']);
+if( isset($_REQUEST['PHPSESSID'])){
+	session_id($_REQUEST['PHPSESSID']);
+}
 include_once('app_config.php');
 include ('header.php');
 
@@ -7,9 +9,9 @@ include ('header.php');
 
 <div class="champsp"><strong>SPECIAL OFFERS</strong>
 
-<u>Exclusively for American Express® Cardholders</u>
+<u>Exclusively for American Express&reg; Cardholders</u>
 
-Lift the lid to avail special privileges exclusive to <br>
+Avail special privileges exclusive to <br>
 
 American Express customers
 
@@ -17,13 +19,13 @@ American Express customers
 <div class="spofld">
 <ul>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards® Points for every Rs. 100 Spent</p></li>
+Rewards&reg; Points for every Rs. 100 Spent</p></li>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards® Points for every Rs. 100 Spent</p></li>
+Rewards&reg; Points for every Rs. 100 Spent</p></li>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards® Points for every Rs. 100 Spent</p></li>
+Rewards&reg; Points for every Rs. 100 Spent</p></li>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards® Points for every Rs. 100 Spent</p></li>
+Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </ul>
 </div>
 <?php if(isset($_SESSION["LOGINURL"])){
@@ -36,7 +38,7 @@ Rewards® Points for every Rs. 100 Spent</p></li>
 </div>
 
 <div class="bottomborder"><p class="btext">
-Want these offers* dont have a American Express® Card. Get one NOW!
+Want these offers* dont have a American Express&reg; Card. <a href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
 </p></div>
 
 

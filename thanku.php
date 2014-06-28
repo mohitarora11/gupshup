@@ -7,6 +7,8 @@ if(!isset($_SESSION["userid"])){
 
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
+
+
 ?>
 
 <!doctype html>
@@ -18,6 +20,8 @@ if(!isset($_SESSION["userid"])){
 </head>
 
 <body>
+    <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
+
 <?php 
 	  $sql = getjodifromfbid($_SESSION['userid']);
 	  $r = $sql->fetch(PDO::FETCH_ASSOC);
@@ -28,6 +32,7 @@ if(!isset($_SESSION["userid"])){
       window.fbAsyncInit = function() {
         FB.init({
           appId  : '<?php echo APPID?>',
+		  channelUrl : SC.BASEURL+'/channel.php',
           status : true, // check login status
           cookie : true, // enable cookies to allow the server to access the session
           xfbml  : true  // parse XFBML
@@ -44,17 +49,18 @@ if(!isset($_SESSION["userid"])){
 	<script>
 	
 	function fbfeed(o,cb){
+	var o = {};
 	o.feedObj = {
         message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
         method: 'feed',
         name: 'A table for',
-        link: 'https:'+SC.CANVASURL+"vote.php?v="+<?php echo $r["id"] ?>,
+        link: SC.CANVASURL+"vote.php?v="+<?php echo $r["id"] ?>,
         picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
         caption: "",		
         description: "Participate in the American Express &reg; Rewarding Jodi Batao"
     };
 	o.path = '/me/feed/';
-	fbFQL({path:o.path, method:'POST', data:o.feedObj},function(r){
+	FB.api({path:o.path, method:'POST', data:o.feedObj},function(r){
 		if(r != void 0){
 			//debug('fbShare'+ o.path , r);
 			//cb(r);
@@ -67,8 +73,18 @@ if(!isset($_SESSION["userid"])){
 	
     function postToFacebook() {
         var body = 'Reading Connect JS documentation';
+		var o = {};
+	o.feedObj = {
+        message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
+        method: 'feed',
+        name: 'A table for',
+        link: SC.CANVASURL+"vote.php?v="+<?php echo $r["id"] ?>,
+        picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
+        caption: "",		
+        description: "Participate in the American Express &reg; Rewarding Jodi Batao"
+    };
 
-        FB.api('/me/feed', 'post', { body: body, message: 'My message is ...' }, function(response) {
+        FB.api('/me/feed', 'post',  o.feedObj , function(response) {
           if (!response || response.error) {
             //alert('Error occured');
           } else {
@@ -123,7 +139,8 @@ if(!isset($_SESSION["userid"])){
 </div>
 <div class="bottomborder"></div>
 <script type="text/javascript">
-fbfeed();
+//setTimeout(function(){postToFacebook()}, 3000);
+
 </script>
 
 <?php

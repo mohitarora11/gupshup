@@ -1,6 +1,6 @@
 <?php
 include('app_config.php');
-
+include('globalvar.php');
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
 require_once( 'Facebook/HttpClients/FacebookCurl.php' );
 require_once( 'Facebook/HttpClients/FacebookCurlHttpClient.php' );
