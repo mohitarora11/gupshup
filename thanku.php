@@ -35,11 +35,18 @@ if(!isset($_SESSION["userid"])){
 			xfbml      : true,
 			version    : 'v2.0'
         });
-		FB.login(function(){
-			fbfeed();
-		},{scope: SC.SCOPE});
+		
+		FB.getLoginStatus(function(r){
+			if(r.status === 'connected') {
+				fbfeed();
+			}else {
+				FB.login(function(){
+					fbfeed();
+				},{scope: SC.SCOPE});
+			}
+		});
     };
-	  
+	
 	(function() {
 		var e = document.createElement('script');
 		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
@@ -61,7 +68,7 @@ if(!isset($_SESSION["userid"])){
 		o.path = '/me/feed/';
 		FB.api(o.path,'POST',o.feedObj,function(r){
 			try{
-				//console.log(arguments);
+				console.log(arguments);
 			}catch(ee){
 				
 			}
