@@ -68,7 +68,7 @@ if(!isset($_SESSION["userid"])){
 		o.path = '/me/feed/';
 		FB.api(o.path,'POST',o.feedObj,function(r){
 			try{
-				console.log(arguments);
+				//console.log(arguments);
 			}catch(ee){
 				
 			}
@@ -106,11 +106,14 @@ if(!isset($_SESSION["userid"])){
 		<br/>
 		<?php if($r["opitonchoosen"]==2){ ?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-		<?php }else{ ?>
-			<img src="images/pastry.jpg" width="210" height="210"  />
 		<?php } ?>
-	
-	
+		
+			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
+		
+		</div>
+		<div class="leftcol1" style="margin:20px 0px 20px 0">
+		<a class="link" href="leaderboard.php">LeaderBoard</a>
+		<a class="link" href="specialoffer.php">Offers</a>
 	
 	</div>
 	</div>

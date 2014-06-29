@@ -89,9 +89,9 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 	height:28px;
 }
 
- input[type="submit"]{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
+ input[type="submit"],a.link{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
 	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
-
+a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none}
 .table1 em { display: block;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -103,7 +103,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 .btext { text-align:center; color:#29546e; font:normal 12px arial;  }
 .champ .marbot { margin-bottom:10px;}
 .champ .cont { margin-bottom:45px; float:left;}
-.leaderboard {  margin:10px 0 0 0; font-family:Arial, Helvetica, sans-serif;  }
+.leaderboard {  margin:10px 0 0 0; font-family:Arial, Helvetica, sans-serif; width:600px;float:left }
 .leaderboard li { float:left; margin:0 0 0 22px; background:#283e28; width:123px; font:normal 12px arial; color:#84c184; text-align:center; height:144px;      }
 .leaderboard li a { text-decoration:none; color:inherit;}
 .leaderboard a:hover li  { background:#2f2f2f; color:#e5a65c;}

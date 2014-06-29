@@ -1,8 +1,13 @@
 <?php
-include ('header.php');
+include_once('globalvar.php');
+include_once('app_config.php');
+include_once('sql.php');
+
+include_once ('header.php');
+$_SESSION["userid"] = '111';
 if($_SESSION["userid"]){
 }else{
-	header("Location: ".$GLOBALS['url']."index1.php"); /* Redirect browser */
+	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
 ?>
 
@@ -11,39 +16,18 @@ if($_SESSION["userid"]){
 Caption Leaders
 
 <ul class="leaderboard">
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
+<?php 
+	$sql = leaderboard_bycaption();
+	//$r = $sql->fetch(PDO::FETCH_ASSOC);
+	while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
 
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
-
-
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
-
-
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
+echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+echo $row['fname'];
+echo'</u><br><b>';
+echo $row['count'];
+echo 'Votes</b></li>';
+}?>
 
 
 </ul>
@@ -53,46 +37,23 @@ Caption Leaders
 Selfie Leaders
 
 <ul class="leaderboard">
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
+<?php 
+	$sql = leaderboard_byselfie();
+	//$r = $sql->fetch(PDO::FETCH_ASSOC);
+	while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
 
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
-
-
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
-
-
-<a href="#">
-<li>
-<img src="images/img1.png" width="100" height="90">
-<u>User 2</u><br>
-<b>80 Votes</b>
-</li>
-</a>
-
-
+echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+echo $row['fname'];
+echo'</u><br><b>';
+echo $row['count'];
+echo 'Votes</b></li>';
+}?>
 </ul>
 
 </div>
 Winners will be declared every monday!
-<div class="fbtwt">
+<div class="fbtwt" style="display:none">
 <a href="#"><img src="images/fb.png" width="66" height="24"></a>
 <a href="#"><img src="images/tweet.png" width="66" height="24"></a>
 

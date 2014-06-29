@@ -98,7 +98,7 @@ if ($session){
 <meta property="og:url" content="<?php echo $GLOBALS['url'];?>vote.php?pk=<?php echo $_SESSION['pk'] ?>" />
 <title>Gupshup</title>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
-<link href="css/american.css" rel="stylesheet" type="text/css">
+<link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="table">
@@ -108,8 +108,8 @@ if ($session){
 <?php
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-	    if(isset($_POST["pk"])){
-			vote($_REQUEST["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
+	    if(isset($_POST["userid"])){
+			vote($_POST["userid"],$_SESSION["voterid"],$_SESSION["voteremail"]);
 		}
 	}
 ?>
@@ -117,64 +117,60 @@ if ($session){
 <div class="champ" >
 	<div class="card"  >
 		<div class="leftcol1">
-<?php 
-	  $sql = getuserfromid($_SESSION['pk']);
-	  $r = $sql->fetch(PDO::FETCH_ASSOC);
-    ?>	
-		
-	<p>
+			<?php 	  
+				$sql = getuserfromid($_SESSION['pk']);	  
+				$r = $sql->fetch(PDO::FETCH_ASSOC);
+			?>			
+			<p>
 				<?php 		
 					if($r["opitonchoosen"]==2){
 				?>
-				<strong><?php echo $r["caption"];?></strong>
-				<br/>
-				At <?php echo $r["location"]?>
-				<?php	}else{ ?>
-				<strong><?php echo $r["cmt"];?></strong>
-				<?php	} ?>
+					<strong><?php echo $r["caption"];?></strong>
+					<br/>
+					At <?php echo $r["location"]?>
+				<?php }else{ ?>
+					<strong><?php echo $r["cmt"];?></strong>
+				<?php } ?>
 			</p>
-		<br/>
-		<?php if($r["opitonchoosen"]==2){ 
-			if ($r["isapproved"]==1)
-			{	
-		?>
-			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-			<?php } 
-			else { ?>
-				<img src="images/pastry.jpg" width="210" height="210" />
-			<?php } ?>
-		<?php }else{ ?>
-			<img src="images/pastry.jpg" width="210" height="210" />
-		<?php } ?>
-	<br/><br/>
-	<?php
-	if ($r["isapproved"]==1){	
-		$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
-		if($q->rowCount()==0){
-	?>
-		
-		
-		<form method="post">
-			<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-			<input type="hidden" name="pk" value="<?php echo $_SESSION["pk"]; ?>"/>
-			<input type="Submit" value="vote"/>
+			<br/>
+				<?php if($r["opitonchoosen"]==2){ 
+						if ($r["isapproved"]==1)
+						{	
+				?>
+							<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
+						<?php 
+							} 
+						?>
+				<?php } ?>
+			<br/><br/>
+			<?php
+			if ($r["isapproved"]==1){	
+				$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
+				if($q->rowCount()==0){
+			?>
+				<form method="post" action="vote.php">
+					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
+					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
+					<input type="Submit" value="vote"/>			
+				</form>
+				<?php
+				} else {
+					echo '<br/><br/><p>Thank You for voting.</p>';
+				}
+					//unset($_SESSION['pk']);
+					/*}else if(isset($_POST["userid"])){
+						echo '<br/><br/><p>Thank You for voting.</p>';
+						//unset($_SESSION['voted']);
+					}else{
+						echo '<br/><br/><p>You have already voted for this</p> ';
+					}*/
+				?>	
+			<?php } else {
+				echo '<p>Kindly approved</p>';
+				}
+			?>
 			
-		</form>
-		<?php
-			unset($_SESSION['pk']);
-			}else if(isset($_SESSION["voted"])){
-				echo '<br/><br/><p>Thank You for voting.</p>';
-				unset($_SESSION['voted']);
-			}else{
-				echo '<br/><br/><p>You have already voted for this</p> ';
-			}
-		?>	
-	<?php } else {
-		echo '<p>Kindly approved</p>';
-		}
-	?>
-	
-	</div>
+		</div>
 	</div>
 </div>
 <div class="bottomborder"></div>
