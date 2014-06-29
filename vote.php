@@ -108,7 +108,9 @@ if ($session){
 <?php
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-	    vote($_REQUEST["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
+	    if(isset($_POST["pk"])){
+			vote($_REQUEST["pk"],$_SESSION["voterid"],$_SESSION["voteremail"]);
+		}
 	}
 ?>
 

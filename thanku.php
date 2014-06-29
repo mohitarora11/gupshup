@@ -51,11 +51,11 @@ if(!isset($_SESSION["userid"])){
 	function fbfeed(o,cb){
 		var o = {};
 		o.feedObj = {
-			message: "Participate in the 'American Express A Table for You' contest and gets a chance to win",
+			message: "Participate in the 'American Express A Table for You' contest and get a chance to win",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
-			caption: "A table for",		
+			caption: "A table for CHAMPIONS",		
 			description: "The contest encourages users to complete the caption ' A Table For ___' or click and upload photos on Facebook while dining at Cyber Hub, submit selected photos or captions through the contest application, share it on their own facebook timeline and get votes from friends"
 		};
 		o.path = '/me/feed/';
