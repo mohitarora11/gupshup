@@ -3,7 +3,7 @@ if( isset($_REQUEST['PHPSESSID'])){
 	session_id($_REQUEST['PHPSESSID']);
 }
 include_once('app_config.php');
-include ('header.php');
+include_once ('header.php');
 
 ?>
 
@@ -38,7 +38,8 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </div>
 
 <div class="bottomborder"><p class="btext">
-Want these offers* dont have a American Express&reg; Card. <a href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
+Want these offers, but don't have an
+American Express&reg; Card? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
 </p></div>
 
 

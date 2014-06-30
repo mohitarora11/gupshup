@@ -64,7 +64,7 @@ $("#id_file").change(function(e) {
 
 $('.popup').on('click',function(){
 
-$( "#"+$(this).data('href')).dialog({ width: '650',height:'600', resizable: false,
+$( "#"+$(this).data('href')).dialog({ width: '550',height:'700', resizable: false,
 
 modal: true });
 

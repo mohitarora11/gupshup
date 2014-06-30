@@ -166,7 +166,7 @@ if ($session){
 					}*/
 				?>	
 			<?php } else {
-				echo '<p>The submission is still under validation, Kindly come back to vote later.</p>';
+				echo '<p> The submission is still under validation, Kindly come back to vote later</p>';
 				}
 			?>
 			

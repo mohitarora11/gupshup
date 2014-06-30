@@ -26,6 +26,7 @@ if(!isset($_SESSION["userid"])){
 ?>
 <?php if(isset($_SESSION["firsttime"]))
 {
+unset($_SESSION['firsttime']);
 ?>
 <div id="fb-root"></div>
 <script>
@@ -54,17 +55,21 @@ if(!isset($_SESSION["userid"])){
 		document.getElementById('fb-root').appendChild(e);
 	}());
     </script>
+	
+	<?php
+	}
+	?>
 	<script>
 	function fbfeed(o,cb){
 	try{FB.Canvas.scrollTo(0,0);}{catch(e){}
 		var o = {};
 		o.feedObj = {
-			message: "Participate in the 'American Express A Table for You' contest and get a chance to win",
+			message: "I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
 			caption: "A table for CHAMPIONS",		
-			description: "The contest encourages users to complete the caption ' A Table For ___' or click and upload photos on Facebook while dining at Cyber Hub, submit selected photos or captions through the contest application, share it on their own facebook timeline and get votes from friends"
+			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
 		o.path = '/me/feed/';
 		FB.api(o.path,'POST',o.feedObj,function(r){
@@ -82,9 +87,6 @@ if(!isset($_SESSION["userid"])){
 		});	
 	}	
     </script>
-	<?php
-	}
-	?>
 <div class="table">
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
