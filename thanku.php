@@ -56,6 +56,7 @@ if(!isset($_SESSION["userid"])){
     </script>
 	<script>
 	function fbfeed(o,cb){
+	try{FB.Canvas.scrollTo(0,0);}{catch(e){}
 		var o = {};
 		o.feedObj = {
 			message: "Participate in the 'American Express A Table for You' contest and get a chance to win",
@@ -111,12 +112,12 @@ if(!isset($_SESSION["userid"])){
 			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
 		
 		</div>
-		<div class="leftcol1" style="margin:20px 0px 20px 0">
+		<div class="leftcol1" style="margin:20px 0px 60px 0">
 		<a class="link" href="leaderboard.php">LeaderBoard</a>
 		<a class="link" href="specialoffer.php">Offers</a>
 	
 	</div>
-	</div>
+	
 	<?php
 		if ($r["isapproved"]==1){
 	?>
@@ -125,11 +126,15 @@ if(!isset($_SESSION["userid"])){
 	<a href="#"><img src="images/tweet.png" width="66" height="24"></a>
 	</div>
 	<?php }else{ ?>
-	<br>
-	We will publish your Caption/Selfie
+	<br><br>
+		<div class="leftcol1">
+	We will publish your <?php if($r["opitonchoosen"]==2){ ?> Selfie <?php } else { ?> Caption <?php } ?>
 	after validation. Please come back soon and share your entry with your
 	friends for Votes
+		</div>
+		
 	<?php } ?>
+	</div>
 </div>
 <div class="bottomborder"></div>
 <?php /*

@@ -70,3 +70,7 @@ modal: true });
 
 });
 
+$(document).ready(function(){
+try{$("html, body").animate({scrollTop:0},1000);}catch(ex){}
+
+});
