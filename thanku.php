@@ -132,7 +132,7 @@ unset($_SESSION['firsttime']);
 	?>
 	<div class="leftcol1" style="margin:20px 0px 60px 0">
 		<a class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
-		<a class="link" href="javascript:void(0)" data-prop="twt">Share on Twitter</a>
+		<a class="link" target="_blank" href="http://twitter.com/intent/tweet?text=Vote-for-me-and-make-me-win&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 	
 	</div>
 	

@@ -95,6 +95,7 @@ $(document).on('click','.cls_share',function(){
 		FB.api(o.path,'POST',o.feedObj,function(r){
 			try{
 				//console.log(arguments);
+				alert('We have shared your entry on your timeline. All the best!');
 			}catch(ee){
 				
 			}
