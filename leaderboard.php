@@ -52,7 +52,7 @@ echo 'Votes</b></li>';
 </ul>
 <br />
 
-<a class="link" href="thanku.php">Go Back</a>
+<a class="link" style="margin-left:250px" href="thanku.php">Go Back</a>
 
 </div>
 Winners will be declared every Monday!

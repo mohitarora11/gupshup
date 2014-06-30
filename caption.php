@@ -58,11 +58,20 @@ include_once('header.php');
 		<li class="divselect">
 			<select name="caption" class="styled">
 			<option value="">select caption</option>
-			<option >hiiii</option>
-			<option >hello</option>
-			<option >how r u</option>
-			<option >sdfghhjjhg</option>
-			<option >sdfghj</option>
+			<option>Cheers</option>
+		<option>Gup-Shup</option>
+		<option>Power Lunches</option>
+		<option>Love</option>
+		<option>Making a Point</option>
+		<option>Pushing the Envelope</option>
+		<option>Breaking the Ice</option>
+		<option>Mergers and Acquisitions</option>
+		<option>Mumbai Vs Delhi</option>
+		<option>Popping the Question</option>
+		<option>Breaking News</option>
+		<option>Friends and Family</option>
+		<option>Coffee Breaks</option>
+
 			</select>
 		</li>
 <li>

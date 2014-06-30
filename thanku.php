@@ -67,7 +67,7 @@ unset($_SESSION['firsttime']);
 	try{FB.Canvas.scrollTo(0,0);}catch(e){}
 		var o = {};
 		o.feedObj = {
-			message: "I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!",
+			message: "I have participated in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
@@ -105,33 +105,35 @@ unset($_SESSION['firsttime']);
 				<strong><?php echo $r["caption"];?></strong>
 				<br/>
 				At <?php echo $r["location"]?>
-				<?php	}else{ ?>
-				<strong><?php echo $r["cmt"];?></strong>
+				<?php	}else{ ?><br/><br/><br/><br/><br/><br/><br/>
+				<strong style="font-size:80px"><?php echo $r["cmt"];?></strong>
 				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
-															participate in the American Express 'A Table for You' contest. Vote
-															for me and make me win!"/>
+															participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 				<?php	} ?>
 			</p>
 		<br/>
 		<?php if($r["opitonchoosen"]==2){ ?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' contest. Vote for me and make me win!"/>
+			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 		<?php } ?>
 		
 			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
 		
 		</div>
-		<div class="leftcol1" style="margin:20px 0px 60px 0">
+		<div class="leftcol1" <?php if($r["opitonchoosen"]==2){	?>style="margin:20px 0px 20px 0;<?php } else { ?>style="margin:20px 0px 20px 0;<?php } ?>padding-left:140px">
 		<a class="link" href="leaderboard.php">LeaderBoard</a>
-		<a class="link" href="specialoffer.php">Offers</a>
+		<a style="width:148px" class="link" href="specialoffer.php">Offers</a>
 	
 	</div>
 	
 	<?php
 		if ($r["isapproved"]==1){
 	?>
-	<div class="leftcol1" style="margin:20px 0px 60px 0">
-		<a class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
+	<div class="leftcol1" <?php if($r["opitonchoosen"]==2){	?>style="margin:20px 0px 20px 0;<?php } else { ?>style="margin:20px 0px 20px 0;<?php } ?>padding-left:30px">
+	
+<p>Get maximum votes and WIN</p>
+<br/>
+	<a style="margin-left:40px" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
 		<a class="link" target="_blank" href="http://twitter.com/intent/tweet?text=Vote-for-me-and-make-me-win&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 	
 	</div>
