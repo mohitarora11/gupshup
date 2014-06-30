@@ -6,6 +6,9 @@ var x = document.forms["commentform"]["comment"].value;
         alert("Kindly enter Caption");
         return false;
     }
+	else{
+		$('#opaque').show();
+	}
 }
 function validatephotoform(){
 var x = document.forms["photoform"]["file"].value;
@@ -13,6 +16,9 @@ var x = document.forms["photoform"]["file"].value;
         alert("Select the selfie to be uplodaed");
         return false;
     }
+	else{
+		$('#opaque').show();
+	}
 }
 function fileonchange(obj){
 document.getElementById('file_url').innerHTML = '';
@@ -73,4 +79,30 @@ modal: true });
 $(document).ready(function(){
 try{$("html, body").animate({scrollTop:0},1000);}catch(ex){}
 
+});
+
+$(document).on('click','.cls_share',function(){
+	var o = {};
+		o.feedObj = {
+			message: $('#id_msg').val(),
+			name: 'A table for',
+			link: SC.CANVASURL+"vote.php?pk="+$('#id_msg').data('pk'),
+			picture: 'https:'+SC.BASEURL+$('#id_msg').data('img'),
+			caption: "A table for CHAMPIONS",		
+			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
+		};
+		o.path = '/me/feed/';
+		FB.api(o.path,'POST',o.feedObj,function(r){
+			try{
+				//console.log(arguments);
+			}catch(ee){
+				
+			}
+			if(r != void 0){
+				//debug('fbShare'+ o.path , r);
+				//cb(r);
+			}else{
+				//debug(arguments);
+			}
+		});	
 });

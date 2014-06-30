@@ -91,7 +91,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 
  input[type="submit"],a.link{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
 	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
-a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none}
+a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none;font-size:17px;}
 .table1 em { display: block;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
@@ -194,3 +194,15 @@ a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none}
 	
 }
 .ui-dialog-content p,.static p{font:normal 14px arial;line-height:20px}
+
+#opaque{
+    background-color: black;
+    display: none;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}

@@ -3,7 +3,7 @@ include_once('globalvar.php');
 include_once('app_config.php');
 include_once('sql.php');
 
-//$_SESSION["userid"] = '11';
+//$_SESSION["userid"] = '12310';
 if(!isset($_SESSION["userid"])){
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
 }
@@ -107,11 +107,15 @@ unset($_SESSION['firsttime']);
 				At <?php echo $r["location"]?>
 				<?php	}else{ ?>
 				<strong><?php echo $r["cmt"];?></strong>
+				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
+															participate in the American Express 'A Table for You' contest. Vote
+															for me and make me win!"/>
 				<?php	} ?>
 			</p>
 		<br/>
 		<?php if($r["opitonchoosen"]==2){ ?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
+			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' contest. Vote for me and make me win!"/>
 		<?php } ?>
 		
 			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
@@ -127,8 +131,8 @@ unset($_SESSION['firsttime']);
 		if ($r["isapproved"]==1){
 	?>
 	<div class="leftcol1" style="margin:20px 0px 60px 0">
-		<a class="link" href="javascript:void(0)">Share on Facebook</a>
-		<a class="link" href="javascript:void(0)">Share on Twitter</a>
+		<a class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
+		<a class="link" href="javascript:void(0)" data-prop="twt">Share on Twitter</a>
 	
 	</div>
 	
@@ -152,6 +156,7 @@ unset($_SESSION['firsttime']);
 */ ?>
 <script type="text/javascript">
 //setTimeout(function(){postToFacebook()}, 3000);
+
 
 </script>
 
