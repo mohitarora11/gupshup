@@ -63,6 +63,15 @@ function savecaption($fbid,$loc,$cap){
 	$res->execute();
 	//mysqli_query($GLOBALS['conn'],$sql);
 }
+
+/* for updating approval status */
+function saveapprovedstatus($id,$status){
+	global $conn;
+	$sql = "Update user_atableforyou set isapproved = ".$status." where id= '".$id."'";
+	$res = $conn->prepare($sql);
+	$res->execute();
+	//mysqli_query($GLOBALS['conn'],$sql);
+}
 /* for getting status */
 function getstatus($fbid){
 	global $conn;

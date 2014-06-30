@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+	<title>DataTables example - Server-side processing</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+		
+	<style type="text/css" class="init">
+	table.dataTable td{
+		border-right:1px solid #ddd;
+		}
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.dataTables.js"></script>	
+	
+	<script type="text/javascript" language="javascript" class="init">
+
+$(document).ready(function() {
+	$('#example').dataTable( {
+		"processing": true,
+		"serverSide": true,
+		"ajax": "scripts/server_processing.php"
+	} );
+} );
+$(document).on('click','.cls_approve',function(){
+   var status =0,t= $(this);
+    if(t.data('prop')=='approve'){
+		alert('Do you want to approve this entry??');
+		status = 1;
+	}else{
+		alert('Do you want to reject this entry??');
+		status = 2;
+	}
+	$.ajax({
+	  type: "POST",
+	  url: "approvestatus.php",
+	  datatype:'json',
+	  data: { id:t.data('id') , status:status }
+	  
+	}).done(function(r){
+		if(r['res']){
+			t.closest('tr').slideUp('slow');
+		}else{
+		
+			alert('Oops some error occured');
+		}
+	})
+	
+});
+
+	</script>
+</head>
+
+
+<body class="dt-example">
+	<div class="container">
+		<section>
+			<div style="text-align:right; margin-bottom:10px;">
+			<form method="post" class="cls_insert" action="logout.php">
+			<input type="submit" value="logout"/>
+			</form>
+			</div>
+			<table id="example" class="display" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>fbid</th>
+						<th>email</th>
+						<th>optionchosen</th>
+						<th>comment</th>
+						<th>Photo url</th>
+						<th>caption</th>
+						<th>Location</th>
+						<th>Isapproved</th>
+					</tr>
+				</thead>
+
+				<tfoot>
+					<tr>						
+						<th>fbid</th>
+						<th>email</th>
+						<th>optionchosen</th>
+						<th>comment</th>
+						<th>Photo url</th>
+						<th>caption</th>
+						<th>Location</th>
+						<th>Isapproved</th>
+					</tr>
+				</tfoot>
+			</table>			
+		</section>
+	</div>
+
+	<section>
+		<div class="footer">
+			<div class="gradient"></div>			
+		</div>
+	</section>
+</body>
+</html>
