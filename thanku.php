@@ -16,6 +16,9 @@ if(!isset($_SESSION["userid"])){
 <title>Thanks</title>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
+<meta name="og:title" content="I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!" />
+<meta name="og:description" content="A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win" />
+<meta name="og:image" content="https:<?php echo BASEURL?>images/pastry.jpg/" />
 <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
 </head>
 <body>
@@ -61,7 +64,7 @@ unset($_SESSION['firsttime']);
 	?>
 	<script>
 	function fbfeed(o,cb){
-	try{FB.Canvas.scrollTo(0,0);}{catch(e){}
+	try{FB.Canvas.scrollTo(0,0);}catch(e){}
 		var o = {};
 		o.feedObj = {
 			message: "I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!",
@@ -123,10 +126,12 @@ unset($_SESSION['firsttime']);
 	<?php
 		if ($r["isapproved"]==1){
 	?>
-	<div class="fbtwt">
-	<a href="#"><img src="images/fb.png" width="66" height="24"></a>
-	<a href="#"><img src="images/tweet.png" width="66" height="24"></a>
+	<div class="leftcol1" style="margin:20px 0px 60px 0">
+		<a class="link" href="javascript:void(0)">Share on Facebook</a>
+		<a class="link" href="javascript:void(0)">Share on Twitter</a>
+	
 	</div>
+	
 	<?php }else{ ?>
 	<br><br>
 		<div class="leftcol1">
