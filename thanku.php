@@ -67,7 +67,7 @@ unset($_SESSION['firsttime']);
 	try{FB.Canvas.scrollTo(0,0);}catch(e){}
 		var o = {};
 		o.feedObj = {
-			message: "I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!",
+			message: "I have participated in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
@@ -108,14 +108,13 @@ unset($_SESSION['firsttime']);
 				<?php	}else{ ?><br/><br/><br/><br/><br/><br/><br/>
 				<strong style="font-size:80px"><?php echo $r["cmt"];?></strong>
 				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
-															participate in the American Express 'A Table for You' contest. Vote
-															for me and make me win!"/>
+															participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 				<?php	} ?>
 			</p>
 		<br/>
 		<?php if($r["opitonchoosen"]==2){ ?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' contest. Vote for me and make me win!"/>
+			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 		<?php } ?>
 		
 			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
