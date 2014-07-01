@@ -101,7 +101,7 @@ unset($_SESSION['firsttime']);
 		<p>
 				<?php 		
 					if($r["opitonchoosen"]==2){
-				?><br/><br/>
+				?>
 				<strong><?php echo $r["caption"];?></strong>
 				<br/>
 				At <?php echo $r["location"]?>
@@ -120,7 +120,7 @@ unset($_SESSION['firsttime']);
 			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
 		
 		</div>
-		<div class="leftcol1" style="margin:20px 0px 60px 0;padding-left:140px">
+		<div class="leftcol1" <?php if($r["opitonchoosen"]==2){	?>style="margin:20px 0px 20px 0;<?php } else { ?>style="margin:20px 0px 20px 0;<?php } ?>padding-left:140px">
 		<a class="link" href="leaderboard.php">LeaderBoard</a>
 		<a style="width:148px" class="link" href="specialoffer.php">Offers</a>
 	
@@ -129,11 +129,11 @@ unset($_SESSION['firsttime']);
 	<?php
 		if ($r["isapproved"]==1){
 	?>
-	<div class="leftcol1" style="margin:20px 0px 60px 0">
+	<div class="leftcol1" <?php if($r["opitonchoosen"]==2){	?>style="margin:20px 0px 20px 0;<?php } else { ?>style="margin:20px 0px 20px 0;<?php } ?>padding-left:30px">
 	
 <p>Get maximum votes and WIN</p>
 <br/>
-	<a class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
+	<a style="margin-left:40px" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
 		<a class="link" target="_blank" href="http://twitter.com/intent/tweet?text=Vote-for-me-and-make-me-win&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 	
 	</div>
