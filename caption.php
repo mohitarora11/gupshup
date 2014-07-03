@@ -17,6 +17,9 @@ if($_SESSION["userid"]){
 		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
+	else{
+		returnuser($_SESSION["userid"]);
+	}
 }
 include_once('header.php');
 ?>
