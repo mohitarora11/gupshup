@@ -149,13 +149,16 @@ function returnuser($fbid){
 	$r = $q->fetch(PDO::FETCH_ASSOC);
 	if($r["opitonchoosen"]==1){
 		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+		exit();
 	}
 	else if($r["opitonchoosen"]==2){
 		if($r["caption"]!=''){
 			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+			exit();
 		}
 		else{
 			header("Location: ".$GLOBALS['url']."caption.php?PHPSESSID=".session_id()); /* Redirect browser */
+			exit();
 		}
 	}
 }
