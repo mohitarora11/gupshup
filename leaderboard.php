@@ -4,7 +4,7 @@ include_once('app_config.php');
 include_once('sql.php');
 
 include_once ('header.php');
-$_SESSION["userid"] = '111';
+//$_SESSION["userid"] = '111';
 if($_SESSION["userid"]){
 }else{
 	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */

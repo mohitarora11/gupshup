@@ -1,5 +1,5 @@
 <?php
-
+include_once('../db_connection.php');
 /*
  * DataTables example server-side processing script.
  *
@@ -43,10 +43,10 @@ $columns = array(
 
 // SQL server connection information
 $sql_details = array(
-	'user' => 'root',
-	'pass' => '',
-	'db'   => 'atableforyou',
-	'host' => '127.0.0.1'
+	'user' => $dbuser,
+	'pass' => $dbpass,
+	'db'   => $dbname,
+	'host' => $dbhost
 );
 
 

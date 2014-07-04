@@ -16,4 +16,3 @@ $rtn=array();
 	echo json_encode($rtn);
 }
 }
-?>
