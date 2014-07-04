@@ -13,7 +13,7 @@ include_once ('header.php');
 
 Avail special privileges exclusive to <br>
 
-American Express customers
+American Express&reg; customers
 
 
 <div class="spofld">

@@ -26,7 +26,7 @@ echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=nor
 echo $row['fname'];
 echo'</u><br><b>';
 echo $row['count'];
-echo 'Votes</b></li>';
+echo 'Vote(s)</b></li>';
 }?>
 
 

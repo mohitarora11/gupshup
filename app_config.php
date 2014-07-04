@@ -11,4 +11,3 @@ define("SCOPE","email,publish_actions"); // comma seperate values
 define("DOMAIN","digiqom.com");
 define("BASEURL","//www.digiqom.com/aexp/atableforappflow/");
 define("TITLE","A Table for Champions");
-

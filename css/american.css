@@ -34,7 +34,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 }
 .champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:65px; font-weight:normal; margin-bottom:38px;  }
 
-.pastry {   background: url("../images/pastry.jpg") no-repeat scroll 0 0;
+.pastry {   background: url("../images/pastry_.jpg") no-repeat scroll 0 0;
     height: 426px;
     margin: 30px auto 0;
     width: 647px;}
@@ -88,7 +88,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 	width:400px;
 	height:28px;
 }
-
+#browse i{font-size:15px;text-decoration:none}
  input[type="submit"],a.link{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
 	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;}
 a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none;font-size:17px;float:left}

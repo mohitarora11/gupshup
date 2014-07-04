@@ -18,7 +18,7 @@ if(!isset($_SESSION["userid"])){
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
 <meta name="og:title" content="I have participated in the American Express 'A Table for You' contest. Vote for me and make me win!" />
 <meta name="og:description" content="A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win" />
-<meta name="og:image" content="https:<?php echo BASEURL?>images/pastry.jpg/" />
+<meta name="og:image" content="https:<?php echo BASEURL?>images/pastry_.jpg/" />
 <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
 </head>
 <body>
@@ -70,7 +70,7 @@ unset($_SESSION['firsttime']);
 			message: "I have participated in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry",
 			name: 'A table for',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
-			picture: 'https:'+SC.BASEURL+'images/pastry.jpg',
+			picture: 'https:'+SC.BASEURL+'images/pastry_.jpg',
 			caption: "A table for CHAMPIONS",		
 			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
@@ -107,7 +107,7 @@ unset($_SESSION['firsttime']);
 				At <?php echo $r["location"]?>
 				<?php	}else{ ?><br/><br/><br/><br/><br/><br/><br/>
 				<strong style="font-size:80px"><?php echo $r["cmt"];?></strong>
-				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
+				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
 															participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 				<?php	} ?>
 			</p>
@@ -117,7 +117,7 @@ unset($_SESSION['firsttime']);
 			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 		<?php } ?>
 		
-			<!--<img src="images/pastry.jpg" width="210" height="210"  />-->
+			<!--<img src="images/pastry_.jpg" width="210" height="210"  />-->
 		
 		</div>
 		<div class="leftcol1" <?php if($r["opitonchoosen"]==2){	?>style="margin:20px 0px 20px 0;<?php } else { ?>style="margin:20px 0px 20px 0;<?php } ?>padding-left:140px">
@@ -134,7 +134,7 @@ unset($_SESSION['firsttime']);
 <p>Get maximum votes and WIN</p>
 <br/>
 	<a style="margin-left:40px" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
-		<a class="link" target="_blank" href="http://twitter.com/intent/tweet?text=Vote-for-me-and-make-me-win&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
+		<a class="link" target="_blank" href="http://twitter.com/intent/tweet?text=I participated in A Table For Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 	
 	</div>
 	
