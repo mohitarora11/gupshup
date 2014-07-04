@@ -4,13 +4,11 @@ if ( isset($_REQUEST['PHPSESSID'])){
 }
 include_once('app_config.php');
 include_once('sql.php');
-if($_SESSION["userid"]){    
+if($_SESSION["userid"]){
+	$q = getjodifromfbid($_SESSION['userid']);
+	$r = $q->fetch(PDO::FETCH_ASSOC);
 	if($_SERVER["REQUEST_METHOD"] == "POST"){ 	
-		$q = getjodifromfbid($_SESSION['userid']);
-		$r = $q->fetch(PDO::FETCH_ASSOC);
-		
 		if($r["opitonchoosen"]==2){
-			
 			savecaption($_SESSION['userid'],$_POST["location"],$_POST["caption"]);
 		}
 		$_SESSION["firsttime"] = true;
@@ -18,7 +16,17 @@ if($_SESSION["userid"]){
 		exit();
 	}
 	else{
-		returnuser($_SESSION["userid"]);
+		if($r["opitonchoosen"]==2){
+			if($r["caption"]!=''){
+				header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+				exit();
+			}
+			
+		}else{
+			header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
+			exit();
+		}
+		
 	}
 }
 include_once('header.php');
