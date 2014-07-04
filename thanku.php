@@ -27,11 +27,13 @@ if(!isset($_SESSION["userid"])){
 	$r = $sql->fetch(PDO::FETCH_ASSOC);
 	$pk = $r["id"];
 ?>
+<div id="opaque"></div>
+<div id="fb-root"></div>
 <?php if(isset($_SESSION["firsttime"]))
 {
 unset($_SESSION['firsttime']);
 ?>
-<div id="fb-root"></div>
+
 <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -60,18 +62,45 @@ unset($_SESSION['firsttime']);
     </script>
 	
 	<?php
-	}
+	}else {
 	?>
+	<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+			appId      : '<?php echo APPID?>',
+			xfbml      : true,
+			version    : 'v2.0'
+        });
+		
+		FB.getLoginStatus(function(r){
+			if(r.status === 'connected') {
+				
+			}else {
+				FB.login(function(){
+					
+				},{scope: SC.SCOPE});
+			}
+		});
+    };
+	
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+    </script>
+<?php } ?>
 	<script>
 	function fbfeed(o,cb){
 	try{FB.Canvas.scrollTo(0,0);}catch(e){}
 		var o = {};
 		o.feedObj = {
 			message: "I have participated in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry",
-			name: 'A table for',
+			name: 'A Table For',
 			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
 			picture: 'https:'+SC.BASEURL+'images/pastry_.jpg',
-			caption: "A table for CHAMPIONS",		
+			caption: "A Table For CHAMPIONS",		
 			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
 		o.path = '/me/feed/';
@@ -107,14 +136,14 @@ unset($_SESSION['firsttime']);
 				At <?php echo $r["location"]?>
 				<?php	}else{ ?><br/><br/><br/><br/><br/><br/><br/>
 				<strong style="font-size:80px"><?php echo $r["cmt"];?></strong>
-				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at Cyber Hub to
+				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to
 															participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 				<?php	} ?>
 			</p>
 		<br/>
 		<?php if($r["opitonchoosen"]==2){ ?>
 			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
+			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 		<?php } ?>
 		
 			<!--<img src="images/pastry_.jpg" width="210" height="210"  />-->

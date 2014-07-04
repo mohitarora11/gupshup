@@ -112,8 +112,9 @@ var Custom = {
 	}
 }
 
-/*$(document).ready(function(){
-	Custom.init();
+$(document).ready(function(){
+	Custom.init();		
+		try{$('#opaque').hide();}catch(e){}
 	});
-*/
-window.onload = Custom.init;
+
+//window.onload = Custom.init;

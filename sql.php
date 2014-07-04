@@ -30,19 +30,25 @@ function saveuser($fbid,$email,$fname){
 /* for updating  user selected info */
 function saveoption($fbid,$optionchoosen,$choosenvalue,$resizedphoto){
 	global $conn;
-	if($optionchoosen == 1){ /*  user has choosen comment */
-		$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", cmt = '".$choosenvalue."',resizephotourl='".$resizedphoto."' where fbid= '".$fbid."'";
-	}else{
-		$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", photourl = '".$choosenvalue."',resizephotourl='".$resizedphoto."' where fbid= '".$fbid."'";
-	}
-	//mysqli_query($GLOBALS['conn'],$sql);
-	$res = $conn->prepare($sql);
-	$res->execute();
+	$j=getjodifromfbid($fbid);
+	$r = $j->fetch(PDO::FETCH_ASSOC);
+	if($r["opitonchoosen"]==0){
+		if($optionchoosen == 1){ /*  user has choosen comment */
+			$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", cmt = '".$choosenvalue."',resizephotourl='".$resizedphoto."' where fbid= '".$fbid."'";
+		}else{
+			$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", photourl = '".$choosenvalue."',resizephotourl='".$resizedphoto."' where fbid= '".$fbid."'";
+		}
+		//mysqli_query($GLOBALS['conn'],$sql);
+		$res = $conn->prepare($sql);
+		$res->execute();
 	
-	$sql = "Select id from user_atableforyou where fbid= '".$fbid."'";
-	$res = $conn->prepare($sql);
-	$res->execute();
-	return $res;
+		$sql = "Select id from user_atableforyou where fbid= '".$fbid."'";
+		$res = $conn->prepare($sql);
+		$res->execute();
+		return $res;
+	}else{	
+		returnuser($_SESSION["userid"]);
+	}
 	//return mysqli_query($GLOBALS['conn'],$sql);
 }
 

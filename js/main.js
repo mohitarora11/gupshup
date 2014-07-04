@@ -85,19 +85,21 @@ $(document).on('click','.cls_share',function(){
 	var o = {};
 		o.feedObj = {
 			message: $('#id_msg').val(),
-			name: 'A table for',
+			name: 'A Table For',
 			link: SC.CANVASURL+"vote.php?pk="+$('#id_msg').data('pk'),
 			picture: 'https:'+SC.BASEURL+$('#id_msg').data('img'),
-			caption: "A table for CHAMPIONS",		
+			caption: "A Table For "+$('#id_msg').data('cmt'),		
 			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
 		o.path = '/me/feed/';
+		$('#opaque').show();
 		FB.api(o.path,'POST',o.feedObj,function(r){
 			try{
 				//console.log(arguments);
+				$('#opaque').hide();
 				alert('We have shared your entry on your timeline. All the best!');
 			}catch(ee){
-				
+				$('#opaque').hide();
 			}
 			if(r != void 0){
 				//debug('fbShare'+ o.path , r);

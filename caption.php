@@ -31,7 +31,7 @@ if($_SESSION["userid"]){
 }
 include_once('header.php');
 ?>
-
+<div id="opaque" style="display:block"></div>
 <div class="champ" ><strong>CHAMPIONS</strong>
 	<div class="card"  >
 <br/><br/>
@@ -97,7 +97,7 @@ include_once('header.php');
 	</div>
 </div>
 <div class="bottomborder"></div>
-<script type="text/javascript" src="js/custom-form-elements.js"></script>
+
 <script type="text/javascript">
 function validatecaption(){
 	var cap = document.forms["captionform"]["caption"].value;
