@@ -143,7 +143,22 @@ function getuserfromid($id){
 	return $res;
 	//return mysqli_query($GLOBALS['conn'],$q);
 }
-
+/* returning user on respective pages */
+function returnuser($fbid){
+	$q = getjodifromfbid($fbid);
+	$r = $q->fetch(PDO::FETCH_ASSOC);
+	if($r["opitonchoosen"]==1){
+		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+	}
+	else if($r["opitonchoosen"]==2){
+		if($r["caption"]!=''){
+			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+		}
+		else{
+			header("Location: ".$GLOBALS['url']."caption.php?PHPSESSID=".session_id()); /* Redirect browser */
+		}
+	}
+}
 /* for getting user current rank */
 function currentposition(){
 	global $conn;

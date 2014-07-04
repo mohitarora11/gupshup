@@ -15,6 +15,9 @@ if(isset($_SESSION) && $_SESSION["userid"]){
 		    exit();
 		}
 	}
+	else{
+		returnuser($_SESSION["userid"]);
+	}
 }else{
 	header("Location: ".$GLOBALS['url']."index.php?PHPSESSID=".session_id()); /* Redirect browser */
 	exit();
