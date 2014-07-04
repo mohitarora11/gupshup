@@ -187,7 +187,7 @@ function leaderboard_bycaption(){
 
 	global $conn;
 	$q = "select v.userid,count(v.userid) as count,u.fname,u.fbid from vote_atableforyou v 
-join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 1
+join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 1 and u.isapproved=1
 group by(userid) order by 2 desc limit 4";
 	$res = $conn->prepare($q);
 	$res->execute();
@@ -197,7 +197,7 @@ function leaderboard_byselfie(){
 
 	global $conn;
 	$q = "select v.userid,count(v.userid) as count,u.fname,u.fbid from vote_atableforyou v 
-join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 2
+join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 2 and u.isapproved=1
 group by(userid) order by 2 desc limit 4";
 	$res = $conn->prepare($q);
 	$res->execute();
