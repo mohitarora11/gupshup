@@ -93,19 +93,30 @@ $(document).on('click','.cls_share',function(){
 		};
 		o.path = '/me/feed/';
 		$('#opaque').show();
-		FB.api(o.path,'POST',o.feedObj,function(r){
+		FB.api(o.path,'POST',o.feedObj,function(response){
+			
 			try{
-				//console.log(arguments);
+				if (!response || response.error) {
+					alert('Oops some Error occured. Kindly try again later');
+				} else {
+					alert('We have shared your entry on your timeline. All the best!');
+				}
 				$('#opaque').hide();
-				alert('We have shared your entry on your timeline. All the best!');
 			}catch(ee){
 				$('#opaque').hide();
 			}
+			
+			/*
+			
+				//console.log(arguments);
+				//$('#opaque').hide();
+				alert('We have shared your entry on your timeline. All the best!');
+			
 			if(r != void 0){
 				//debug('fbShare'+ o.path , r);
 				//cb(r);
 			}else{
 				//debug(arguments);
-			}
+			}*/
 		});	
 });
