@@ -10,7 +10,7 @@ include_once ('header.php');
 <div class="champsp"><strong>GREAT DEALS.</strong>
 
 <u>The Card of choice at CyberHub</u>
-_____Exclusive offers<sup>*</sup> for American Express&reg; cardmembers____
+Exclusive offers<sup>*</sup> for American Express&reg; cardmembers<br/>
 
 <div class="spofld">
 <ul>

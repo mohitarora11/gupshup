@@ -36,7 +36,7 @@ echo 'Vote(s)</b></li>';
 
 </ul>
 </div>
-<div class="cont">
+<div class="cont" style="margin-bottom:20px">
 
 Selfie Leaders
 
