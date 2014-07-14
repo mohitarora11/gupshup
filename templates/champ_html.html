@@ -1,6 +1,7 @@
 <div id="opaque"></div>
 <div class="champ"><strong>CHAMPIONS</strong>
-    American Express gives you a chance to win a gift voucher worth Rs. 2000
+   <span class="pull-left spntxt" > At Cyber Hub, we call it a Table For Gupshup, Fun, Brainstorming, Friends? How would you like to describe your table? Complete the phrase to  participate:</span>
+<!--
     <ul class="cyberhub">
         <li><b>1.</b>
             Add a caption or upload a selfie.</li>
@@ -14,7 +15,8 @@
             Win yourself a gift voucher
         </li>
     </ul>
-
+-->
+<br/><br/><br/>
     <form class="table1" method="post" style="margin-bottom:10px" action="champ.php" name="commentform" onsubmit="return validateform()">
         <input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>" />
         <strong>#ATABLEFOR
@@ -22,9 +24,14 @@
         <input name="comment" type="text" maxlength="30">
         <input name="optionchosen" value="1" type="hidden">
         <input name="" type="submit" value="Submit" />
-        <em>Submit a snappy caption that may feature in our outdoor advertsing at Cyberhub
-</em><span class="or">OR</span>
+        <span class="spntxt pull-left">Complete the caption and #ATableFor and we may just publish it in CyberHub
+</span>
+<br/><br/><br/>
+<span class="or">OR</span>
     </form>
+	<br/>
+	<span class="spntxt pull-left" style="margin-top:5px">Click a picture of yourself, aka selfie, tag its location, select a phrase and upload:</span>
+
     <form class="table1" style="margin-top:5px" enctype="multipart/form-data" method="post" action="champ.php" name="photoform" onsubmit="return validatephotoform()">
         <input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>" />
         <label id="browse">
@@ -32,14 +39,14 @@
 			<input name="file" type="file" id="id_file">
         </label>
         <input name="optionchosen" value="2" type="hidden">
-        <input name="" type="submit" value="Upload">
+        <input style="padding:3px 0" name="" type="submit" value="Upload">
 <br/>    
-    <em>Smile &amp; take a dazzling selfie, tag your location and upload the picture.
+    <em>upload a selfie,tag its location and select a caption.
 <!--If you do not chose a caption, your selfie will be be tagged with a
 caption of our choice!-->
 </em>
     </form>
-
+<span class="pull-left spntxt">6 American Express Gift Vouchers to be won every week</span>
 </div>
 
 <div class="bottomborder">

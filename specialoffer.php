@@ -7,14 +7,10 @@ include_once ('header.php');
 
 ?>
 
-<div class="champsp"><strong>SPECIAL OFFERS</strong>
+<div class="champsp"><strong>GREAT DEALS.</strong>
 
-<u>Exclusively for American Express&reg; Cardholders</u>
-
-Avail special privileges exclusive to <br>
-
-American Express&reg; customers
-
+<u>The Card of choice at CyberHub</u>
+_____Exclusive offers<sup>*</sup> for American Express&reg; cardmembers____
 
 <div class="spofld">
 <ul>
@@ -28,6 +24,8 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </ul>
 </div>
+<span class="pull-left spntxt" style="margin-bottom:5px">Now, participate in the contest and win gift vouchers worth Rs. 2000!</span>
+
 <?php if(isset($_SESSION["LOGINURL"])){
 ?>
 <a target="_top" href="<?php echo $_SESSION['LOGINURL'];?>" class="buttonsp">ENTER CONTEST</a>
@@ -38,8 +36,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </div>
 
 <div class="bottomborder"><p class="btext">
-Want these offers, but don't have an
-American Express&reg; Card? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
+Liked these deals but do not have an American Express Card?  <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply Now!</a>
 </p></div>
 
 

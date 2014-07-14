@@ -20,27 +20,37 @@ html {width:700px;margin:0 auto;}
 body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
 .bckno { background:none;}
-.table { width:418px; margin:93px 195px 25px; }
+.table {
+    margin: 93px 0 25px 188px;
+    width: 450px;
+}
 .table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right; }
 
 .champ { 
     font-family: libre_baskervilleregular;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: normal;
     margin: 0 auto;
     text-align: center;
     width: 600px;
-	height:610px;
+	height:620px;
+	
 }
-.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:65px; font-weight:normal; margin-bottom:38px;  }
+.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:50px; font-weight:normal; margin-bottom:20px;  }
 
 .pastry {   background: url("../images/pastry_.jpg") no-repeat scroll 0 0;
-    height: 426px;
-    margin: 30px auto 0;
+    height: 380px;
+    margin: 15px auto 0;
     width: 647px;}
 	
-	.pastry .offers { background:#073955; float:left; margin:30px 0 0 90px; padding:5px 10px; font-size:29px; }
-		.pastry .offers a { color:#fff; text-decoration:none;}
+	.pastry .offers,.off { background:#073955; float:left; margin:20px 0 0 200px; padding:5px 10px; font-size:29px; }
+		.pastry .offers a,.off a { color:#fff; text-decoration:none;}
+.off {
+    float: none;
+    font-size: 13px;
+    margin: 0;
+    padding: 2px 6px;
+}
 			.bottomborder {
     background: url("../images/bottom1.png") no-repeat scroll 27px center rgba(0, 0, 0, 0);
     height: 45px;
@@ -63,15 +73,21 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 .table1 { width:558px; margin:47px auto; }
 .table1 strong {color: #505151;
     display: block;
-    font-size: 36px; text-align:left; margin:0; }
-.table1 span { font-size:26px; display:block; text-align:left; width:100%; padding:10px 0; color:#505151; }
+    font-size: 18px;font-weight:bold; text-align:left; margin:0;float:left; width:auto;margin-right:5px;padding-top:10px}
+.table1 span { font-size:26px; display:block; text-align:left; width:100%; padding:10px 0; color:#505151;float:left }
 .table1 span.or{text-align:center}
 .table1 input[type="text"],#browse  { width:400px; background:#dedfe0; border:none; padding:10px 0px; }
-.table1 input[type="text"]{padding:10px 5px;float:left;font-size:15px }
+
+.table1 input[type="text"] {
+    float: left;
+    font-size: 15px;
+    padding: 10px 5px;
+    width: 276px;
+}
 #browse {
     
     display: block;
-     width:400px; background:#dedfe0; border:none; padding:1px 0;height:30px;float:left;position:relative;
+     width:427px; background:#dedfe0; border:none; padding:1px 0;height:30px;float:left;position:relative;
 }
 
 #browse input {
@@ -97,7 +113,7 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
 }
 #browse i ab{width:auto;color:#999}
  input[type="submit"],a.link{ width:120px; background:#3e513d; border:none; padding:5px 0; color:#fff; 
-	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;cursor:pointer;}
+	font-size:20px; font-family:'libre_baskervilleregular'; text-transform:uppercase;cursor:pointer;float:left}
 input[type="submit"]{background:#2a5665;}
 	a.link{width:auto;padding:5px;margin:5px 10px 5px 0px;text-decoration:none;font-size:17px;float:left}
 .table1 em { display: block;
@@ -118,6 +134,17 @@ input[type="submit"]{background:#2a5665;}
 .leaderboard li u { text-decoration:none; }
 .leaderboard li b { font:normal 15px arial; color:#fff; line-height:10px; }
 .leaderboard li img { margin:10px auto 2px; border:solid 1px #fff; }
+.leaderboard li tbr {
+    background: none repeat scroll 0 0 #fff;
+    color: #333;
+    float: left;
+    font-size: 17px;
+    height: 95px;
+    margin: 4px;
+    padding: 3px;
+    width: 90%;
+	overflow:hidden;
+}
 .fbtwt { width:300px; margin:10px auto; }
 .fbtwt a { border:none;}
 .fbtwt a img { margin-left:20px;}
@@ -134,8 +161,8 @@ input[type="submit"]{background:#2a5665;}
 }
 .champsp strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:45px; font-weight:normal; line-height:36px;   }
 .champsp a { text-decoration:none;}
-.champsp u { text-decoration:none; font:normal 16px arial; color:#333; display:block; margin-bottom:20px;margin-top:5px}
-.spofld { background:url(../images/lid.png) no-repeat; width:512px; height:481px; margin:10px 0 0 46px;  }
+.champsp u { text-decoration:none; font:normal 16px arial; color:#333; display:block; margin-bottom:10px;margin-top:5px}
+.spofld { background:url(../images/lid.png) no-repeat; width:480px; height:481px; margin:8px 0 0 46px; float:left }
 .spofld ul { list-style:none; margin:172px 0 0 120px; padding:0; float:left; }
 .spofld li { border-bottom:solid 1px #c4ab85; width:250px; padding:7px 0; float:left;    }
 .spofld li span { width:60px; float:left; }
@@ -214,3 +241,5 @@ input[type="submit"]{background:#2a5665;}
     width: 100%;
     z-index: 1000;
 }
+.pull-left{float:left}
+.spntxt{padding:5px !important;text-align:center !important;width:98.5% !important;font-size:16px !important;}

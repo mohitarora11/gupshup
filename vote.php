@@ -47,6 +47,7 @@ if(isset($_REQUEST['error']) ){
 
 	$helper = new FacebookRedirectLoginHelper(CANVASURL);
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
+	$_SESSION["LOGINURL"]= $LOGINURL;
 	include_once('home.php');
 	die('');
 }
@@ -80,6 +81,7 @@ if ($session){
 }else{
 	$helper = new FacebookRedirectLoginHelper(CANVASURL."vote.php?pk=".$_SESSION['pk']."&PHPSESSID=".session_id());
 	$LOGINURL = $helper->getLoginUrl(explode(',',SCOPE));
+	$_SESSION["LOGINURL"]= $LOGINURL;
 ?>
 	<script>
 		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
@@ -87,9 +89,10 @@ if ($session){
 <?php
 	//exit();
 }
-/*$_SESSION["voterid"] = '81355519';
+/*
+$_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 18;*/
+	$_SESSION["pk"] = 39;*/
 ?>
  <!doctype html>
 <html>
@@ -101,6 +104,31 @@ if ($session){
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
 </head>
 <body>
+<?php 	  
+				$sql = getuserfromid($_SESSION['pk']);	  
+				$r = $sql->fetch(PDO::FETCH_ASSOC);
+			
+	if ($r["isapproved"]==0){
+?>
+
+<div class="table">
+	<span></span>
+</div>
+<div class="champ" style="min-height:740px" >
+	<div class="card"  >
+		
+	<span class="spntxt pull-left" style="margin-top:10px;font-size:18px !important"> The submission is still under validation, Kindly come back to vote later</span>
+	
+	
+	<span class="spntxt pull-left" style="margin-top:130px;margin-bottom:30px">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+</span>
+	</div>
+	</div>
+<?php } else {
+
+?>
 <div class="table">
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
@@ -116,11 +144,8 @@ if ($session){
 
 <div class="champ" >
 	<div class="card"  >
-		<div class="leftcol1">
-			<?php 	  
-				$sql = getuserfromid($_SESSION['pk']);	  
-				$r = $sql->fetch(PDO::FETCH_ASSOC);
-			?>			
+		
+					
 			<p>
 				<?php 		
 					if($r["opitonchoosen"]==2){
@@ -132,47 +157,63 @@ if ($session){
 					<strong><?php echo $r["cmt"];?></strong>
 				<?php } ?>
 			</p>
+			
+			
+			
+			
 			<br/>
 				<?php if($r["opitonchoosen"]==2){ 
 						if ($r["isapproved"]==1)
 						{	
 				?>
-							<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
+							<img src="resizedimages/<?php echo $r['photourl']?>" width="120" height="120" />
 						<?php 
 							} 
 						?>
 				<?php } ?>
-			<br/><br/>
+			<br/>
+			
+			
+			
+			
 			<?php
-			if ($r["isapproved"]==1){	
+			
 				$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
 				if($q->rowCount()==0){
 			?>
+			<span class="spntxt pull-left">Here's what your friend has written. Like it? <br/>Vote now and help your friend to win!<br/><br/><br/></span>
 				<form method="post" action="vote.php">
 					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
-					<input type="Submit" value="vote"/>			
+					<input type="Submit" value="vote" style="margin-left:230px"/>			
 				</form>
+				
+				<span class="spntxt pull-left" style="margin-top:130px;">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+</span>
 				<?php
-				} else {
-					echo '<br/><br/><p>Thank You for voting.</p>';
-				}
-					//unset($_SESSION['pk']);
-					/*}else if(isset($_POST["userid"])){
-						echo '<br/><br/><p>Thank You for voting.</p>';
-						//unset($_SESSION['voted']);
-					}else{
-						echo '<br/><br/><p>You have already voted for this</p> ';
-					}*/
-				?>	
-			<?php } else {
-				echo '<p> The submission is still under validation, Kindly come back to vote later</p>';
-				}
-			?>
-			
-		</div>
+				} else { ?>
+					<span class="spntxt pull-left">Thank you for voting!<br/>
+					
+							Now its your turn to win vouchers from <br/>American Express&reg;.<br/><br/>
+							
+							Come, participate in the contest and, get lucky!<br/><br/> 
+							</span>
+					
+					<span class="off" style="display:inline;background:#2a5665;margin-top:10px">
+						<a href="index.php">Enter Contest</a>
+					</span>		
+				
+				<?php } ?>
+
+					
 	</div>
 </div>
+
+
+<?php } ?>	
+
 <div class="bottomborder"></div>
 <?php
 	include_once ('footer.html');

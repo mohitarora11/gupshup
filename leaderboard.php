@@ -12,6 +12,9 @@ if($_SESSION["userid"]){
 ?>
 
 <div class="champ"><strong class="marbot">LEADERS</strong>
+
+<span class="spntxt pull-left" style="font-size:18px !important">Entries which are leading the contest</span>
+<br/><br/>
 <div class="cont">
 Caption Leaders
 
@@ -22,7 +25,8 @@ Caption Leaders
 	while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 {
 
-echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+//echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr>';
 echo $row['fname'];
 echo'</u><br><b>';
 echo $row['count'];
@@ -43,16 +47,17 @@ Selfie Leaders
 	while ($row = $sql->fetch(PDO::FETCH_ASSOC))
 {
 
-echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+//echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
+echo '<li><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height="90" /><u>';
 echo $row['fname'];
 echo'</u><br><b>';
 echo $row['count'];
 echo 'Votes</b></li>';
 }?>
 </ul>
-<br />
 
-<a class="link" style="margin-left:250px" href="thanku.php">Go Back</a>
+
+<a class="link" style="margin-left:250px;margin-top:40px" href="thanku.php">Go Back</a>
 
 </div>
 Winners will be declared every Monday!
