@@ -95,7 +95,12 @@ include_once('header.php');
 			<img src="resizedimages/<?php echo $r['resizephotourl']?>"  style="margin-right:10px;" />
 		</div>
 	</div>
-</div>
+<span class="pull-left spntxt" style="margin-top:120px">
+        Want these offers, but don't have an
+American Express&reg; Card? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
+    </span>
+	
+	</div>
 <div class="bottomborder"></div>
 
 <script type="text/javascript">

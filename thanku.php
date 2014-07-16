@@ -192,7 +192,7 @@ Remember, the more you share, the more your chances to win.
 	
 	<span class="spntxt pull-left" style="margin-top:30px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
-		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=I participated in A Table For Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
+		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in 'A Table For' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
 	
@@ -231,6 +231,10 @@ Remember, the more you share, the more your chances to win.
 	Six gift vouchers to be won every week! 
 
 	</span>
+	<span class="spntxt pull-left" ><br/>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#073955"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+</span>
 	<?php } ?>
 	
 </div>

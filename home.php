@@ -9,7 +9,7 @@ include ('header.php');
 
 <div class="offers"><a href="<?php echo $LOGINURL;?>" target="_top">Enter contest</a></div>
 </div>
-<span class="pull-left" style="font-size:17px;padding:5px;line-height:26px">
+<span class="pull-left" style="font-size:16px;padding:5px;line-height:26px">
 If you are an American Express Cardmember, explore special deals at Cyber Hub, Gurgaon. <span class="off"><a href="specialoffer.php">OFFERS</a></span>
 <span>
 </div>
