@@ -3,7 +3,7 @@ include ('header.php');
 ?>
 
 <div class="champ"><strong>CHAMPIONS</strong>
-<span class="pull-left spntxt" >American Express, the Card of choice at Cyber Hub, Gurgaon, brings to you an opportunity to win gift vouchers. <br/><span style="color:#069">Participate, share with friends 
+<span class="pull-left spntxt" >American Express, the Card of choice at Cyber Hub, Gurgaon, brings to you an opportunity to win American Express Gift Card. <br/><span style="color:#069">Participate, share with friends 
 & get a chance to win</span>.<br/>Six winners to be announced every week!</span>
 <div class="pastry pull-left">
 

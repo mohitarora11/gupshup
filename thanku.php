@@ -173,7 +173,7 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		if($r["opitonchoosen"]==2){
 	?>
 		<?php echo $r["caption"];?>
-		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
 	<?php } else { ?>
 		<?php echo $r["cmt"];?>
 		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>

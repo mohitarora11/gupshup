@@ -7,9 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dest  = imagecreatefrompng('images/img2.png');
     $image = new SimpleImage();
     $image->load($_FILES["file"]["tmp_name"]);
-    if ($image->getWidth() > 200 && $image->getHeight() > 200) {
+    if ($image->getWidth() > 500 && $image->getHeight() > 500) {
         $resizedphotourl = 'resize_' . time() . $_FILES["file"]["name"];
-        $image->resize(210, 210);
+        $image->resize(500, 500);
         $i = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'resizedimages' . DIRECTORY_SEPARATOR . $resizedphotourl;
         $image->save($i);
         $srcimg = new SimpleImage();
@@ -25,6 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         imagedestroy($dest);
         imagedestroy($srcimg->image);
     } else {
-       echo "Please upload image of size more than 200X200";
+       echo "Please upload image of size more than 500x500";
     }
 }

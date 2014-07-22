@@ -46,23 +46,46 @@ include_once('header.php');
 			<li class="divselect">
 				<select name="location" class="styled">
 				<option value="">select location </option>
-				<option>Oh! Calcutta</option>
-				<option>Olive Bistro</option>
-				<option>Panchvati Gaurav  </option>
-				<option>Pita Pit </option>
-				<option>Pizza Hut Delivery</option>
-				<option>Raasta</option>
-				<option>Red Mango  </option>
-				<option>Rred Hot  </option>
-				<option>Soda Bottle Opener  </option>
-				<option>Soi 7  </option>
-				<option>Sutra Gastropub</option>
-				<option>Starbucks</option>
-				<option>The Beer Cafe </option>
-				<option>The Wine Company</option>
-				<option>Vaango  </option>
-				<option>Yogito </option>
-				<option>Zambar </option>
+				<option>Al Zaitoon </option>
+<option>Angels in My Kittchen </option>
+<option>The Beer Cafe </option>
+<option>Bubble Teas</option>
+<option>Cafe DT </option>
+<option>Café Delhi Heights</option>
+<option>California Pizza </option>
+<option>Canton Spice </option>
+<option>Chai Point </option>
+<option>Dhaba (by Claridges) </option>
+<option>Dunkin' Donuts </option>
+<option>Haldiram's</option>
+<option>Hard Rock Cafe</option>
+<option>Imperfecto</option>
+<option>Italiano  </option>
+<option>Joost </option>
+<option>KFC </option>
+<option>Kebab Express   </option>
+<option>Kings Kulfi  </option>
+<option>Made in Punjab  </option>
+<option>McDonald's  </option>
+<option>Nando's  </option>
+<option>Oh! Calcutta</option>
+<option>Olive Bistro</option>
+<option>Panchvati Gaurav  </option>
+<option>Pita Pit </option>
+<option>Pizza Hut Delivery</option>
+<option>Raasta</option>
+<option>Red Mango  </option>
+<option>Rred Hot  </option>
+<option>Soda Bottle Opener  </option>
+<option>Soi 7  </option>
+<option>Sutra Gastropub</option>
+<option>Starbucks</option>
+<option>The Beer Cafe </option>
+<option>The Wine Company</option>
+<option>Vaango  </option>
+<option>Yogito </option>
+<option>Zambar </option>
+
 				</select>
 			</li>
 
@@ -92,7 +115,7 @@ include_once('header.php');
 			</form>
 		</div>
 		<div class="rytimg">		
-			<img src="resizedimages/<?php echo $r['resizephotourl']?>"  style="margin-right:10px;" />
+			<img src="resizedimages/<?php echo $r['resizephotourl']?>"   style="margin-right:10px;width:300px;height:300px" />
 		</div>
 	</div>
 	

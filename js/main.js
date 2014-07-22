@@ -13,7 +13,7 @@ var x = document.forms["commentform"]["comment"].value;
 function validatephotoform(){
 var x = document.forms["photoform"]["file"].value;
     if (x == null || x == "") {
-        alert("Select the selfie to be uplodaed");
+        alert("Select the selfie to be uploaded");
         return false;
     }
 	else{
@@ -41,8 +41,8 @@ $("#id_file").change(function(e) {
         img = new Image();
         img.onload = function() {
 		
-			if( this.width < 210 || this.height < 210 ){
-               alert("Please upload image greater than 210X210");
+			if( this.width < 500 || this.height < 500 ){
+               alert("Please upload image greater than 500x500px");
 			   document.getElementById('file_url').innerHTML='';
 			   $('#id_file').val('');
 			   return false;
