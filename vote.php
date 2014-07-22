@@ -92,9 +92,10 @@ if ($session){
 /*
 $_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 39;*/
+	$_SESSION["pk"] = 41;*/
+	
 ?>
- <!doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -171,10 +172,7 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 							} 
 						?>
 				<?php } ?>
-			<br/>
-			
-			
-			
+			<br/>	
 			
 			<?php
 			
@@ -188,10 +186,7 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 					<input type="Submit" value="vote" style="margin-left:230px"/>			
 				</form>
 				
-				<span class="spntxt pull-left" <?php if ($r["opitonchoosen"]==2) { ?>style="margin-top:70px;"<?php } else {?>style="margin-top:150px;"<?php } ?>>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
-If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
-</span>
+				
 				<?php
 				} else { ?>
 					<span class="spntxt pull-left">Thank you for voting!<br/>
@@ -201,7 +196,7 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 							Come, participate in the contest and, get lucky!<br/><br/> 
 							</span>
 					
-					<span class="off" style="display:inline;background:#2a5665;margin-top:10px">
+					<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:10px;padding:10px">
 						<a href="index.php">Enter Contest</a>
 					</span>		
 				
@@ -214,7 +209,14 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 
 <?php } ?>	
 
-<div class="bottomborder"></div>
+<div class="bottomborder">
+
+<span class="offer" <?php if ($r["opitonchoosen"]==2) { ?>style="margin-top:70px;"<?php } else {?>style="margin-top:150px;"<?php } ?>>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+</span>
+
+</div>
 <?php
 	include_once ('footer.html');
 ?>

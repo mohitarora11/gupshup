@@ -6,13 +6,15 @@ include_once('app_config.php');
 include_once ('header.php');
 
 ?>
-
-<div class="champsp"><strong>GREAT DEALS.</strong>
+<style type="text/css">
+footer ul{padding-top:4px}
+</style>
+<div class="champsp"><strong>GREAT DEALS</strong>
 
 <u>The Card of choice at CyberHub</u>
 Exclusive offers<sup>*</sup> for American Express&reg; cardmembers<br/>
 
-<div class="spofld" style="height:475px">
+<div class="spofld" style="height:465px">
 <ul>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
 Rewards&reg; Points for every Rs. 100 Spent</p></li>
@@ -35,7 +37,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 <?php } ?>
 </div>
 
-<div class="bottomborder"><p class="btext" style="font-size:16px;">
+<div class="bottomborder"><p class="offer">
 Liked these deals but do not have an American Express Card?  <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply Now!</a>
 </p></div>
 

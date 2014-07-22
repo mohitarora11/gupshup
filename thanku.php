@@ -125,7 +125,7 @@ unset($_SESSION['firsttime']);
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
 -->
-<div class="table"><span></span></div>	
+<div class="table" style="height:15px"><span></span></div>	
 <div class="champ" style="min-height:740px">
 <br/><br/>
 
@@ -156,10 +156,7 @@ To win the contest, remember to share your entry with friends as soon as it is u
 
 <a class="link" href="leaderboard.php" style="margin-left:60px">Click to see what's trending in the contest</a>
 
-		<span class="spntxt pull-left"style="margin-top:30px;margin-bottom:30px">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
-If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
-</span>
+		
 		
 		
 		
@@ -186,44 +183,13 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 	<span class="spntxt pull-left" style="margin-top:20px;font-size:18px !important">
 	Great! You entry is now live.<br/> Time to share this with your friends. <br/><br/>
 Remember, the more you share, the more your chances to win. 
-</span>
-
-	
-	
+</span>	
 	<span class="spntxt pull-left" style="margin-top:30px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
 		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in 'A Table For' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
-	
-	
-	<!--
-	<div class="leftcol1">
-		
-		<p>
-				<?php 		
-					if($r["opitonchoosen"]==2){
-				?>
-				<strong><?php echo $r["caption"];?></strong>
-				<br/>
-				At <?php echo $r["location"]?>
-				<?php	}else{ ?><br/>
-				<strong style="font-size:80px"><?php echo $r["cmt"];?></strong>
-				<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to
-															participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
-				<?php	} ?>
-			</p>
-		<br/>
-		<?php if($r["opitonchoosen"]==2){ ?>
-			<img src="resizedimages/<?php echo $r['photourl']?>" width="250" height="250" />
-			<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['photourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
-		<?php } ?>
-		
-		
-		
-		</div>-->
-		
-		
+			
 		<span class="spntxt pull-left" style="margin-top:30px">
 		<a style="margin-left:175px;background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
 	</span>
@@ -231,14 +197,18 @@ Remember, the more you share, the more your chances to win.
 	Six gift vouchers to be won every week! 
 
 	</span>
-	<span class="spntxt pull-left" ><br/>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#073955"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
-If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
-</span>
+	
 	<?php } ?>
 	
 </div>
-<div class="bottomborder"></div>
+<div class="bottomborder">
+
+	<span class="offer" ><br/>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#073955"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+</span>
+
+</div>
 <?php /*
 <hr/>
 <a href="#" onclick="javascript:postToFacebook();">Postwall</a>

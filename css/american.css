@@ -17,13 +17,20 @@
 
 
 html {width:700px;margin:0 auto;}
-body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
+body { width:700px; background:url(../images/base1.png) 0px -15px no-repeat; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
 .bckno { background:none;}
-.table {
+/*.table {
     margin: 93px 0 25px 188px;
     width: 450px;
+}*/
+.table {
+    height: 90px;
+    margin: 0;
+    padding: 58px 50px 5px;
+    width: 85%;
 }
+.table img{margin-left:155px;margin-top:20px}
 .table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right; }
 
 .champ { 
@@ -55,10 +62,21 @@ body { width:700px; background:url(../images/base1.png) no-repeat; margin:0 auto
     background: url("../images/bottom1.png") no-repeat scroll 27px center rgba(0, 0, 0, 0);
     height: 45px;
     width: 673px;
+	position:relative;
 }
+
+.bottomborder .offer {
+    bottom: 34px;
+    font-size: 15px;
+    left: 68px;
+    position: absolute;
+    text-align: center;
+    width: 84%;
+}
+
 			.nobg { background:none; height:0;}
-	footer {  height:40px; width:603px; margin:0 auto 70px;}
-		footer ul { width:384px; margin:0 auto; padding:18px 0 0 0; }
+	footer {  height:30px; width:603px; margin:0 auto 0px;}
+		footer ul { width:384px; margin:0 auto; padding:8px 0 0 0; }
 		footer li { display:inline; padding:0 14px; font-size:10px; text-align:center; line-height:20px; color:#000;}
 			footer li a { color:#000; text-decoration:none;}
 .lids { height:415px; margin:14px 60px 0; text-align:center; font-size:18px; font-weight:bold;}
@@ -159,9 +177,9 @@ input[type="submit"]{background:#2a5665;}
 	height:652px;
 	
 }
-.champsp strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:45px; font-weight:normal; line-height:36px;   }
+.champsp strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:40px; font-weight:normal; line-height:36px;   }
 .champsp a { text-decoration:none;}
-.champsp u { text-decoration:none; font:normal 16px arial; color:#333; display:block; margin-bottom:10px;margin-top:5px}
+.champsp u { text-decoration:none; font-size:16px ; color:#333; display:block; margin-bottom:10px;margin-top:5px}
 .spofld { background:url(../images/lid.png) no-repeat; width:480px; height:481px; margin:8px 0 0 46px; float:left }
 .spofld ul { list-style:none; margin:172px 0 0 120px; padding:0; float:left; }
 .spofld li { border-bottom:solid 1px #c4ab85; width:250px; padding:7px 0; float:left;    }
