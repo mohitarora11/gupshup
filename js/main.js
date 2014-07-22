@@ -22,7 +22,10 @@ var x = document.forms["photoform"]["file"].value;
 }
 function fileonchange(obj){
 document.getElementById('file_url').innerHTML = '';
+var k =[];
 if((/\.(gif|jpg|jpeg|tiff|png)$/i).test(obj.value)){	
+		k=obj.value;
+		
 		document.getElementById('file_url').innerHTML = obj.value;
 }
 else{

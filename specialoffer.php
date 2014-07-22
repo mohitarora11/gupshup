@@ -8,12 +8,12 @@ include_once ('header.php');
 ?>
 <style type="text/css">
 footer ul{padding-top:4px}
-.table{height:85px}
+
 </style>
-<div class="champsp"><strong>GREAT DEALS</strong>
+<div class="champ"><strong>GREAT DEALS</strong>
 You don’t just book a table for two, three or four. You book a table for love, romance, friendship, memories and many other great occasions. This is the spirit that American Express celebrates at Cyber Hub with 17 exciting offers on dining.<br/>
 
-<div class="spofld" style="height:459px">
+<div class="spofld" style="height:290px;overflow:hidden">
 <ul>
 <li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
 Rewards&reg; Points for every Rs. 100 Spent</p></li>
@@ -25,6 +25,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </ul>
 </div>
+<div style="clear:both"></div>
 <span class="pull-left spntxt" style="margin-bottom:5px">Now, participate in the contest and win American Express Gift Card worth Rs. 2000!</span>
 
 <?php if(isset($_SESSION["LOGINURL"])){
@@ -36,7 +37,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 <?php } ?>
 </div>
 
-<div class="bottomborder"><p class="offer">
+<div class="bottomborder"><span class="spntxt pull-left">
 Liked these deals but do not have an American Express Card?  <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply Now!</a>
 </p></div>
 

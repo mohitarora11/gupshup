@@ -11,4 +11,4 @@
 
 </head>
 <body>
-<div class="table"><img src="images/tablefor.png" width="298" height="59" alt=""><span></span></div>
+<div class="table"><img src="images/tablefor.png" alt=""><span></span></div>

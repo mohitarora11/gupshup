@@ -84,15 +84,15 @@ if ($session){
 	$_SESSION["LOGINURL"]= $LOGINURL;
 ?>
 	<script>
-		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
+//		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
 	</script>
 <?php
 	//exit();
 }
-/*
+
 $_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 41;*/
+	$_SESSION["pk"] = 47;
 	
 ?>
 <!doctype html>
@@ -115,23 +115,20 @@ $_SESSION["voterid"] = '81355519';
 <div class="table">
 	<span></span>
 </div>
-<div class="champ" style="min-height:740px" >
+<div class="champ"  >
 	<div class="card"  >
 		
-	<span class="spntxt pull-left" style="margin-top:10px;font-size:18px !important"> The submission is still under validation, Kindly come back to vote later</span>
+	<span class="spntxt pull-left" style="margin-top:70px;font-size:17px !important"> The submission is still under validation, Kindly come back to vote later</span>
 	
 	
-	<span class="spntxt pull-left" style="margin-top:130px;margin-bottom:30px">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
-If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
-</span>
+	
 	</div>
 	</div>
 <?php } else {
 
 ?>
 <div class="table">
-	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
+	<img src="images/tablefor.png" alt=""><span></span>
 </div>
 
 <?php
@@ -167,7 +164,7 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 						if ($r["isapproved"]==1)
 						{	
 				?>
-							<img src="resizedimages/<?php echo $r['photourl']?>" width="180" height="180" />
+							<img src="resizedimages/<?php echo $r['resizephotourl']?>" width="200" height="200" />
 						<?php 
 							} 
 						?>
@@ -179,11 +176,11 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 				$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
 				if($q->rowCount()==0){
 			?>
-			<span class="spntxt pull-left"><?php if ($r["opitonchoosen"]==1) { ?>Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/><br/><br/></span>
+			<span class="spntxt pull-left"><?php if ($r["opitonchoosen"]==1) { ?>Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/></span>
 				<form method="post" action="vote.php">
 					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
-					<input type="Submit" value="vote" style="margin-left:230px"/>			
+					<input type="Submit" value="vote" style="margin-left:375px;margin-top:10px"/>			
 				</form>
 				
 				
@@ -211,8 +208,8 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 
 <div class="bottomborder">
 
-<span class="offer" <?php if ($r["opitonchoosen"]==2) { ?>style="margin-top:70px;"<?php } else {?>style="margin-top:150px;"<?php } ?>>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
+<span class="spntxt pull-left">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
+		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">DEALS</a></span><br/>
 If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
 </span>
 

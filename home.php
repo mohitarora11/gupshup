@@ -3,17 +3,21 @@ include ('header.php');
 ?>
 
 <div class="champ"><strong>CHAMPIONS</strong>
-<span class="pull-left spntxt" >American Express, the Card of choice at Cyber Hub, Gurgaon, brings to you an opportunity to win American Express Gift Card. <br/><span style="color:#069">Participate, share with friends 
-& get a chance to win</span>.<br/>Six winners to be announced every week!</span>
-<div class="pastry pull-left">
+<span class="pull-left spntxt" >You don’t just book a table for two, three or four. You book a table for love, romance, friendship, memories and many other great occasions.This is the spirit that American Express celebrates at Cyber Hub,gurgaon with 17 exciting offers on dining. <br/><span style="color:#069">Participate, share with friends 
+& get a chance to win</span>.<br/></span>
+<div style="clear:both"></div>
+<div class="pastry">
 
 <div class="offers"><a href="<?php echo $LOGINURL;?>" target="_top">Enter contest</a></div>
 </div>
-<span class="pull-left" style="font-size:16px;padding:5px;line-height:26px">
-If you are an American Express Cardmember, explore special deals at Cyber Hub, Gurgaon. <span class="off"><a href="specialoffer.php">OFFERS</a></span>
+<span class="spntxt pull-left" style="color:#069"  >
+Six winners to be announced every week!</span>
+</div>
+<div class="bottomborder">
+<span class="spntxt pull-left" >
+If you are an American Express Cardmember, explore special deals at Cyber Hub, Gurgaon. <span class="off"><a href="specialoffer.php">DEALS</a></span>
 <span>
 </div>
-<div class="bottomborder"></div>
 <?php
 include ('footer.html');
 ?>

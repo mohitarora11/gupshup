@@ -115,15 +115,15 @@ include_once('header.php');
 			</form>
 		</div>
 		<div class="rytimg">		
-			<img src="resizedimages/<?php echo $r['resizephotourl']?>"   style="margin-right:10px;width:300px;height:300px" />
+			<img src="resizedimages/<?php echo $r['resizephotourl']?>"   style="margin-right:10px;width:330px;height:330px" />
 		</div>
 	</div>
 	
 	</div>
 <div class="bottomborder">
-<span class="offer">
+<span class="spntxt pull-left">
         Want these offers, but don't have an
-American Express&reg; Card?<br/> <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
+American Express&reg; Card? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
     </span>
 
 </div>

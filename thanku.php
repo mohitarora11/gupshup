@@ -125,36 +125,33 @@ unset($_SESSION['firsttime']);
 	<img src="images/tablefor.png" width="298" height="59" alt=""><span></span>
 </div>
 -->
-<div class="table" style="height:15px"><span></span></div>	
-<div class="champ" style="min-height:740px">
-<br/><br/>
+<div class="table" ><span></span></div>	
+<div class="champ" >
+
 
 <?php if ($r["isapproved"]==2){
 
 ?>
-<span class="spntxt pull-left" style="font-size:40px !important">Thank You<br/>for participating.</span>
+<span class="spntxt pull-left" style="font-size:30px !important">Thank You<br/>for participating.</span>
 
-<span class="spntxt pull-left" style="margin-top:50px;font-size:18px !important">Your entry had inappropriate content and has been deleted. Please refer to T&Cs for details.
+<span class="spntxt pull-left" style="margin-top:10px;font-size:18px !important">Your entry had inappropriate content and has been deleted. Please refer to T&Cs for details.
 
 <br/><br/>Participate in the contest next week!
 <br/>
 </span>
-<span class="spntxt pull-left" style="margin-top:100px;font-size:18px !important">
-If you are an American Express Cardmember, check out  special deals at Cyber Hub, Gurgaon. <span class="off"><a href="specialoffer.php">OFFERS</a></span> <br/> <br/>
-If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">NOW!</a>
-</span>
+
 	<?php
 		} else if ($r["isapproved"]==0){
 	?>
 
-<span class="spntxt pull-left" style="font-size:40px !important">Thank You<br/>for participating.</span>
+<span class="spntxt pull-left" style="font-size:30px !important">Thank You<br/>for participating.</span>
 	
 	
-	<span class="spntxt pull-left" style="margin-top:30px;">Your entry is in the moderation queue and will take few minutes to get published. </span>
-<span class="spntxt pull-left" style="margin-top:30px;margin-bottom:30px">
+	<span class="spntxt pull-left" style="margin-top:15px;">Your entry is in the moderation queue and will take few minutes to get published. </span>
+<span class="spntxt pull-left" style="margin-top:10px;margin-bottom:15px">
 To win the contest, remember to share your entry with friends as soon as it is up!</span>
-
-<a class="link" href="leaderboard.php" style="margin-left:60px">Click to see what's trending in the contest</a>
+<div style="clear:both"></div>
+<a class="link" href="leaderboard.php" style="float:none">Click to see what's trending in the contest</a>
 
 		
 		
@@ -167,34 +164,34 @@ To win the contest, remember to share your entry with friends as soon as it is u
 	?>
 	
 <span class="spntxt pull-left" style="font-size:30px !important">#AtableFor</span>	
-	<br/>
-	<span class="spntxt pull-left" style="font-size:60px !important">
+	
+	<span class="spntxt pull-left" style="font-size:35px !important">
 	<?php 		
 		if($r["opitonchoosen"]==2){
 	?>
 		<?php echo $r["caption"];?>
-		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'Atablefor' Contest. Help me win this contest by voting for my entry"/>
 	<?php } else { ?>
 		<?php echo $r["cmt"];?>
-		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to participate in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry"/>
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to participate in the American Express 'Atablefor' Contest. Help me win this contest by voting for my entry"/>
 		<?php } ?>
 	
 	</span>	
-	<span class="spntxt pull-left" style="margin-top:20px;font-size:18px !important">
+	<span class="spntxt pull-left" style="margin-top:20px;">
 	Great! You entry is now live.<br/> Time to share this with your friends. <br/><br/>
 Remember, the more you share, the more your chances to win. 
 </span>	
-	<span class="spntxt pull-left" style="margin-top:30px">
+	<span class="spntxt pull-left" style="margin-top:20px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
 		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in 'A Table For' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
 			
-		<span class="spntxt pull-left" style="margin-top:30px">
-		<a style="margin-left:175px;background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
+		<span class="spntxt pull-left" style="margin-top:20px">
+		<a style="background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
 	</span>
-	<span class="spntxt pull-left" style="margin-top:20px;font-size:18px !important">
-	Six gift vouchers to be won every week! 
+	<span class="spntxt pull-left" style="margin-top:15px;font-size:15px !important">
+	Six gift cards to be won every week! 
 
 	</span>
 	
@@ -203,11 +200,11 @@ Remember, the more you share, the more your chances to win.
 </div>
 <div class="bottomborder">
 
-	<span class="offer" ><br/>If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#073955"><a href="specialoffer.php">OFFERS</a></span><br/><br/>
-If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
+<span class="spntxt pull-left" >
+If you are an American Express Cardmember, check out  special deals at Cyber Hub, Gurgaon. 
+<span class="off"><a href="specialoffer.php">OFFERS</a></span> <br/>
+If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">NOW!</a>
 </span>
-
 </div>
 <?php /*
 <hr/>
