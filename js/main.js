@@ -84,7 +84,7 @@ $("#id_file").change(function(e) {
 
 $('.popup').on('click',function(){
 
-$( "#"+$(this).data('href')).dialog({ width: '800',height:'700', resizable: false,
+$( "#"+$(this).data('href')).dialog({ width: '800',height:'500', resizable: false,
 
 modal: true });
 
@@ -113,7 +113,7 @@ $(document).on('click','.cls_share',function(){
 				if (!response || response.error) {
 					alert('Oops some Error occured. Kindly try again later');
 				} else {
-					alert('We have shared your entry on your timeline. All the best!');
+					//alert('We have shared your entry on your timeline. All the best!');
 				}
 				$('#opaque').hide();
 			}catch(ee){

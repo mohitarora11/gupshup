@@ -92,7 +92,7 @@ if ($session){
 /*
 $_SESSION["voterid"] = '12310';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 52;
+	$_SESSION["pk"] = 54;
 */
 ?>
 <!doctype html>
@@ -128,7 +128,7 @@ $_SESSION["voterid"] = '12310';
 
 ?>
 <div class="table">
-	<img src="images/tablefor.png" alt=""><span></span>
+	<img src="images/tablefor_old.png" alt=""><span></span>
 </div>
 
 <?php
@@ -148,11 +148,11 @@ $_SESSION["voterid"] = '12310';
 				<?php 		
 					if($r["opitonchoosen"]==2){
 				?>
-					<strong><?php echo $r["caption"];?></strong>
+					<strong style="text-transform:uppercase"><?php echo $r["caption"];?></strong>
 					
 					At <?php echo $r["location"]?>
 				<?php }else{ ?>
-					<strong><?php echo $r["cmt"];?></strong>
+					<strong style="text-transform:uppercase"><?php echo $r["cmt"];?></strong>
 				<?php } ?>
 			</span>
 			
@@ -176,8 +176,17 @@ $_SESSION["voterid"] = '12310';
 				$q = isvoted($_SESSION["pk"],$_SESSION["voterid"]);		
 				if($q->rowCount()==0){
 			?>
-			<span class="spntxt pull-left"><?php if ($r["opitonchoosen"]==1) { ?>Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/></span>
-				<form method="post" action="vote.php">
+			<span class="spntxt pull-left">
+			<?php if ($r["fbid"] != $_SESSION["voterid"] ) {?>
+			
+			
+			<?php if ($r["opitonchoosen"]==1) { ?>
+			
+			Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/></span>
+			<?php }
+			?>
+
+			<form method="post" action="vote.php">
 					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
 					<input type="Submit" value="vote" style="margin-left:335px;margin-top:10px"/>			

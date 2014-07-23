@@ -29,8 +29,8 @@ body { width:900px; background:url(../images/background2.png) 0px -15px no-repea
     width: 89%;
 }
 .table img {
-    margin-left: 300px;
-    margin-top: 20px;
+    margin-left: 250px;
+    margin-top: 10px;
 }
 .table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right;margin: 10px 17px 0 0; }
 
@@ -44,7 +44,7 @@ body { width:900px; background:url(../images/background2.png) 0px -15px no-repea
 	height:465px;
 	
 }
-.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:37px; font-weight:normal; margin-bottom:10px;  }
+.champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:40px; font-weight:normal; margin-bottom:10px;  }
 
 .pastry {   background: url("../images/pastry_.jpg") no-repeat scroll 0 0;
     height: 250px;
@@ -196,13 +196,13 @@ input[type="submit"]{background:#2a5665;}
 }
 .spofld li { border-bottom:solid 1px #c4ab85; width:188px; padding:7px 0; float:left;    }
 .spofld li span { width:60px; float:left; }
-.spofld li p { padding:0 0 0 10px; margin:0; float:right; width:117px; font-size:11px; color:#000; text-align:left; }
+.spofld li p { padding:0 0 0 10px; margin:0; float:right; width:117px; font-size:13px; color:#000; text-align:left; }
 .ovrwrt { margin:77px 195px 8px; }
 .buttonsp {
     background: none repeat scroll 0 0 #283e28;
     color: #fff;
     font-family: libre_baskervilleregular;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     padding: 4px 9px;
 }

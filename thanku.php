@@ -156,10 +156,6 @@ To win the contest, remember to share your entry with friends as soon as it is u
 <div style="clear:both"></div>
 <a class="link" href="leaderboard.php" style="float:none">Click to see what's trending in the contest</a>
 
-		
-		
-		
-		
 	<?php } ?>
 	
 	<?php
@@ -173,6 +169,7 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		if($r["opitonchoosen"]==2){
 	?>
 		<strong><?php echo $r["caption"];?></strong>
+		<img src="resizedimages/<?php echo $r['resizephotourl']?>" width="120" height="120" />
 		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my entry"/>
 	<?php } else { ?>
 		<strong><?php echo $r["cmt"];?></strong>
@@ -180,17 +177,17 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		<?php } ?>
 	
 	</span>	
-	<span class="spntxt pull-left" style="margin-top:20px;">
+	<span class="spntxt pull-left" style="margin-top:10px;">
 	Great! You entry is now live.<br/> Time to share this with your friends. <br/><br/>
 Remember, the more you share, the more your chances to win. 
 </span>	
-	<span class="spntxt pull-left" style="margin-top:20px">
+	<span class="spntxt pull-left" style="margin-top:15px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
-		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in '#ATableFor' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
+		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in '%23ATableFor' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
 			
-		<span class="spntxt pull-left" style="margin-top:20px">
+		<span class="spntxt pull-left" style="margin-top:15px">
 		<a style="background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
 	</span>
 	<span class="spntxt pull-left" style="margin-top:15px;font-size:15px !important">
@@ -203,7 +200,7 @@ Remember, the more you share, the more your chances to win.
 </div>
 <div class="bottomborder">
 
-<span class="spntxt pull-left" >
+<span class="spntxt pull-left" style="display:none" >
 Want these offers, but don't have an
 American Express&reg; Card?.<span class="off"><a href="specialoffer.php">OFFERS</a></span>
 If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">NOW!</a>

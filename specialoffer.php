@@ -11,7 +11,7 @@ footer ul{padding-top:4px}
 
 </style>
 <div class="champ"><strong>GREAT DEALS</strong>
-The Card of your choice at Cyber Hub<br/>Exclusive offers for American Express Cardmembers
+The Card of your choice at Cyber Hub<br/><span style="font-size:12px">Exclusive offers for American Express&reg; Cardmembers</span>
 
 <div class="spofld" style="overflow:hidden">
 <ul>
