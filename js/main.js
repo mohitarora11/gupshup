@@ -50,7 +50,7 @@ $("#id_file").change(function(e) {
         img.onload = function() {
 		
 			if( this.width < 500 || this.height < 500 ){
-               $('.errormsg').html("Please upload image greater than 500x500px");
+               $('.errormsg').html("Please upload image of higher dimension");
 			   document.getElementById('file_url').innerHTML='';
 			   $('#id_file').val('');
 			   return false;

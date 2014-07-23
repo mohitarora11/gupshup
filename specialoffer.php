@@ -36,7 +36,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 
 <div class="bottomborder"><span class="spntxt pull-left">
 Liked these deals but do not have an American Express Card?  <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply Now!</a>
-</p></div>
+</div>
 
 
 <?php
