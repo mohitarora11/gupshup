@@ -12,6 +12,7 @@ if($_SESSION["userid"]){
 			savecaption($_SESSION['userid'],$_POST["location"],$_POST["caption"]);
 		}
 		$_SESSION["firsttime"] = true;
+		unset($_SESSION["caption"]);
 		header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
 		exit();
 	}
@@ -28,6 +29,7 @@ if($_SESSION["userid"]){
 		}
 		
 	}
+	$_SESSION["caption"] = true;
 }
 include_once('header.php');
 ?>
@@ -115,7 +117,8 @@ include_once('header.php');
 			</form>
 		</div>
 		<div class="rytimg">		
-			<img src="resizedimages/<?php echo $r['resizephotourl']?>"   style="margin-right:10px;width:330px;height:330px" />
+			<img src="resizedimages/<?php echo $r['resizephotourl']?>"   style="margin-right:10px;width:300px;height:300px" /><br/>
+			<a href="champ.php?PHPSESSID=<?php echo session_id(); ?>" >Change Image</a>
 		</div>
 	</div>
 	

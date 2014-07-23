@@ -32,7 +32,8 @@ function saveoption($fbid,$optionchoosen,$choosenvalue,$resizedphoto){
 	global $conn;
 	$j=getjodifromfbid($fbid);
 	$r = $j->fetch(PDO::FETCH_ASSOC);
-	if($r["opitonchoosen"]==0){
+	if($r["opitonchoosen"]==0 || isset($_SESSION["caption"])){
+		unset($_SESSION["caption"]);
 		if($optionchoosen == 1){ /*  user has choosen comment */
 			$sql = "Update user_atableforyou set opitonchoosen = ".$optionchoosen.", cmt = '".$choosenvalue."',resizephotourl='".$resizedphoto."' where fbid= '".$fbid."'";
 		}else{
@@ -158,13 +159,15 @@ function returnuser($fbid){
 		exit();
 	}
 	else if($r["opitonchoosen"]==2){
-		if($r["caption"]!=''){
-			header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
-			exit();
-		}
-		else{
-			header("Location: ".$GLOBALS['url']."caption.php?PHPSESSID=".session_id()); /* Redirect browser */
-			exit();
+		if(!isset($_SESSION["caption"])){
+			if($r["caption"]!=''){
+				header("Location: ".$GLOBALS['url']."thanku.php?PHPSESSID=".session_id()); /* Redirect browser */
+				exit();
+			}
+			else{
+				header("Location: ".$GLOBALS['url']."caption.php?PHPSESSID=".session_id()); /* Redirect browser */
+				exit();
+			}
 		}
 	}
 }

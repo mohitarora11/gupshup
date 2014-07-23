@@ -92,7 +92,7 @@ if ($session){
 
 $_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 47;
+	$_SESSION["pk"] = 50;
 	
 ?>
 <!doctype html>
@@ -180,7 +180,7 @@ $_SESSION["voterid"] = '81355519';
 				<form method="post" action="vote.php">
 					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
-					<input type="Submit" value="vote" style="margin-left:375px;margin-top:10px"/>			
+					<input type="Submit" value="vote" style="margin-left:335px;margin-top:10px"/>			
 				</form>
 				
 				
@@ -193,7 +193,7 @@ $_SESSION["voterid"] = '81355519';
 							Come, participate in the contest and, get lucky!<br/><br/> 
 							</span>
 					
-					<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:10px;padding:10px">
+					<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
 						<a href="index.php">Enter Contest</a>
 					</span>		
 				
@@ -208,8 +208,9 @@ $_SESSION["voterid"] = '81355519';
 
 <div class="bottomborder">
 
-<span class="spntxt pull-left">If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. 
-		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">DEALS</a></span><br/>
+<span class="spntxt pull-left">Want these offers, but don't have an
+American Express&reg; Card?. 
+		<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">DEALS</a></span>
 If not, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">apply for a Card, NOW!</a> 
 </span>
 

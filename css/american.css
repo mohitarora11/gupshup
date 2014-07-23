@@ -15,7 +15,7 @@
 }
 
 html {width:900px;margin:0 auto;background:#fff}
-body { width:900px; /*background:url(../images/base1.png) 0px -15px no-repeat;*/background:#f2f2f2; margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
+body { width:900px; background:url(../images/background.png) 0px -15px no-repeat;/*background:#f2f2f2;*/ margin:0 auto; padding:0; font-family:libre_baskervilleregular;}
 * { margin:0; padding:0; list-style:none;}
 .bckno { background:none;}
 /*.table {
@@ -23,7 +23,7 @@ body { width:900px; /*background:url(../images/base1.png) 0px -15px no-repeat;*/
     width: 450px;
 }*/
 .table {
-    height: 70px;
+    height: 66px;
     margin: 0;
     padding: 40px 50px 5px;
     width: 89%;
@@ -32,7 +32,7 @@ body { width:900px; /*background:url(../images/base1.png) 0px -15px no-repeat;*/
     margin-left: 300px;
     margin-top: 20px;
 }
-.table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right;margin:15px 13px 0 0 }
+.table span { background:url(../images/logo.png) no-repeat; width:59px; height:51px; float:right;margin: 10px 17px 0 0; }
 
 .champ { 
     font-family: libre_baskervilleregular;
@@ -40,7 +40,7 @@ body { width:900px; /*background:url(../images/base1.png) 0px -15px no-repeat;*/
     font-weight: normal;
     margin: 0 auto;
     text-align: center;
-    width: 880px;
+    width: 807px;
 	height:460px;
 	
 }
@@ -60,7 +60,7 @@ body { width:900px; /*background:url(../images/base1.png) 0px -15px no-repeat;*/
     padding: 2px 6px;
 }
 			.bottomborder {
-    /*background: url("../images/bottom1.png") no-repeat scroll 27px center rgba(0, 0, 0, 0);*/
+    background: url("../images/bottom2.png") no-repeat scroll 22px center;
     height: 45px;
     width: 100%;
 	position:relative;
@@ -181,15 +181,31 @@ input[type="submit"]{background:#2a5665;}
 .champsp strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:35px; font-weight:normal; line-height:36px;   }
 .champsp a { text-decoration:none;}
 .champsp u { text-decoration:none; font-size:16px ; color:#333; display:block; margin-bottom:10px;margin-top:5px}
-.spofld { background:url(../images/lid.png) no-repeat; width:480px; height:481px; margin:3px 0 0 185px; float:left }
-.spofld ul { list-style:none; margin:172px 0 0 120px; padding:0; float:left; }
-.spofld li { border-bottom:solid 1px #c4ab85; width:250px; padding:7px 0; float:left;    }
+.spofld {
+    background: url("../images/img_lid.png") no-repeat scroll 0 -10px ;
+    float: left;
+    height: 311px;
+    margin: 3px 0 0 253px;
+    width: 480px;
+}
+.spofld ul {
+    float: left;
+    list-style: none outside none;
+    margin: 122px 0 0 68px;
+    padding: 0;width:188px;padding-top:5px;
+}
+.spofld li { border-bottom:solid 1px #c4ab85; width:188px; padding:7px 0; float:left;    }
 .spofld li span { width:60px; float:left; }
-.spofld li p { padding:0 0 0 10px; margin:0; float:right; width:180px; font-size:11px; color:#000; text-align:left; }
+.spofld li p { padding:0 0 0 10px; margin:0; float:right; width:117px; font-size:11px; color:#000; text-align:left; }
 .ovrwrt { margin:77px 195px 8px; }
-.buttonsp { background:#283e28; font-family: libre_baskervilleregular;
-    font-size: 16px;
-    font-weight: normal; color:#fff; padding:7px 15px;  }
+.buttonsp {
+    background: none repeat scroll 0 0 #283e28;
+    color: #fff;
+    font-family: libre_baskervilleregular;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 2px 9px;
+}
 	.hgt { height:55px;}
 .fontst { color:#585858; font-size:35px !important;}
 .card { /*background:url(../images/bg.png) no-repeat;*/ width:100%; height:350px; }
@@ -225,7 +241,7 @@ input[type="submit"]{background:#2a5665;}
     font: 13px Arial,Helvetica,sans-serif;
     left: 2px;
     top: 9px;
-    width: 219px !important;
+    width: 339px !important;
 	height:18px;
 }
 	
@@ -241,7 +257,7 @@ input[type="submit"]{background:#2a5665;}
     padding: 2px 10px 4px;
     position: absolute;
     top: 0px;
-    width: 200px !important;
+    width: 320px !important;
     z-index: 5;
 	margin:0px;
 	
@@ -262,4 +278,4 @@ input[type="submit"]{background:#2a5665;}
 }
 .pull-left{float:left}
 .spntxt{padding:5px !important;text-align:center !important;width:98.5% !important;font-size:14px !important;}
-.bottomborder .spntxt{font-size:13px !important;}
+.bottomborder .spntxt{font-size:13px !important;padding-top:0px !important}
