@@ -3,7 +3,7 @@ var _URL = window.URL || window.webkitURL;
 function validateform(){
 var x = document.forms["commentform"]["comment"].value;
     if (x == null || x == "") {
-        alert("Kindly enter Caption");
+       $('.errmsgcaption').html("Kindly enter Caption");
         return false;
     }
 	else{
@@ -13,11 +13,13 @@ var x = document.forms["commentform"]["comment"].value;
 function validatephotoform(){
 var x = document.forms["photoform"]["file"].value;
     if (x == null || x == "") {
-        alert("Select the selfie to be uploaded");
+        $('.errormsg').html("Select the selfie to be uploaded");
         return false;
     }
 	else{
+		$('.errmsgcaption').html('');
 		$('#opaque').show();
+		
 	}
 }
 function fileonchange(obj){
@@ -34,10 +36,13 @@ obj.value = '';
 alert("Kindly upload only gif,jpg,jpeg,png file");
 }
 }
+
+
 $("#id_file").change(function(e) {
     var file, img;
 	
 		document.getElementById('file_url').innerHTML = this.value;
+		$('.errormsg').html('');
 	
 
     if ((file = this.files[0])) {
@@ -45,10 +50,16 @@ $("#id_file").change(function(e) {
         img.onload = function() {
 		
 			if( this.width < 500 || this.height < 500 ){
-               alert("Please upload image greater than 500x500px");
+               $('.errormsg').html("Please upload image greater than 500x500px");
 			   document.getElementById('file_url').innerHTML='';
 			   $('#id_file').val('');
 			   return false;
+			}
+			else if(file.size > 3145728){
+				 $('.errormsg').html("Please upload image less than 3MB");
+				document.getElementById('file_url').innerHTML='';
+				$('#id_file').val('');				   
+				return false;
 			}
 			/*if(Math.abs(this.width-this.height)>10 ){
 				alert("Please upload a square image");
@@ -58,16 +69,16 @@ $("#id_file").change(function(e) {
 			}*/
         };
         img.onerror = function() {
-            alert( "not a valid file: " + file.type);
+            $('.errormsg').html( "not a valid file: " + file.type);
 				document.getElementById('file_url').innerHTML='';
 				$('#id_file').val('');
 				return false;
         };
         img.src = _URL.createObjectURL(file);
-
+		
 
     }
-
+	$('.errormsg').html('');
 });
 
 
