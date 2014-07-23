@@ -21,9 +21,10 @@
         <input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>" />
         <strong>#ATABLEFOR
 </strong>
-        <input name="comment" type="text" maxlength="30">
+        <input name="comment" type="text" maxlength="30" id="id_comment">
         <input name="optionchosen" value="1" type="hidden">
         <input name="" type="submit" value="Submit" />
+		<div class="errmsgcaption"></div>
         <span class="spntxt pull-left">Complete the caption #ATableFor 
 </span>
 <br/><br/><br/>
@@ -37,9 +38,11 @@
         <label id="browse">
 				<i id="file_url"><ab>Select a selfie</ab></i>	
 			<input name="file" type="file" id="id_file">
-        </label>
+			
+        </label>		
         <input name="optionchosen" value="2" type="hidden">
         <input style="padding:3px 0" name="" type="submit" value="Upload">
+		<div class="errormsg"></div>
 <br/>    
     <span class="spntxt pull-left" style="margin-top:2px">Upload a selfie,tag its location and select a caption.
 <!--If you do not chose a caption, your selfie will be be tagged with a

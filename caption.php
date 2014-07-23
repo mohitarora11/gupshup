@@ -111,6 +111,7 @@ include_once('header.php');
 			</select>
 		</li>
 <li>
+			<div class="errormsg"></div>
 			<input type="submit" value="submit">
 			</li>
 			</ul>
@@ -136,9 +137,10 @@ function validatecaption(){
 	var cap = document.forms["captionform"]["caption"].value;
 	var loc = document.forms["captionform"]["location"].value;
     if (cap == null || cap == "" || loc ==null || loc=="") {
-        alert("Kindly Select caption and location");
+        $('.errormsg').html("Kindly Select caption and location");
         return false;
     }
+	$('.errormsg').html('');
 }
 </script>
 <?php
