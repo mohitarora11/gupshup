@@ -99,11 +99,11 @@ $(document).on('click','.cls_share',function(){
 	var o = {};
 		o.feedObj = {
 			message: $('#id_msg').val(),
-			name: 'A Table For',
+			name: '#ATableFor',
 			link: SC.CANVASURL+"vote.php?pk="+$('#id_msg').data('pk'),
 			picture: 'https:'+SC.BASEURL+$('#id_msg').data('img'),
-			caption: "A Table For "+$('#id_msg').data('cmt'),		
-			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
+			caption: "#ATableFor "+$('#id_msg').data('cmt'),		
+			description: "'#ATableFor' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
 		o.path = '/me/feed/';
 		$('#opaque').show();

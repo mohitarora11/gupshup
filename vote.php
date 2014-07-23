@@ -90,10 +90,10 @@ if ($session){
 	//exit();
 }
 /*
-$_SESSION["voterid"] = '81355519';
+$_SESSION["voterid"] = '12310';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 51;
-*/	
+	$_SESSION["pk"] = 52;
+	*/
 ?>
 <!doctype html>
 <html>
@@ -144,17 +144,17 @@ $_SESSION["voterid"] = '81355519';
 	<div class="card"  >
 		
 					
-			<p>
+			<span class="spntxt pull-left">
 				<?php 		
 					if($r["opitonchoosen"]==2){
 				?>
 					<strong><?php echo $r["caption"];?></strong>
-					<br/>
+					
 					At <?php echo $r["location"]?>
 				<?php }else{ ?>
 					<strong><?php echo $r["cmt"];?></strong>
 				<?php } ?>
-			</p>
+			</span>
 			
 			
 			
@@ -194,7 +194,11 @@ $_SESSION["voterid"] = '81355519';
 							</span>
 					
 					<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
+						<?php if ($r["fbid"] == $_SESSION["voterid"] ) {?>
+						<a href="leaderboard.php">Check your Votes</a>
+						<?php } else { ?>
 						<a href="index.php">Enter Contest</a>
+						<?php } ?>
 					</span>		
 				
 				<?php } ?>

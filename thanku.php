@@ -20,6 +20,9 @@ if(!isset($_SESSION["userid"])){
 <meta name="og:description" content="A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win" />
 <meta name="og:image" content="https:<?php echo BASEURL?>images/pastry_.jpg/" />
 <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
+<style type="text/css">
+.spntxt {font-size:16px !important}
+</style>
 </head>
 <body>
 <?php 
@@ -170,10 +173,10 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		if($r["opitonchoosen"]==2){
 	?>
 		<?php echo $r["caption"];?>
-		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at CyberHub to participate in the American Express 'Atablefor' Contest. Help me win this contest by voting for my entry"/>
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my entry"/>
 	<?php } else { ?>
 		<?php echo $r["cmt"];?>
-		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have uploaded a #Caption - 'A Table for <?php echo $r["cmt"];?> ' at CyberHub to participate in the American Express 'Atablefor' Contest. Help me win this contest by voting for my entry"/>
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have submitted the phrase - '#ATableFor <?php echo $r["cmt"];?> ' at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my submission"/>
 		<?php } ?>
 	
 	</span>	
