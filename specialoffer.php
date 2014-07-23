@@ -15,10 +15,8 @@ The Card of your choice at Cyber Hub<br/>Exclusive offers for American Express C
 
 <div class="spofld" style="overflow:hidden">
 <ul>
-<li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards&reg; Points for every Rs. 100 Spent</p></li>
-<li><span><img src="images/bbar.png" width="60" height="43"></span><p>Earn 10 Bonus Membership 
-Rewards&reg; Points for every Rs. 100 Spent</p></li>
+<li><span><img src="images/dunkindonuts.jpg" width="60" height="43"></span><p>20% discount at Pizza Hut</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" height="43"></span><p>10% discount at Dunkin Donuts</p></li>
 
 </ul>
 </div>
