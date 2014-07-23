@@ -168,14 +168,14 @@ To win the contest, remember to share your entry with friends as soon as it is u
 	
 <span class="spntxt pull-left" style="font-size:30px !important">#ATableFor</span>	
 	
-	<span class="spntxt pull-left" style="font-size:32px !important;text-transform:uppercase">
+	<span class="spntxt pull-left" style="text-transform:uppercase">
 	<?php 		
 		if($r["opitonchoosen"]==2){
 	?>
-		<?php echo $r["caption"];?>
+		<strong><?php echo $r["caption"];?></strong>
 		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my entry"/>
 	<?php } else { ?>
-		<?php echo $r["cmt"];?>
+		<strong><?php echo $r["cmt"];?></strong>
 		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have submitted the phrase - '#ATableFor <?php echo $r["cmt"];?> ' at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my submission"/>
 		<?php } ?>
 	

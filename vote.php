@@ -93,7 +93,7 @@ if ($session){
 $_SESSION["voterid"] = '12310';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
 	$_SESSION["pk"] = 52;
-	*/
+*/
 ?>
 <!doctype html>
 <html>
@@ -186,20 +186,25 @@ $_SESSION["voterid"] = '12310';
 				
 				<?php
 				} else { ?>
-					<span class="spntxt pull-left">Thank you for voting!<br/>
+					<span class="spntxt pull-left">Thank you for voting!<br/><br/></span>
 					
-							Now its your turn to win vouchers from <br/>American Express&reg;.<br/><br/>
+							
+					
+					
+						<?php if ($r["fbid"] == $_SESSION["voterid"] ) {?>
+						<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
+						<a href="leaderboard.php">Check your Votes</a></span>
+						<?php } else { ?>
+						<span class="spntxt pull-left">
+						Now its your turn to win vouchers from <br/>American Express&reg;.<br/><br/>
 							
 							Come, participate in the contest and, get lucky!<br/><br/> 
 							</span>
-					
-					<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
-						<?php if ($r["fbid"] == $_SESSION["voterid"] ) {?>
-						<a href="leaderboard.php">Check your Votes</a>
-						<?php } else { ?>
+							<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
 						<a href="index.php">Enter Contest</a>
+						</span>		
 						<?php } ?>
-					</span>		
+					
 				
 				<?php } ?>
 
