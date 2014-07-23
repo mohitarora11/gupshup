@@ -40,8 +40,8 @@ alert("Kindly upload only gif,jpg,jpeg,png file");
 
 $("#id_file").change(function(e) {
     var file, img;
-	
-		document.getElementById('file_url').innerHTML = this.value;
+	k=this.value.split("\\");
+		document.getElementById('file_url').innerHTML = k[k.length-1];
 		$('.errormsg').html('');
 	
 
