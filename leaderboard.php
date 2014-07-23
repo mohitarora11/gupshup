@@ -13,8 +13,8 @@ if($_SESSION["userid"]){
 
 <div class="champ"><strong class="marbot">LEADERS</strong>
 
-<span class="spntxt pull-left" style="font-size:18px !important">Entries which are leading the contest</span>
-<br/><br/>
+<span class="spntxt pull-left">Entries which are leading the contest</span>
+<br/>
 <div class="cont">
 Caption Leaders
 
@@ -36,7 +36,7 @@ echo 'Vote(s)</b></li>';
 
 </ul>
 </div>
-<div class="cont" style="margin-bottom:20px">
+<div class="cont">
 
 Selfie Leaders
 
@@ -56,8 +56,8 @@ echo 'Votes</b></li>';
 }?>
 </ul>
 
-
-<a class="link" style="margin-left:250px;margin-top:40px" href="thanku.php">Go Back</a>
+<div style="clear:both;height:10px"></div>
+<a class="link"  href="thanku.php">Go Back</a>
 
 </div>
 Winners will be declared every Monday!

@@ -84,16 +84,16 @@ if ($session){
 	$_SESSION["LOGINURL"]= $LOGINURL;
 ?>
 	<script>
-//		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
+		top.window.location.href = '<?php echo $helper->getLoginUrl(explode(',',SCOPE));?>';
 	</script>
 <?php
 	//exit();
 }
-
+/*
 $_SESSION["voterid"] = '81355519';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 50;
-	
+	$_SESSION["pk"] = 51;
+*/	
 ?>
 <!doctype html>
 <html>

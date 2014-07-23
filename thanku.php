@@ -163,7 +163,7 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		if ($r["isapproved"]==1){
 	?>
 	
-<span class="spntxt pull-left" style="font-size:30px !important">#AtableFor</span>	
+<span class="spntxt pull-left" style="font-size:30px !important">#Atablefor</span>	
 	
 	<span class="spntxt pull-left" style="font-size:35px !important">
 	<?php 		
@@ -201,8 +201,8 @@ Remember, the more you share, the more your chances to win.
 <div class="bottomborder">
 
 <span class="spntxt pull-left" >
-If you are an American Express Cardmember, check out  special deals at Cyber Hub, Gurgaon. 
-<span class="off"><a href="specialoffer.php">OFFERS</a></span> <br/>
+Want these offers, but don't have an
+American Express&reg; Card?.<span class="off"><a href="specialoffer.php">OFFERS</a></span>
 If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">NOW!</a>
 </span>
 </div>
