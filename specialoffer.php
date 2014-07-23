@@ -11,7 +11,7 @@ footer ul{padding-top:4px}
 
 </style>
 <div class="champ"><strong>GREAT DEALS</strong>
-You don’t just book a table for two, three or four. You book a table for love, romance, friendship, memories and many other great occasions. This is the spirit that American Express celebrates at Cyber Hub with 17 exciting offers on dining.<br/>
+The Card of your choice at Cyber Hub<br/>Exclusive offers for American Express Cardmembers
 
 <div class="spofld" style="overflow:hidden">
 <ul>
@@ -23,7 +23,7 @@ Rewards&reg; Points for every Rs. 100 Spent</p></li>
 </ul>
 </div>
 <div style="clear:both"></div>
-<span class="pull-left spntxt" style="padding-bottom:1px !important">Now, participate in the contest and win American Express Gift Card worth Rs. 2000!</span>
+<span class="pull-left spntxt" style="padding-bottom:5px !important">Now, participate in the contest and win American Express Gift Card worth Rs. 2000!</span>
 
 <?php if(isset($_SESSION["LOGINURL"])){
 ?>

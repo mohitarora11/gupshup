@@ -163,9 +163,9 @@ To win the contest, remember to share your entry with friends as soon as it is u
 		if ($r["isapproved"]==1){
 	?>
 	
-<span class="spntxt pull-left" style="font-size:30px !important">#Atablefor</span>	
+<span class="spntxt pull-left" style="font-size:30px !important">#ATableFor</span>	
 	
-	<span class="spntxt pull-left" style="font-size:35px !important">
+	<span class="spntxt pull-left" style="font-size:32px !important;text-transform:uppercase">
 	<?php 		
 		if($r["opitonchoosen"]==2){
 	?>
@@ -183,7 +183,7 @@ Remember, the more you share, the more your chances to win.
 </span>	
 	<span class="spntxt pull-left" style="margin-top:20px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
-		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in 'A Table For' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
+		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in '#ATableFor' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
 			

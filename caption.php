@@ -44,7 +44,7 @@ include_once('header.php');
 		<div class="leftcol" style="text-align:left">
 			<form class="table1" method="post" style="margin-bottom:10px" action="caption.php" name="captionform" onsubmit="return validatecaption()">
 				<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-			<ul>
+			<ul style="margin-top:15px;width:350px">
 			<li class="divselect">
 				<select name="location" class="styled">
 				<option value="">select location </option>
@@ -93,7 +93,7 @@ include_once('header.php');
 
 		<li class="divselect">
 			<select name="caption" class="styled">
-			<option value="">select caption</option>
+			<option value="">select phrase</option>
 			<option>Cheers</option>
 		<option>Gup-Shup</option>
 		<option>Power Lunches</option>
@@ -112,7 +112,7 @@ include_once('header.php');
 		</li>
 <li>
 			<div class="errormsg"></div>
-			<input type="submit" value="submit">
+			<input type="submit" value="submit" style="margin:40px 0 0 100px">
 			</li>
 			</ul>
 			</form>
