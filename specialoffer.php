@@ -15,8 +15,24 @@ The Card of your choice at Cyber Hub<br/><span style="font-size:12px">Exclusive 
 
 <div class="spofld" style="overflow:hidden">
 <ul>
-<li><span><img src="images/dunkindonuts.jpg" width="60" height="43"></span><p>20% discount at Pizza Hut</p></li>
-<li><span><img src="images/pizzahut.jpg" width="60" height="43"></span><p>10% discount at Dunkin Donuts</p></li>
+<li><span><img src="images/dunkindonuts.jpg" width="60" ></span><p>20% discount at Pizza Hut</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount at Dunkin Donuts</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount at Zambar</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount at The Beer Cafe </p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>15% discount at Rred Hot </p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>5% discount</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount on Italiano</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount on Krispy Kreme</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount on au bon pain</p></li>
+<li><span><img src="images/rsz_thumb-13.jpg" width="60" ></span><p>15% discount on cafe Delhi Heights</p></li>
+<li><span><img src="images/rsz_thumb-14.jpg" width="60" ></span><p>10% discount on Joost Juice bars</p></li>
+<li><span><img src="images/rsz_thumb-15.jpg" width="60" ></span><p>15% discount on Raasta</p></li>
+<li><span><img src="images/rsz_thumb-16.jpg" width="60" ></span><p>10% discount on Dhaba</p></li>
+<li><span><img src="images/rsz_thumb-17.jpg" width="60" ></span><p>10% discount on Quiznos</p></li>
+<li><span><img src="images/rsz_thumb-18.png" width="60" ></span><p>10% discount on Smokeys</p></li>
+<li><span><img src="images/rsz_thumb-19.png" width="60" ></span><p>15% discount on Cherry Comet</p></li>
+
+
 
 </ul>
 </div>

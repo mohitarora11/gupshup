@@ -33,6 +33,13 @@ if($_SESSION["userid"]){
 }
 include_once('header.php');
 ?>
+<style type="text/css">
+.bottomborder .spntxt {    
+    position: absolute;
+    top: -17px;
+}
+.off{font-size:12px}
+</style>
 <div id="opaque" style="display:block"></div>
 <div class="champ" ><strong>CHAMPIONS</strong>
 	<div class="card"  >
@@ -125,11 +132,12 @@ include_once('header.php');
 	
 	</div>
 <div class="bottomborder">
-<span class="spntxt pull-left">
-        Want these offers, but don't have an
-American Express&reg; Card? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Get one NOW!</a>
-    </span>
+   <span class="spntxt pull-left" >
+If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. <br/>
+<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">DEALS</a></span>
+Yet to have one? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply for a Card, NOW!</a>
 
+</span>
 </div>
 
 <script type="text/javascript">

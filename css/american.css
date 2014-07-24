@@ -190,13 +190,25 @@ input[type="submit"]{background:#2a5665;}
 }
 .spofld ul {
     float: left;
+    height: 154px;
     list-style: none outside none;
     margin: 122px 0 0 68px;
-    padding: 0;width:188px;padding-top:5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px 0 0;
+    width: 188px;
 }
 .spofld li { border-bottom:solid 1px #c4ab85; width:188px; padding:7px 0; float:left;    }
 .spofld li span { width:60px; float:left; }
-.spofld li p { padding:0 0 0 10px; margin:0; float:right; width:117px; font-size:13px; color:#000; text-align:left; }
+.spofld li p {
+    color: #000;
+    float: left;
+    font-size: 13px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    text-align: left;
+    width: 103px;
+}
 .ovrwrt { margin:77px 195px 8px; }
 .buttonsp {
     background: none repeat scroll 0 0 #283e28;
