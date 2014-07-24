@@ -21,7 +21,13 @@ if(!isset($_SESSION["userid"])){
 <meta name="og:image" content="https:<?php echo BASEURL?>images/pastry_.jpg/" />
 <script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
 <style type="text/css">
-.spntxt {font-size:16px !important}
+.spntxt {font-size:15px !important}
+.table{height:60px}
+.bottomborder .spntxt {    
+    position: absolute;
+    top: -17px;
+}
+.off{font-size:12px}
 </style>
 </head>
 <body>
@@ -178,19 +184,19 @@ To win the contest, remember to share your entry with friends as soon as it is u
 	
 	</span>	
 	<span class="spntxt pull-left" style="margin-top:10px;">
-	Great! You entry is now live.<br/> Time to share this with your friends. <br/><br/>
+	Great! You entry is now live.<br/> Time to share this with your friends. <br/>
 Remember, the more you share, the more your chances to win. 
 </span>	
-	<span class="spntxt pull-left" style="margin-top:15px">
+	<span class="spntxt pull-left" style="margin-top:10px">
 	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
 		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in '%23ATableFor' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
 		</span>
 	
 			
-		<span class="spntxt pull-left" style="margin-top:15px">
+		<span class="spntxt pull-left" style="margin-top:10px">
 		<a style="background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
 	</span>
-	<span class="spntxt pull-left" style="margin-top:15px;font-size:15px !important">
+	<span class="spntxt pull-left" style="margin-top:10px;font-size:15px !important">
 	Six gift cards to be won every week! 
 
 	</span>
@@ -200,10 +206,11 @@ Remember, the more you share, the more your chances to win.
 </div>
 <div class="bottomborder">
 
-<span class="spntxt pull-left" style="display:none" >
-Want these offers, but don't have an
-American Express&reg; Card?.<span class="off"><a href="specialoffer.php">OFFERS</a></span>
-If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">NOW!</a>
+<span class="spntxt pull-left" >
+If you are an American Express Cardmember, do not forget to explore special deals at Cyber Hub, Gurgaon. <br/>
+<span class="off" style="display:inline;background:#3e513d"><a href="specialoffer.php">DEALS</a></span>
+Yet to have one? <a target="_blank" href="https://www.americanexpress.com/in/content/credit-cards/">Apply for a Card, NOW!</a>
+
 </span>
 </div>
 <?php /*
@@ -217,7 +224,7 @@ If not, apply for a Card, <a target="_blank" href="https://www.americanexpress.c
 
 
 </script>
-
+<div id="thanku" title="#ATableFor" style="display:none">Processing...</div>
 <?php
 include ('footer.html');
 ?>

@@ -84,7 +84,7 @@ $("#id_file").change(function(e) {
 
 $('.popup').on('click',function(){
 
-$( "#"+$(this).data('href')).dialog({ width: '800',height:'500', resizable: false,
+$( "#"+$(this).data('href')).dialog({ width: '800',height:'450', resizable: false,
 
 modal: true });
 
@@ -106,18 +106,20 @@ $(document).on('click','.cls_share',function(){
 			description: "'#ATableFor' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
 		};
 		o.path = '/me/feed/';
-		$('#opaque').show();
+		$('#thanku').dialog({modal:true,close: function(ev, ui) { $('#thanku').html('Processing...'); }});
+		//$('#opaque').show();
 		FB.api(o.path,'POST',o.feedObj,function(response){
 			
 			try{
 				if (!response || response.error) {
-					alert('Oops some Error occured. Kindly try again later');
+					$('#thanku').html('Oops some Error occured. Kindly try again later');
 				} else {
-					//alert('We have shared your entry on your timeline. All the best!');
+					$('#thanku').html('We have shared your entry on your timeline. All the best!');
 				}
-				$('#opaque').hide();
+				
+				
 			}catch(ee){
-				$('#opaque').hide();
+				
 			}
 			
 			/*

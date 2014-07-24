@@ -44,12 +44,12 @@ include_once('header.php');
 		<div class="leftcol" style="text-align:left">
 			<form class="table1" method="post" style="margin-bottom:10px" action="caption.php" name="captionform" onsubmit="return validatecaption()">
 				<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
-			<ul style="margin-top:15px;width:350px">
+			<ul style="margin-top:35px;width:350px">
 			<li class="divselect">
 				<select name="location" class="styled">
 				<option value="">select location </option>
 				<option>Al Zaitoon </option>
-<option>Angels in My Kittchen </option>
+<option>Angels in My Kitchen </option>
 <option>The Beer Cafe </option>
 <option>Bubble Teas</option>
 <option>Cafe DT </option>
