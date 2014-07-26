@@ -15,8 +15,8 @@ The Card of your choice at Cyber Hub<br/><span style="font-size:12px">Exclusive 
 
 <div class="spofld" style="overflow:hidden">
 <ul>
-<li><span><img src="images/dunkindonuts.jpg" width="60" ></span><p>20% discount at Pizza Hut</p></li>
-<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>10% discount at Dunkin Donuts</p></li>
+<li><span><img src="images/pizzahut.jpg" width="60" ></span><p>20% discount at Pizza Hut</p></li>
+<li><span><img src="images/dunkindonuts.jpg" width="60" ></span><p>10% discount at Dunkin Donuts</p></li>
 <li><span><img src="images/zombar.jpg" width="60" ></span><p>10% discount at Zambar</p></li>
 <li><span><img src="images/beercafe.jpg" width="60" ></span><p>10% discount at The Beer Cafe </p></li>
 <li><span><img src="images/redhot.jpg" width="60" ></span><p>15% discount at Rred Hot </p></li>

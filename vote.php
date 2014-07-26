@@ -90,9 +90,9 @@ if ($session){
 	//exit();
 }
 /*
-$_SESSION["voterid"] = '12310';
+$_SESSION["voterid"] = '13310';
 	$_SESSION["voteremail"] = 'mohit.11.arora@gmail.com';
-	$_SESSION["pk"] = 54;
+	$_SESSION["pk"] = 57;
 */
 ?>
 <!doctype html>
@@ -103,8 +103,15 @@ $_SESSION["voterid"] = '12310';
 <title>Gupshup</title>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css"  rel="stylesheet" type="text/css">
 <link href="css/american.css?<?php echo $GLOBALS['bpc'];?>" rel="stylesheet" type="text/css">
+<script>var SC={DISPLAYNAME:'<?php echo APPNAME;?>',CANVASURL: '<?php echo CANVASURL;?>',APPID:'<?php echo APPID;?>',BASEURL:'<?php echo BASEURL;?>',SCOPE:'<?php echo SCOPE;?>'};</script>
+<style type="text/css">a.link{font-size:13px;padding:4px}</style>
 </head>
 <body>
+
+<div id="opaque"></div>
+<div id="fb-root"></div>
+
+
 <?php 	  
 				$sql = getuserfromid($_SESSION['pk']);	  
 				$r = $sql->fetch(PDO::FETCH_ASSOC);
@@ -177,15 +184,17 @@ $_SESSION["voterid"] = '12310';
 				if($q->rowCount()==0){
 			?>
 			<span class="spntxt pull-left">
+			
+			
 			<?php if ($r["fbid"] != $_SESSION["voterid"] ) {?>
 			
 			
 			<?php if ($r["opitonchoosen"]==1) { ?>
 			
-			Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/></span>
+			Here's what your friend has written<?php } else {?>Here is your friend's selfie<?php } ?>. Like it? <br/>Vote now and help your friend to win!<br/>
 			<?php }
 			?>
-
+			</span>
 			<form method="post" action="vote.php">
 					<input type="hidden" name="PHPSESSID" value="<?php echo session_id(); ?>"/>
 					<input type="hidden" name="userid" value="<?php echo $_SESSION["pk"]; ?>"/>
@@ -197,12 +206,97 @@ $_SESSION["voterid"] = '12310';
 				} else { ?>
 					<span class="spntxt pull-left">Thank you for voting!<br/><br/></span>
 					
-							
-					
-					
-						<?php if ($r["fbid"] == $_SESSION["voterid"] ) {?>
-						<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
+					<?php if ($r["fbid"] == $_SESSION["voterid"] ) {?>
+						<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:5px">
 						<a href="leaderboard.php">Check your Votes</a></span>
+						
+						<?php 
+							$sql = getuserfromid($_SESSION["pk"]);
+							$q = $sql->fetch(PDO::FETCH_ASSOC);	
+							$pk = $_SESSION["pk"];
+						?>	
+
+
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+			appId      : '<?php echo APPID?>',
+			xfbml      : true,
+			version    : 'v2.0'
+        });
+		
+		FB.getLoginStatus(function(r){
+			if(r.status === 'connected') {
+				
+			}else {
+				FB.login(function(){
+					
+				},{scope: SC.SCOPE});
+			}
+		});
+    };
+	
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+    </script>
+
+	<script>
+	function fbfeed(o,cb){
+	try{FB.Canvas.scrollTo(0,0);}catch(e){}
+		var o = {};
+		o.feedObj = {
+			message: "I have participated in the American Express 'A Table for You' Contest. Help me win this contest by voting for my entry",
+			name: 'A Table For',
+			link: SC.CANVASURL+"vote.php?pk="+<?php echo $pk; ?>,
+			picture: 'https:'+SC.BASEURL+'images/pastry_.jpg',
+			caption: "A Table For CHAMPIONS",		
+			description: "'A Table For' is a unique contest by American Express. Check out your friend's entry, vote for it, and make it win"
+		};
+		o.path = '/me/feed/';
+		FB.api(o.path,'POST',o.feedObj,function(r){
+			try{
+				//console.log(arguments);
+			}catch(ee){
+				
+			}
+			if(r != void 0){
+				//debug('fbShare'+ o.path , r);
+				//cb(r);
+			}else{
+				//debug(arguments);
+			}
+		});	
+	}	
+    </script>						
+						
+						<span class="spntxt pull-left" style="text-transform:uppercase">
+	<?php 		
+		if($q["opitonchoosen"]==2){
+	?>
+		
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["caption"];?>" data-img="resizedimages/<?php echo $r['resizephotourl']?>" value=" I have uploaded a #Selfie at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my entry"/>
+	<?php } else { ?>
+		
+		<input  id="id_msg" type="hidden" data-pk="<?php echo $pk; ?>" data-cmt="<?php echo $r["cmt"];?>" data-img="images/pastry_.jpg" value="I have submitted the phrase - '#ATableFor <?php echo $r["cmt"];?> ' at Cyber Hub to participate in the American Express '#ATableFor' Contest. Help me win this contest by voting for my submission"/>
+		<?php } ?>
+	
+	</span>	
+	<span class="spntxt pull-left" style="margin-top:10px;">
+	Don't forget to share it with your friends. <br/>
+Remember, the more you share, the more your chances to win. 
+</span>	
+	
+	<span class="spntxt pull-left" style="margin-top:7px">
+	<a style="margin-left:55px;background:#073955" class="link cls_share" href="javascript:void(0)" data-prop="fb">Share on Facebook</a>
+		<a class="link" style="background:#073955" target="_blank" href="http://twitter.com/intent/tweet?text=Vote for my entry in '%23ATableFor' Contest&amp;url=<?php echo CANVASURL ?>vote.php?pk=<?php echo $pk; ?>">Share on Twitter</a>
+		</span>
+	
+						
+						
 						<?php } else { ?>
 						<span class="spntxt pull-left">
 						Now its your turn to win vouchers from <br/>American Express&reg;.<br/><br/>
@@ -211,7 +305,11 @@ $_SESSION["voterid"] = '12310';
 							</span>
 							<span class="off" style="display:inline;background:#2a5665;font-size:15px;margin-top:7px;padding:7px">
 						<a href="index.php">Enter Contest</a>
-						</span>		
+						</span>	
+
+
+
+						
 						<?php } ?>
 					
 				
@@ -233,6 +331,7 @@ If not, <a target="_blank" href="https://www.americanexpress.com/in/content/cred
 </span>
 
 </div>
+<div id="thanku" title="#ATableFor" style="display:none">Processing...</div>
 <?php
 	include_once ('footer.html');
 ?>

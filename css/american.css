@@ -46,12 +46,12 @@ body { width:900px; background:url(../images/background2.png) 0px -15px no-repea
 }
 .champ strong { display:block; font-family:libre_baskervilleregular; width:100%; font-size:40px; font-weight:normal; margin-bottom:10px;  }
 
-.pastry {   background: url("../images/pastry_.jpg") no-repeat scroll 0 0;
-    height: 250px;
+.pastry {   background: url("../images/image.jpg") no-repeat scroll 0 0;
+    height: 249px;
     margin: 15px auto 0;
-    width: 647px;}
+    width: 800px;}
 	
-	.pastry .offers,.off { background:#073955; float:left; margin:20px 0 0 200px; padding:5px 10px; font-size:25px; }
+	.pastry .offers,.off { background:#073955; float:left; margin:20px 0 0 295px; padding:5px 10px; font-size:25px; }
 		.pastry .offers a,.off a { color:#fff; text-decoration:none;}
 .off {
     float: none;
@@ -182,7 +182,7 @@ input[type="submit"]{background:#2a5665;}
 .champsp a { text-decoration:none;}
 .champsp u { text-decoration:none; font-size:16px ; color:#333; display:block; margin-bottom:10px;margin-top:5px}
 .spofld {
-    background: url("../images/img_lid.png") no-repeat scroll 0 -10px ;
+    background: url("../images/img1_lid.png") no-repeat scroll 0 -10px ;
     float: left;
     height: 311px;
     margin: 3px 0 0 253px;
