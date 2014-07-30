@@ -197,7 +197,7 @@ Remember, the more you share, the more your chances to win.
 		<a style="background:#073955" class="link" href="leaderboard.php">Check your Votes</a>
 	</span>
 	<span class="spntxt pull-left" style="margin-top:10px;font-size:15px !important">
-	Six gift cards to be won every week! 
+	Six American Express Gift Cards to be won every week! 
 
 	</span>
 	
