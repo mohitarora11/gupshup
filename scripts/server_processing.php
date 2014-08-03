@@ -34,7 +34,7 @@ $columns = array(
 	array( 'db' => 'email',  'dt' => 1 ),
 	array( 'db' => 'opitonchoosen',   'dt' => 2 ),
 	array( 'db' => 'cmt',     'dt' => 3 ),
-	array( 'db' => 'photourl',     'dt' => 4 ),
+	array( 'db' => 'resizephotourl',     'dt' => 4 ),
 	array( 'db' => 'caption',     'dt' => 5 ),
 	array( 'db' => 'location',     'dt' => 6 ),
 	array( 'db' => 'id',     'dt' => 7 )

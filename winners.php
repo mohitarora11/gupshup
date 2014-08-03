@@ -92,7 +92,7 @@ Selfie Leaders
 </ul>
 
 </div>
-Winners will be declared every monday!
+Winners will be declared every Friday!
 <div class="fbtwt">
 <a href="#"><img src="images/fb.png" width="66" height="24"></a>
 <a href="#"><img src="images/tweet.png" width="66" height="24"></a>

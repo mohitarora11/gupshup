@@ -2,7 +2,7 @@
 var _URL = window.URL || window.webkitURL;
 function validateform(){
 var x = document.forms["commentform"]["comment"].value;
-    if (x == null || x == "") {
+    if (x == null || x.trim() == "") {
        $('.errmsgcaption').html("Kindly enter Caption");
         return false;
     }

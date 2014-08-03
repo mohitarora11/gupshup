@@ -52,9 +52,9 @@ class SSP {
 							$row[ $column['dt'] ] = 'Caption';
 						}
 						break;
-					case 'photourl':
+					case 'resizephotourl':
 						if($data[$i][$columns[$j]['db']]!=''){
-							$row[ $column['dt'] ] = '<img src="resizedimages/'.$data[$i][$columns[$j]['db']].'" width="50" height="50">';						
+							$row[ $column['dt'] ] = '<img src="resizedimages/'.$data[$i][$columns[$j]['db']].'" width="100" height="100">';						
 						}else{
 							$row[ $column['dt'] ] = '';
 						}
@@ -205,10 +205,10 @@ class SSP {
 		}
 
 		if ( $where !== '' ) {
-			$where = 'WHERE '.$where.' AND isapproved=0 ';
+			$where = 'WHERE '.$where.' AND isapproved=0 AND status=2 ';
 		}
 		else{
-			$where = 'WHERE isapproved=0 ';
+			$where = 'WHERE isapproved=0 AND status=2 ';
 		}
 
 		return $where;

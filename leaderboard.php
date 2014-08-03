@@ -60,7 +60,7 @@ echo 'Votes</b></li>';
 <a class="link"  href="thanku.php">Go Back</a>
 
 </div>
-Winners will be declared every Monday!
+Winners will be declared every Friday!
 <div class="fbtwt" style="display:none">
 <a href="#"><img src="images/fb.png" width="66" height="24"></a>
 <a href="#"><img src="images/tweet.png" width="66" height="24"></a>
