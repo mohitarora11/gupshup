@@ -86,9 +86,7 @@ include_once('sql.php');
 include_once ('header.php');
 //$_SESSION["userid"] = '111';
 if($_SESSION["userid"]){
-}else{
-	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
-}
+
 ?>
 
 <div class="champ"><strong class="marbot">LEADERS</strong>
@@ -152,5 +150,11 @@ Winners will be declared every Friday!
 
 <div class="bottomborder"></div>
 <?php
-include ('footer.html');
+	include ('footer.html');
+}
+else{
+	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
+}
 ?>
+
+
