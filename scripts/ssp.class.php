@@ -48,8 +48,11 @@ class SSP {
 					case 'opitonchoosen':				
 						if($data[$i][$columns[$j]['db']]=='2'){
 							$row[ $column['dt'] ] = 'Selfie';						
-						}else{
+						}else if($data[$i][$columns[$j]['db']]=='1'){
 							$row[ $column['dt'] ] = 'Caption';
+						}
+						else{
+							$row[ $column['dt'] ] = 'None';
 						}
 						break;
 					case 'resizephotourl':
