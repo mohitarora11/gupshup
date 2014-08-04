@@ -108,16 +108,14 @@ echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr>';
 echo $row['fname'];
 echo'</u><br><b>';
 echo $row['count'];
-echo 'Vote(s)</b></li>';
+echo ' Vote(s)</b></li>';
 }?>
 
 
 </ul>
 </div>
 <div class="cont">
-
 Selfie Leaders
-
 <ul class="leaderboard">
 <?php 
 	$sql = leaderboard_byselfie();
@@ -130,7 +128,7 @@ echo '<li><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height
 echo $row['fname'];
 echo'</u><br><b>';
 echo $row['count'];
-echo 'Votes</b></li>';
+echo ' Vote(s)</b></li>';
 }?>
 </ul>
 
