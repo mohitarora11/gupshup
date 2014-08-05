@@ -1,9 +1,5 @@
-
-<?php
-
+<?php include_once('app_config.php');
 include_once('globalvar.php');
-include_once('app_config.php');
-
 include_once('sql.php');
 include_once ('header.php');
 //$_SESSION["userid"] = '111';
@@ -73,7 +69,7 @@ Winners will be declared every Friday!
 	include ('footer.html');
 /*}
 else{
-	header("Location: ".$GLOBALS['url']."index.php"); /* Redirect browser */
+	header("Location: ".$GLOBALS['url']."index.php"); // Redirect browser 
 }*/
 ?>
 
