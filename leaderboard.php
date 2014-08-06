@@ -22,7 +22,7 @@ Caption Leaders
 {
 
 //echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
-echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr>';
+echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr><u>';
 echo $row['fname'];
 echo'</u><b>';
 echo $row['count'];
@@ -51,7 +51,7 @@ echo ' Vote(s)</b></li>';
 </ul>
 
 <div style="clear:both;height:7px"></div>
-<a class="link"  href="thanku.php">Go Back</a>
+<a class="link" style="padding:2px;font-size:13px"  href="thanku.php">Go Back</a>
 
 </div>
 Winners will be declared every Friday!

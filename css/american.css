@@ -147,7 +147,7 @@ input[type="submit"]{background:#2a5665;}
 .champ .marbot { margin-bottom:10px;}
 .champ .cont { margin-bottom:9px; float:left;width:98%}
 .leaderboard {  margin:6px 0 0 0; font-family:Arial, Helvetica, sans-serif; width:100%;float:left }
-.leaderboard li { float:left; margin:0 0 0 22px; background:#283e28; width:130px; font:normal 12px arial; color:#84c184; text-align:center; height:150px;}
+.leaderboard li { float:left; margin:0 0 0 45px; background:#283e28; width:150px; font:normal 12px arial; color:#84c184; text-align:center; height:150px;}
 .leaderboard li a { text-decoration:none; color:inherit;}
 .leaderboard a:hover li  { background:#2f2f2f; color:#e5a65c;}
 .leaderboard li u { text-decoration:none;display:block }
