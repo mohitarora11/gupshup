@@ -145,19 +145,19 @@ input[type="submit"]{background:#2a5665;}
 	
 .btext { text-align:center; color:#29546e; font:normal 14px arial;  }
 .champ .marbot { margin-bottom:10px;}
-.champ .cont { margin-bottom:10px; float:left;width:98%}
-.leaderboard {  margin:10px 0 0 0; font-family:Arial, Helvetica, sans-serif; width:100%;float:left }
-.leaderboard li { float:left; margin:0 0 0 22px; background:#283e28; width:123px; font:normal 12px arial; color:#84c184; text-align:center; height:140px;}
+.champ .cont { margin-bottom:9px; float:left;width:98%}
+.leaderboard {  margin:6px 0 0 0; font-family:Arial, Helvetica, sans-serif; width:100%;float:left }
+.leaderboard li { float:left; margin:0 0 0 22px; background:#283e28; width:130px; font:normal 12px arial; color:#84c184; text-align:center; height:150px;}
 .leaderboard li a { text-decoration:none; color:inherit;}
 .leaderboard a:hover li  { background:#2f2f2f; color:#e5a65c;}
-.leaderboard li u { text-decoration:none; }
+.leaderboard li u { text-decoration:none;display:block }
 .leaderboard li b { font:normal 15px arial; color:#fff; line-height:10px; }
-.leaderboard li img { margin:10px auto 2px; border:solid 1px #fff; }
+.leaderboard li img { margin:8px auto 2px; border:solid 1px #fff; }
 .leaderboard li tbr {
     background: none repeat scroll 0 0 #fff;
     color: #333;
     float: left;
-    font-size: 17px;
+    font-size: 16px;
     height: 95px;
     margin: 4px;
     padding: 3px;

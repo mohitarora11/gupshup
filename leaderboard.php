@@ -11,7 +11,7 @@ include_once ('header.php');
 
 ?>
 
-<div class="champ"><strong class="marbot">LEADERS</strong>
+<div class="champ"><strong class="marbot" style="margin-bottom:2px">LEADERS</strong>
 
 <span class="spntxt pull-left">Entries which are leading the contest</span>
 <br/>
@@ -28,7 +28,7 @@ Caption Leaders
 //echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
 echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr>';
 echo $row['fname'];
-echo'</u><br><b>';
+echo'</u><b>';
 echo $row['count'];
 echo ' Vote(s)</b></li>';
 }?>
@@ -36,7 +36,7 @@ echo ' Vote(s)</b></li>';
 
 </ul>
 </div>
-<div class="cont">
+<div class="cont" style="margin-bottom:8px">
 Selfie Leaders
 <ul class="leaderboard">
 <?php 
@@ -46,15 +46,15 @@ Selfie Leaders
 {
 
 //echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
-echo '<li><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height="90" /><u>';
+echo '<li><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height="100" /><u>';
 echo $row['fname'];
-echo'</u><br><b>';
+echo'</u><b>';
 echo $row['count'];
 echo ' Vote(s)</b></li>';
 }?>
 </ul>
 
-<div style="clear:both;height:10px"></div>
+<div style="clear:both;height:7px"></div>
 <a class="link"  href="thanku.php">Go Back</a>
 
 </div>
