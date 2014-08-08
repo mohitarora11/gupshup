@@ -22,7 +22,7 @@ Caption Leaders
 {
 
 //echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
-echo '<li><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr><u>';
+echo '<li id="'.$row["userid"].'"><tbr>Atable<br/>For<br/>'.$row['cmt'].'</tbr><u>';
 echo $row['fname'];
 echo'</u><b>';
 echo $row['count'];
@@ -42,7 +42,7 @@ Selfie Leaders
 {
 
 //echo '<li><img src="https://graph.facebook.com/'.$row['fbid'].'/picture?type=normal" width="100" height="90"><u>';
-echo '<li><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height="100" /><u>';
+echo '<li id="'.$row["userid"].'"><img src="resizedimages/'.$row["resizephotourl"].'" width="100" height="100" /><u>';
 echo $row['fname'];
 echo'</u><b>';
 echo $row['count'];
