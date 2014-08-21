@@ -96,12 +96,22 @@ function vote($userid,$fbid,$email){
 	$q=isvoted($userid,$fbid);
 	$count = $q->rowCount();
 	if($count == 0){
-		$q = "insert into vote_atableforyou(userid,fbid,votetime,ipaddress,email) 
-			values(".$userid.",'".$fbid."',current_timestamp(),'".$_SERVER['REMOTE_ADDR']."','".$email."')";		
+		
+		$ipList = array('101.63.12.122','106.51.232.27','101.63.11.92','115.252.211.63','115.69.251.28','115.69.251.229','115.252.209.239','115.252.210.221','103.31.145.107','180.249.136.117','117.207.81.126','103.20.65.44','117.214.184.10','117.212.22.86','103.20.66.162','103.31.145.9','115.69.251.28','122.179.164.177','103.20.66.162','103.31.145.9', '101.61.22.83', '115.251.157.212', '115.251.240.132');
+		$ipblock = 0;		
+		if(in_array($_SERVER['REMOTE_ADDR'],$ipList)){
+			$ipblock= 1;
+		}
+		
+		$q = "insert into vote_atableforyou(userid,fbid,votetime,ipaddress,email,ipblock) 
+			values(".$userid.",'".$fbid."',current_timestamp(),'".$_SERVER['REMOTE_ADDR']."','".$email."','".$ipblock."')";		
 		$_SESSION["voted"] = 1;
-		$res=$conn->prepare($q);
-		$res->execute();
-		return $res;
+		
+			$res=$conn->prepare($q);
+			$res->execute();
+			return $res;
+		
+		return 1;
 		//return mysqli_query($GLOBALS['conn'],$q);
 	}
 	return 0;
@@ -199,7 +209,7 @@ function leaderboard_bycaption(){
 
 	global $conn;
 	$q = "select v.userid,count(v.userid) as count,v.userid,u.fname,u.cmt,u.fbid from vote_atableforyou v 
-join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 1 and u.isapproved=1 and u.isfaked=0 
+join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 1 and u.isapproved=1 and u.isfaked=0 and v.ipblock='0'
 group by(userid) order by 2 desc limit 4";
 	$res = $conn->prepare($q);
 	$res->execute();
@@ -209,7 +219,7 @@ function leaderboard_byselfie(){
 
 	global $conn;
 	$q = "select v.userid,count(v.userid) as count,v.userid,u.fname,u.resizephotourl,u.fbid from vote_atableforyou v 
-join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 2 and u.isapproved=1 and u.isfaked=0 
+join user_atableforyou u where u.id = v.userid and u.opitonchoosen = 2 and u.isapproved=1 and u.isfaked=0 and v.ipblock='0'
 group by(userid) order by 2 desc limit 4";
 	$res = $conn->prepare($q);
 	$res->execute();
